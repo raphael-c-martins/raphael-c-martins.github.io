@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Raphael Martins — Dev Front-End & Suporte TI</title>
+  <meta name="description" content="Portfólio e currículo de Raphael Chernicharo Martins — Estudante de Ciência da Computação, Dev Front-End e especialista em suporte e manutenção de TI." />
+  <meta name="keywords" content="Raphael Martins, desenvolvedor front-end, suporte TI, ciência da computação, portfólio, currículo" />
+  <meta name="author" content="Raphael Chernicharo Martins" />
+
+  <!-- Open Graph (LinkedIn / WhatsApp preview) -->
+  <meta property="og:title" content="Raphael Martins — Dev Front-End & Suporte TI" />
+  <meta property="og:description" content="Estudante de Ciência da Computação com foco em desenvolvimento web e cibersegurança." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ CURSOR GLOW ═══════════════════════════ -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Início">
+        <span class="logo-bracket">&lt;</span>RM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre"         class="nav-link">Sobre</a></li>
+        <li><a href="#experiencia"   class="nav-link">Experiência</a></li>
+        <li><a href="#formacao"      class="nav-link">Formação</a></li>
+        <li><a href="#habilidades"   class="nav-link">Habilidades</a></li>
+        <li><a href="#certificacoes" class="nav-link">Cursos</a></li>
+        <li><a href="#projetos"      class="nav-link">Projetos</a></li>
+        <li><a href="#contato"       class="nav-link nav-link--cta">Contato</a></li>
+      </ul>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════ HERO ════════════════════════════════ -->
+  <section id="hero" class="hero" aria-label="Apresentação">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-greeting" data-reveal>Olá, mundo 👋</p>
+      <h1 class="hero-name" data-reveal>
+        Raphael<br />
+        <span class="hero-name--accent">Chernicharo</span><br />
+        Martins
+      </h1>
+      <p class="hero-title" data-reveal>
+        <span class="typed-text" id="typed-text"></span>
+        <span class="typed-cursor" aria-hidden="true">|</span>
+      </p>
+      <p class="hero-summary" data-reveal>
+        Estudante de Ciência da Computação com foco em desenvolvimento web e cibersegurança.
+        Habilidade em resolução de problemas, aprendizagem rápida e facilidade de comunicação.
+      </p>
+      <div class="hero-actions" data-reveal>
+        <a href="#projetos" id="btn-projetos" class="btn btn--primary">
+          <i class="fa-solid fa-folder-open" aria-hidden="true"></i> Ver Projetos
+        </a>
+        <a href="#contato" id="btn-contato" class="btn btn--outline">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Entrar em Contato
+        </a>
+      </div>
+      <div class="hero-social" data-reveal>
+        <a href="mailto:raphaelchernicharo@gmail.com" id="social-email" class="social-link" aria-label="E-mail" title="raphaelchernicharo@gmail.com">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/raphael-c-martins" id="social-github" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/raphael-c-martins/" id="social-linkedin" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="tel:+5521980833930" id="social-phone" class="social-link" aria-label="Telefone" title="+55 (21) 98083-3930">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ SOBRE ════════════════════════════════ -->
+  <section id="sobre" class="section" aria-label="Sobre mim">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">// sobre</span>
+        <h2 class="section-title">Quem sou eu</h2>
+      </div>
+
+      <div class="sobre-grid">
+        <div class="sobre-img-wrapper" data-reveal>
+          <img src="imgs/foto-rosto.jfif" alt="Foto de Raphael Martins" class="sobre-img" />
+          <div class="sobre-img-backdrop"></div>
+        </div>
+
+        <div class="sobre-content">
+          <div class="sobre-text" data-reveal>
+          <p>
+            Sou <strong>Raphael Chernicharo Martins</strong>, nascido em 13 de agosto de 2003, 
+            natural de Itaboraí, Rio de Janeiro. Atualmente curso <strong>Ciência da Computação</strong> 
+            na Universidade Estácio de Sá (previsão de conclusão: dez/2028).
+          </p>
+          <p>
+            Tenho experiência prática em <strong>desenvolvimento front-end</strong>, 
+            <strong>manutenção de hardware</strong> e <strong>suporte técnico</strong>. 
+            Sou apaixonado por tecnologia desde cedo e constantemente busco ampliar meu conhecimento 
+            por meio de cursos, projetos práticos e desafios reais.
+          </p>
+          <p>
+            Meu objetivo é crescer como desenvolvedor full-stack, unindo a solidez técnica de TI 
+            com a criatividade do desenvolvimento de software.
+          </p>
+        </div>
+
+        <div class="sobre-cards" data-reveal>
+          <div class="info-card glass">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <div>
+              <span class="info-card__label">Localização</span>
+              <span class="info-card__value">Itaboraí, Rio de Janeiro - RJ</span>
+            </div>
+          </div>
+          <div class="info-card glass">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            <div>
+              <span class="info-card__label">Formação</span>
+              <span class="info-card__value">Ciência da Computação — Estácio de Sá</span>
+            </div>
+          </div>
+          <div class="info-card glass">
+            <i class="fa-solid fa-language" aria-hidden="true"></i>
+            <div>
+              <span class="info-card__label">Idiomas</span>
+              <span class="info-card__value">PT 🇧🇷 · EN 🇺🇸 · ES 🇪🇸</span>
+            </div>
+          </div>
+          <div class="info-card glass">
+            <i class="fa-solid fa-car" aria-hidden="true"></i>
+            <div>
+              <span class="info-card__label">Habilitação</span>
+              <span class="info-card__value">CNH Categoria B</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ EXPERIÊNCIA ══════════════════════════ -->
+  <section id="experiencia" class="section section--alt" aria-label="Experiência profissional">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">// experiência</span>
+        <h2 class="section-title">Trajetória Profissional</h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- JOB 1 -->
+        <article class="timeline-item" data-reveal>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Monitor de Informática</h3>
+                <p class="timeline-company">
+                  <i class="fa-solid fa-building" aria-hidden="true"></i> Microlins — Niterói, RJ
+                </p>
+              </div>
+              <span class="timeline-period">mai 2023 – set 2023</span>
+            </div>
+            <ul class="timeline-duties">
+              <li>Proporcionava soluções de hardware/software e manutenção de computadores</li>
+              <li>Desenvolvimento de materiais de treinamento e comunicação eficaz</li>
+              <li>Planejamento e ministração de aulas sobre Microsoft Office, front-end e redes</li>
+              <li>Manutenção de laboratório e suporte técnico aos alunos</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Suporte TI</span>
+              <span class="tag">Hardware</span>
+              <span class="tag">Didática</span>
+              <span class="tag">Redes</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- JOB 2 -->
+        <article class="timeline-item" data-reveal>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-card glass">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Auxiliar de Marcenaria</h3>
+                <p class="timeline-company">
+                  <i class="fa-solid fa-building" aria-hidden="true"></i> RMS — Obras & Marcenaria, Itaboraí
+                </p>
+              </div>
+              <span class="timeline-period">mai 2021 – fev 2023</span>
+            </div>
+            <ul class="timeline-duties">
+              <li>Auxílio nas tarefas de corte, montagem e organização de materiais</li>
+              <li>Desenvolvimento de habilidades práticas de trabalho manual e planejamento</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Trabalho em Equipe</span>
+              <span class="tag">Organização</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FORMAÇÃO ════════════════════════════ -->
+  <section id="formacao" class="section" aria-label="Formação acadêmica">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">// formação</span>
+        <h2 class="section-title">Acadêmica</h2>
+      </div>
+
+      <div class="education-grid">
+
+        <article class="edu-card glass" data-reveal>
+          <div class="edu-icon">
+            <i class="fa-solid fa-university" aria-hidden="true"></i>
+          </div>
+          <div class="edu-info">
+            <span class="edu-level">Ensino Superior — Em andamento</span>
+            <h3 class="edu-course">Ciências da Computação</h3>
+            <p class="edu-institution">Universidade Estácio de Sá — Itaboraí</p>
+            <span class="edu-period">mar 2024 – atual (conclusão: dez/2028)</span>
+          </div>
+        </article>
+
+        <article class="edu-card glass" data-reveal>
+          <div class="edu-icon">
+            <i class="fa-solid fa-school" aria-hidden="true"></i>
+          </div>
+          <div class="edu-info">
+            <span class="edu-level">Ensino Médio — Concluído</span>
+            <h3 class="edu-course">Ensino Médio Regular</h3>
+            <p class="edu-institution">CEIPS — Centro Educacional de Itaboraí Pedro e Santana</p>
+            <span class="edu-period">fev 2019 – dez 2021</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ HABILIDADES ══════════════════════════ -->
+  <section id="habilidades" class="section section--alt" aria-label="Habilidades técnicas">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">// habilidades</span>
+        <h2 class="section-title">Tech Stack</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-group glass" data-reveal>
+          <div class="skill-group__icon">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+          </div>
+          <h3 class="skill-group__title">Front-End</h3>
+          <div class="skill-pills">
+            <span class="skill-pill skill-pill--primary">HTML5</span>
+            <span class="skill-pill skill-pill--primary">CSS3</span>
+            <span class="skill-pill skill-pill--primary">JavaScript</span>
+            <span class="skill-pill">WordPress</span>
+            <span class="skill-pill">PHP</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" data-reveal>
+          <div class="skill-group__icon">
+            <i class="fa-solid fa-server" aria-hidden="true"></i>
+          </div>
+          <h3 class="skill-group__title">Infraestrutura & SO</h3>
+          <div class="skill-pills">
+            <span class="skill-pill skill-pill--primary">Windows</span>
+            <span class="skill-pill skill-pill--primary">Linux</span>
+            <span class="skill-pill">Redes TCP/IP</span>
+            <span class="skill-pill">Montagem de PCs</span>
+            <span class="skill-pill">Manutenção HW/SW</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" data-reveal>
+          <div class="skill-group__icon">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          </div>
+          <h3 class="skill-group__title">Cibersegurança</h3>
+          <div class="skill-pills">
+            <span class="skill-pill skill-pill--primary">LGPD</span>
+            <span class="skill-pill skill-pill--primary">Backup & Restore</span>
+            <span class="skill-pill">Identificação de Malwares</span>
+            <span class="skill-pill">Hardening</span>
+          </div>
+        </div>
+
+        <div class="skill-group glass" data-reveal>
+          <div class="skill-group__icon">
+            <i class="fa-solid fa-file-excel" aria-hidden="true"></i>
+          </div>
+          <h3 class="skill-group__title">Ferramentas</h3>
+          <div class="skill-pills">
+            <span class="skill-pill skill-pill--primary">Excel</span>
+            <span class="skill-pill skill-pill--primary">Word</span>
+            <span class="skill-pill skill-pill--primary">PowerPoint</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">VS Code</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CERTIFICAÇÕES ════════════════════════ -->
+  <section id="certificacoes" class="section" aria-label="Cursos e certificações">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">// cursos & certs</span>
+        <h2 class="section-title">Certificações</h2>
+      </div>
+
+      <div class="certs-grid">
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-card__header">
+            <i class="fa-solid fa-layer-group cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">atual</span>
+          </div>
+          <h3 class="cert-name">Full Stack Master</h3>
+          <p class="cert-issuer">Danki Code</p>
+          <div class="cert-topics">
+            <span>Lógica de programação</span>
+            <span>Front-end Completo</span>
+            <span>JavaScript</span>
+            <span>Infraestrutura Web</span>
+            <span>PHP Jedai</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-card__header">
+            <i class="fa-solid fa-shield-halved cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">mai 2024</span>
+          </div>
+          <h3 class="cert-name">Segurança da Informação — Módulos 00/01/02/03</h3>
+          <p class="cert-issuer">Curso em Vídeo</p>
+          <div class="cert-topics">
+            <span>LGPD</span>
+            <span>Wi-Fi Seguro</span>
+            <span>Backups</span>
+            <span>Senhas Fortes</span>
+            <span>Malwares & Trojans</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-card__header">
+            <i class="fa-solid fa-microchip cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">abr 2024</span>
+          </div>
+          <h3 class="cert-name">Hardware — Instalação e Manutenção</h3>
+          <p class="cert-issuer">Curso em Vídeo</p>
+          <div class="cert-topics">
+            <span>Instalação de SO</span>
+            <span>Montagem & Limpeza</span>
+            <span>Manutenção Preventiva</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-card__header">
+            <i class="fa-solid fa-laptop-code cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">fev 2024</span>
+          </div>
+          <h3 class="cert-name">Fundamentos da Informática</h3>
+          <p class="cert-issuer">IBSEC</p>
+          <div class="cert-topics">
+            <span>Protocolos de Internet</span>
+            <span>Componentes de PC</span>
+            <span>Resolução de Problemas</span>
+            <span>Windows</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-card__header">
+            <i class="fa-brands fa-html5 cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">ago 2023</span>
+          </div>
+          <h3 class="cert-name">Desenvolvimento Front-End</h3>
+          <p class="cert-issuer">Microlins</p>
+          <div class="cert-topics">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>WordPress</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-card__header">
+            <i class="fa-solid fa-screwdriver-wrench cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">set 2023</span>
+          </div>
+          <h3 class="cert-name">Montagem e Manutenção de Computadores</h3>
+          <p class="cert-issuer">Microlins</p>
+          <div class="cert-topics">
+            <span>Diagnóstico HW/SW</span>
+            <span>Desmontagem</span>
+            <span>Reparo</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-card__header">
+            <i class="fa-solid fa-file-word cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">jul 2023</span>
+          </div>
+          <h3 class="cert-name">Pacote Office</h3>
+          <p class="cert-issuer">Microlins</p>
+          <div class="cert-topics">
+            <span>Word</span>
+            <span>PowerPoint</span>
+            <span>Excel</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PROJETOS ════════════════════════════ -->
+  <section id="projetos" class="section section--alt" aria-label="Projetos">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">// projetos</span>
+        <h2 class="section-title">O que eu construí</h2>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Projetos serão adicionados aqui futuramente -->
+        <div class="projects-placeholder glass" data-reveal>
+          <i class="fa-solid fa-hammer" aria-hidden="true"></i>
+          <p>Projetos em breve — trabalhando nisso! 🚀</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTATO ══════════════════════════════ -->
+  <section id="contato" class="section" aria-label="Contato">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">// contato</span>
+        <h2 class="section-title">Vamos conversar?</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal>
+          <p class="contact-intro">
+            Estou aberto a oportunidades, freelas e colaborações. 
+            Me manda uma mensagem — responderei assim que possível! 💬
+          </p>
+          <div class="contact-links">
+            <a href="mailto:raphaelchernicharo@gmail.com" id="contact-email" class="contact-item glass">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <div>
+                <span class="contact-item__label">E-mail</span>
+                <span class="contact-item__value">raphaelchernicharo@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+5521980833930" id="contact-phone" class="contact-item glass">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <div>
+                <span class="contact-item__label">Telefone / WhatsApp</span>
+                <span class="contact-item__value">+55 (21) 98083-3930</span>
+              </div>
+            </a>
+            <a href="https://github.com/raphael-c-martins" id="contact-github" target="_blank" rel="noopener noreferrer" class="contact-item glass">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <div>
+                <span class="contact-item__label">GitHub</span>
+                <span class="contact-item__value">github.com/raphael-c-martins</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/raphael-c-martins/" id="contact-linkedin" target="_blank" rel="noopener noreferrer" class="contact-item glass">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <div>
+                <span class="contact-item__label">LinkedIn</span>
+                <span class="contact-item__value">linkedin.com/in/raphael-c-martins</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form glass" data-reveal novalidate>
+          <div class="form-group">
+            <label for="form-name">Nome</label>
+            <input type="text" id="form-name" name="name" placeholder="Seu nome" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="form-email">E-mail</label>
+            <input type="email" id="form-email" name="email" placeholder="seu@email.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="form-message">Mensagem</label>
+            <textarea id="form-message" name="message" placeholder="Olá Raphael, gostaria de conversar sobre..." rows="5" required></textarea>
+          </div>
+          <button type="submit" id="btn-send" class="btn btn--primary btn--full">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem
+          </button>
+          <p class="form-note">
+            <i class="fa-solid fa-info-circle" aria-hidden="true"></i>
+            O formulário abrirá seu cliente de e-mail padrão.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        &copy; <span id="footer-year"></span> Raphael Chernicharo Martins — Feito com 
+        <i class="fa-solid fa-heart" aria-hidden="true" style="color: var(--accent-pink)"></i> e muito café ☕
+      </p>
+      <a href="#hero" class="footer-top" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════ TOAST ════════════════════════════════ -->
+  <div id="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
