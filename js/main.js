@@ -35,10 +35,10 @@ navLinks.querySelectorAll('.nav-link').forEach(link => {
 
 /* ── TYPED EFFECT ────────────────────────────────────── */
 const phrases = [
-  'Dev Front-End 💻',
-  'Estudante de Ciência da Computação 🎓',
-  'Suporte & Manutenção TI 🔧',
-  'Apaixonado por CiberSegurança 🛡️',
+  'Suporte Técnico (HelpDesk) 🔧',
+  'Infraestrutura & Redes 🌐',
+  'Automação de Rotinas de TI ⚡',
+  'Cibersegurança Defensiva 🛡️',
 ];
 let pIdx = 0, cIdx = 0, deleting = false;
 const typedEl = document.getElementById('typed-text');
