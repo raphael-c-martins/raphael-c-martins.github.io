@@ -359,19 +359,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    CERTIFICAÇÕES
    ═══════════════════════════════════════════════════════ */
 .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-.cert-card { padding: 24px; transition: var(--transition); }
+.cert-card { padding: 24px; transition: var(--transition); display: flex; flex-direction: column; height: 100%; }
 .cert-card:hover { transform: translateY(-4px); }
 .cert-card__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
 .cert-icon { font-size: 1.4rem; color: var(--accent); }
 .cert-date { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--text-3); }
 .cert-name { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
 .cert-issuer { font-size: .8rem; color: var(--accent); margin-bottom: 14px; font-weight: 500; }
-.cert-topics { display: flex; flex-wrap: wrap; gap: 6px; }
+.cert-card > p:not(.cert-issuer) { text-align: justify; }
+.cert-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
 .cert-topics span {
   font-size: .72rem; padding: 3px 10px; border-radius: 50px;
   background: rgba(255,255,255,.05); color: var(--text-3);
   border: 1px solid var(--border);
 }
+.cert-card .btn { margin-top: auto; }
 
 /* ═══════════════════════════════════════════════════════
    PROJETOS
@@ -485,6 +487,22 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .lightbox-close:hover {
   background: rgba(239, 68, 68, 0.15); border-color: #ef4444; color: #ef4444;
 }
+
+/* Lightbox Navigation */
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(10,10,10,0.8); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-2); font-size: 1.2rem; transition: var(--transition);
+  z-index: 1001;
+}
+.lightbox-nav:hover {
+  background: var(--accent); border-color: var(--accent); color: var(--bg);
+}
+.lightbox-prev { left: -64px; }
+.lightbox-next { right: -64px; }
+
 .btn-cert { margin-top: 16px; width: 100%; font-size: .8rem; padding: 10px; }
 
 /* ═══════════════════════════════════════════════════════
@@ -511,6 +529,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .timeline { padding-left: 20px; }
   .timeline::before { left: 4px; }
   .timeline-dot { left: -18px; }
+  
+  .lightbox-prev { left: 8px; background: rgba(10,10,10,0.9); }
+  .lightbox-next { right: 8px; background: rgba(10,10,10,0.9); }
 }
 @media (max-width: 480px) {
   .section { padding: 72px 0; }

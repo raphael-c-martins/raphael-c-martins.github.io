@@ -25,5 +25,29 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - Implementação de modal full-screen com fundo fumê interativo e fechamento via `ESC` e `Click-out`.
   - Novos escopos incorporados: Atividade Extracurricular Lógica (Estácio) e Treinamento Profissionalizante de Excel Avançado.
 
+### [2026-04-20] - Refinamento de Copywriting (Tom de Voz)
+- **Decisão:** Substituição de jargões técnicos excessivos (ex: *Daemon*, *Parsing*, *Senior*, *Bottleneck Analysis*) por descrições didáticas em Português limpo.
+- **Racional:** Aproximar o portfólio de recrutadores não-técnicos e gestores de RH, mantendo alta sofisticação sem inflar títulos. A comunicação torna-se honesta, direta e exalta utilidade prática do software.
+- **Execução:**
+  - Descrições massivamente simplificadas em todas as esferas de Projetos e Timeline.
+
+### [2026-04-21] - Indexação de Projetos (Trindade Full-Stack)
+- **Decisão:** Lançamento da grade interativa com três pilares técnicos:
+  1. Otimizador Ultimate de SO (Infra, Hardening/Scripts).
+  2. Monitor Steam (Desenvolvimento Back-end/Automação em Python e Consumo de API).
+  3. Landing Page Customizada (Front-End Avançado com UI/UX apurada e motor de CSS puro).
+- **Racional:** Provar versatilidade (Full-Stack real) e zelo por código autoral.
+- **Execução:**
+  - Setup dinâmico no `index.html` aplicando a mesma linguagem visual do currículo.
+  - Alinhamento Geométrico Robusto na grade: aplicação de Flexbox híbrido (`display: flex; flex-direction: column; height: 100%`) nos Cards com `margin-top: auto` nos botões de finalização garantindo Grid perfeitamente alinhado verticalmente independente da assimetria do texto.
+
+### [2026-04-21] - Lightbox Carousel & Contact APIs
+- **Decisão:** Refatoração do script de Modal para suportar paginação Dinâmica (Modelo Carrossel) via JS Puro e conexão de comunicação instantânea.
+- **Racional:** Eliminar o uso desorganizado de "Múltiplos Botões Tetris" no preview de múltiplos arquivos visuais e entregar a melhor experiência Desktop UX possível, além de escalar conversão no footer via integrações Diretas.
+- **Execução:**
+  - Mecanismo de leitura adaptativo em JS para `data-gallery` que fatia arrays via split.
+  - Setas responsivas construídas via CSS com listeners de teclado (`ArrowLeft / ArrowRight`).
+  - Atualização do Botão de Telefone para o Handler de API nativo `wa.me/` do WhatsApp.
+
 ---
 *Este arquivo será alimentado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
