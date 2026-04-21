@@ -145,3 +145,37 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 const style = document.createElement('style');
 style.textContent = `.nav-link.active { color: var(--accent) !important; }`;
 document.head.appendChild(style);
+
+/* ── LIGHTBOX MODAL ──────────────────────────────────── */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+const lightboxOverlay = document.getElementById('lightbox-overlay');
+
+document.querySelectorAll('.btn-cert').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const certSrc = btn.getAttribute('data-cert');
+    if(certSrc) {
+      lightboxImg.src = certSrc;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Evita scroll de fundo
+    }
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+  // Timeout para dar tempo da animação de saída antes de limpar o src
+  setTimeout(() => lightboxImg.src = '', 300);
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxOverlay.addEventListener('click', closeLightbox);
+
+// Fechar com ESC
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape' && lightbox.classList.contains('active')) {
+    closeLightbox();
+  }
+});

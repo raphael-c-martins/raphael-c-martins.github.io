@@ -16,9 +16,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 - **Decisão:** Transição da paleta de cores primária (Roxo/Azul "Genérica tech") para Ouro Metálico (`#D4AF37`) sobre Preto Absoluto (`#070707`).
 - **Racional:** Implementar uma estética extremamente assertiva e minimalista, incorporando referências sutis de engenharia de alta performance e motorsport (Ayrton Senna's John Player Special Lotus), sem comprometer o profissionalismo focado na área de TI.
 - **Execução:**
-  - Update massivo dos Tokens CSS (`--bg`, `--accent`, etc).
-  - Remoção de texturas de "bolinhas" brilhantes em favor de um Background Grid diagional sutil.
   - Fonte JetBrains Mono setada como principal nas tags e links de navbar para assemelhar a painéis de telemetria.
+
+### [2026-04-20] - Certifications UI & Lightbox System
+- **Decisão:** Desenvolvimento de uma Galeria Modal (Lightbox) nativa (`Vanilla JS`) para visualização segura de diplomas diretamente na página, e descarte de certificados de base para preservar a Senioridade do portfólio.
+- **Execução:**
+  - Inserção de atributos `data-cert` nos botões para isolar os componentes dinâmicos no JS.
+  - Implementação de modal full-screen com fundo fumê interativo e fechamento via `ESC` e `Click-out`.
+  - Novos escopos incorporados: Atividade Extracurricular Lógica (Estácio) e Treinamento Profissionalizante de Excel Avançado.
 
 ---
 *Este arquivo será alimentado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
