@@ -3,7 +3,7 @@
 Site de portfólio/currículo pessoal hospedado no GitHub Pages.
 
 ## 🔗 Acesso
-> **URL:** `https://<seu-usuario>.github.io/web-curriculo`
+> **URL:** `https://raphael-c-martins.github.io/`
 
 ---
 
@@ -15,14 +15,13 @@ Web Curriculo/
 │   └── style.css       # Estilos (Dark Glassmorphism)
 ├── js/
 │   └── main.js         # Interações e animações
-└── assets/             # Imagens e recursos (futuros)
+└── imgs/               # Imagens e recursos
 ```
 
 ## 🚀 Deploy no GitHub Pages
-1. Crie um repositório no GitHub (ex: `web-curriculo`)
-2. Suba os arquivos via GitHub Desktop ou `git push`
-3. Vá em **Settings → Pages → Branch: main → / (root)**
-4. Aguarde ~1 min e acesse a URL gerada
+1. Repositório oficial nomeado como `raphael-c-martins.github.io`
+2. Configurado deploy automático via branch `master` -> `/ (root)`
+3. Site servido nativamente na raiz sem sub-paths.
 
 ## 📝 TODO — Próximas Etapas
 - [ ] Adicionar foto de perfil na seção Sobre
