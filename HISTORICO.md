@@ -49,5 +49,31 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - Setas responsivas construídas via CSS com listeners de teclado (`ArrowLeft / ArrowRight`).
   - Atualização do Botão de Telefone para o Handler de API nativo `wa.me/` do WhatsApp.
 
+### [2026-04-21] - Refinamento de Identidade (Foco em Infra/HelpDesk)
+- **Decisão:** Reformulação do tom de voz da Hero Section e do "Sobre" para refletir com precisão o papel atual de profissional de Infraestrutura, Suporte HelpDesk e Automação corporativa, abandonando o enquadramento primário de "desenvolvedor front-end".
+- **Racional:** Portfólio deve comunicar com clareza e honestidade para recrutadores da área de TI. A linha de abertura genérica foi substituída por uma descrição direta do papel operacional real: suporte, infraestrutura, GPOs, redes, automação.
+- **Execução:**
+  - Hero summary e texto do Sobre totalmente reescritos em primeira pessoa com foco técnico-operacional.
+  - Typed Effect (efeito de digitação) atualizado com as frases: `Suporte Técnico (HelpDesk) 🔧`, `Infraestrutura & Redes 🌐`, `Automação de Rotinas de TI ⚡`, `Cibersegurança Defensiva 🛡️`.
+  - Seção de Experiência: remoção do job de marcenaria; adição do cargo `Auxiliar de Cartório no Setor de TI` (jun 2025 – atual) com 6 subdivisões técnicas agrupadas por disciplina (HelpDesk, Infra/Redes, AD/Cyber, Automação, Operações, Compliance).
+  - Mantido e refinado: card de Estagiário de TI (set 2024 – mai 2025) como sub-entrada aninhada no mesmo artigo.
+
+### [2026-04-21] - Indexação do Projeto Suite de Ferramentas (Destaque Full-Width)
+- **Decisão:** Adição do projeto "Suíte de Ferramentas Web (Hub Operacional)" como card de destaque em largura total (`grid-column: 1 / -1`) na grade de Projetos, com descrição técnica aprofundada.
+- **Racional:** Este é o projeto de maior complexidade arquitetural do portfólio (SPA ReactJS + FastAPI assíncrono + WebSockets), validando a capacidade de engenharia full-stack em ambiente de produção real do cartório. Exige tratamento de destaque visual e descritivo no portfólio.
+- **Execução:**
+  - Card posicionado como primeiro item, visualmente diferenciado com `border-left: 4px solid var(--accent)` e label `Ferramenta Interna Corporativa`.
+  - Descrição narrativa em PT-BR cobrindo as três vertentes do sistema: Monitoramento de Infra/AD, Manipulação em Lote de .TIF/PDF e Gerenciamento/Auditoria de Dados.
+  - Botão de galeria via `data-gallery` apontando para 7 capturas de tela reais do sistema (suite1.png → suite7.png).
+  - Tags de tecnologia destacadas: `ReactJS + FastAPI`, `WebSockets em Tempo Real`, `Monitoramento de LOGs & AD`, `Manipulação IO Avançada (.TIF)`, `UI Glassmorphism`.
+
+### [2026-04-21] - Documentação Técnica da Suite (Copywriting de Engenharia)
+- **Decisão:** Redação de uma descrição técnica impactante e recrutador-friendly para a Suite de Ferramentas, baseada em análise detalhada do projeto original (backend Python/FastAPI + frontend React).
+- **Racional:** A primeira versão da descrição usava linguagem muito abstrata. A nova versão equilibra precisão técnica (async, WebSockets, engine TIFF) com acessibilidade para gestores não-técnicos, seguindo o protocolo de Copywriting de Engenharia do agente.
+- **Execução:**
+  - Análise real dos módulos do projeto: rotas FastAPI, componentes React, scripts utilitários e arquivos de automação.
+  - Texto final aprovado: descreve a evolução de "utilitários isolados" para "Aplicação Web Moderna e Assíncrona", detalha os 3 pilares (Monitoramento AD, Manipulação IO em lote, Gerenciamento de Dados com Live Polling).
+  - Confidencialidade preservada: sem exposição de caminhos de rede internos, IPs ou dados organizacionais sensíveis.
+
 ---
-*Este arquivo será alimentado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
+*Este arquivo é atualizado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
