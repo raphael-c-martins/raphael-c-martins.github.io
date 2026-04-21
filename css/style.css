@@ -275,7 +275,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .sobre-img-wrapper:hover .sobre-img-backdrop { opacity: 0.5; transform: translate(0, 0); filter: blur(50px); }
 
 .sobre-content { display: flex; flex-direction: column; gap: 32px; }
-.sobre-text p { color: var(--text-2); margin-bottom: 16px; font-size: 1.05rem; }
+.sobre-text p { color: var(--text-2); margin-bottom: 16px; font-size: 1.05rem; text-align: justify; }
 .sobre-text p:last-child { margin-bottom: 0; }
 .sobre-text strong { color: var(--text-1); font-weight: 600; }
 .sobre-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -316,7 +316,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .timeline-duties { margin-bottom: 16px; }
 .timeline-duties li {
   color: var(--text-2); font-size: .9rem; padding: 4px 0;
-  padding-left: 14px; position: relative;
+  padding-left: 14px; position: relative; text-align: justify;
 }
 .timeline-duties li::before {
   content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: .75rem;
