@@ -40,7 +40,7 @@ O portfólio está calibrado para comunicar com clareza e honestidade o perfil r
 /
 ├── index.html          # Núcleo estrutural (Semântica W3C + SEO + Open Graph)
 ├── css/
-│   └── style.css       # Estilização Glass, Media Queries e Animações
+│   └── style.css       # Estilização Glass, Media Queries Mobile-First e Animações
 ├── js/
 │   └── main.js         # DOM Manipulation, Observers, Lightbox Carousel e Toast System
 └── imgs/
@@ -63,6 +63,12 @@ O portfólio está calibrado para comunicar com clareza e honestidade o perfil r
   - [x] Toast Notifications para feedback visual de ações.
   - [x] Cursor Glow seguindo o mouse (efeito glassmorphism no cursor).
   - [x] Deploy configurado na raiz do domínio `raphael-c-martins.github.io` (sem sub-path).
+  - [x] **[Mobile] Hamburger Menu** com animação de transição `☰ → ✕` e overlay Glassmorphism (`blur(24px)`).
+  - [x] **[Mobile] Navbar Safe-Area** com `env(safe-area-inset-top)` para suporte a notch/Dynamic Island (iPhone).
+  - [x] **[Mobile] Botão CTA compacto** (`width: auto; align-self: center`) no menu mobile — sem ocupar a largura total.
+  - [x] **[Mobile] Overlay de menu** com tríade robusta `transform + visibility + pointer-events` para garantir que itens não vazem para a navbar quando fechado.
+  - [x] **[Mobile] Ver mais / Ver menos** — sistema expansível (`expand-hidden` / `expand-trigger`) nas duties de experiência profissional, exibindo apenas 3 itens inicialmente e revelando o restante sob demanda via JS puro.
+  - [x] **[Mobile] Lightbox navegável** com setas reposicionadas para dentro da tela (`left: 8px` / `right: 8px`) em viewports ≤ 768px.
 
 ---
 > *Refinado com muito código suado e focado na Brutalidade Operacional.*

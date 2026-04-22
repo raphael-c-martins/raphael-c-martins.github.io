@@ -75,5 +75,15 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - Texto final aprovado: descreve a evolução de "utilitários isolados" para "Aplicação Web Moderna e Assíncrona", detalha os 3 pilares (Monitoramento AD, Manipulação IO em lote, Gerenciamento de Dados com Live Polling).
   - Confidencialidade preservada: sem exposição de caminhos de rede internos, IPs ou dados organizacionais sensíveis.
 
+### [2026-04-22] - Otimização de Responsividade & UX Mobile (Deep-Focus)
+- **Decisão:** Implementação de uma arquitetura mobile-first robusta para garantir que a "Brutalidade Operacional" se traduza perfeitamente em telas pequenas (9:16).
+- **Racional:** O portfólio apresentava gargalos visuais em iPhones (notch) e excesso de scroll vertical na seção de experiência. A atualização foca em economia de espaço e navegação intuitiva.
+- **Execução:**
+  - **Navbar Adaptativa:** Inclusão de `env(safe-area-inset-top)` para evitar sobreposição do conteúdo pela Dynamic Island/Notch em dispositivos iOS.
+  - **Menu Hamburger "Zero-Leak":** Implementação de menu lateral via JS Puro com tríade de controle `transform: translateY(-8px)`, `visibility: hidden` e `pointer-events: none`. Isso garante que cliques acidentais não ocorram enquanto o menu está invisível e remove o "vazamento" de itens para a área da navbar.
+  - **Mobile CTA Tuning:** Ajuste do botão de contato no menu mobile para `width: auto` e `align-self: center`, mantendo o aspecto de botão e evitando o estiramento visual comum em layouts mobile genéricos.
+  - **Sistema de Duties Expansível (Ver mais/menos):** Introdução de lógica em JS para truncar listas longas de responsabilidades profissionais. Exibe-se apenas os 3 primeiros itens por padrão no mobile, com um trigger estilizado (`.expand-trigger`) para revelar o conteúdo completo, reduzindo drasticamente a fadiga de scroll.
+  - **Ajustes de Viewport Lightbox:** Reposicionamento das setas de navegação da galeria para o interior da tela (`left: 8px` / `right: 8px`) em telas menores que 768px, prevenindo que os controles fiquem fora da área de toque.
+
 ---
 *Este arquivo é atualizado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
