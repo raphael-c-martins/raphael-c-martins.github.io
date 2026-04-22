@@ -16,19 +16,124 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 }, { passive: true });
 
+/* ── EXPANDABLE DUTIES (mobile only) ────────────────── */
+/**
+ * Oculta os itens 3+ da lista de responsabilidades do cargo principal
+ * e injeta um botão "Ver mais" com fade gradient acima.
+ * Só executa em viewports <= 768px (mobile).
+ */
+function initExpandableDuties() {
+  const firstDuties = document.querySelector('.timeline-item .timeline-duties');
+  if (!firstDuties) return;
+
+  const items = Array.from(firstDuties.querySelectorAll('li'));
+  if (items.length <= 2) return;
+
+  // Esconde os itens a partir do 3º (índice 2)
+  items.slice(2).forEach(li => li.classList.add('expand-hidden'));
+
+  // Cria o <li> de trigger com botão
+  const triggerLi = document.createElement('li');
+  triggerLi.className = 'expand-trigger';
+  triggerLi.innerHTML = `
+    <button class="expand-btn" aria-expanded="false" aria-label="Ver mais responsabilidades">
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      <span>Ver mais</span>
+    </button>
+  `;
+  firstDuties.appendChild(triggerLi);
+
+  // Toggle bidirecional: Ver mais ↔ Ver menos
+  const btn     = triggerLi.querySelector('.expand-btn');
+  const label   = triggerLi.querySelector('span');
+  let expanded  = false;
+
+  btn.addEventListener('click', () => {
+    expanded = !expanded;
+    btn.setAttribute('aria-expanded', expanded);
+
+    if (expanded) {
+      items.slice(2).forEach(li => li.classList.remove('expand-hidden'));
+      triggerLi.classList.add('open');
+      label.textContent = 'Ver menos';
+    } else {
+      items.slice(2).forEach(li => li.classList.add('expand-hidden'));
+      triggerLi.classList.remove('open');
+      label.textContent = 'Ver mais';
+    }
+  });
+}
+
+// Só inicializa em mobile (nunca altera o layout desktop)
+if (window.matchMedia('(max-width: 768px)').matches) {
+  initExpandableDuties();
+  initExpandableProject();
+}
+
+/* ── EXPANDABLE PROJECT DESC (mobile only) ───────────── */
+/**
+ * Oculta o 2º parágrafo do projeto Suite [data-project-extra]
+ * e injeta botão "Ver mais / Ver menos" entre os dois parágrafos.
+ * Mesmo padrão do initExpandableDuties().
+ */
+function initExpandableProject() {
+  const main  = document.querySelector('[data-project-main]');
+  const extra = document.querySelector('[data-project-extra]');
+  if (!main || !extra) return;
+
+  // Mesmo padrão da timeline: adiciona expand-hidden diretamente ao elemento
+  extra.classList.add('expand-hidden');
+
+  // Insere o trigger entre os dois parágrafos
+  const triggerDiv = document.createElement('div');
+  triggerDiv.className = 'expand-trigger-block';
+  triggerDiv.innerHTML = `
+    <button class="expand-btn" aria-expanded="false" aria-label="Ver mais sobre o projeto">
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      <span>Ver mais</span>
+    </button>
+  `;
+  // Insere o trigger APÓS o extra (mesmo padrão do appendChild da timeline)
+  // Colapsado: extra some → botão fica logo abaixo do 1º parágrafo
+  // Expandido: extra aparece → botão fica abaixo de todo o conteúdo
+  extra.parentNode.insertBefore(triggerDiv, extra.nextSibling);
+
+  const btn    = triggerDiv.querySelector('.expand-btn');
+  const label  = triggerDiv.querySelector('span');
+  let expanded = false;
+
+  btn.addEventListener('click', () => {
+    expanded = !expanded;
+    btn.setAttribute('aria-expanded', expanded);
+
+    if (expanded) {
+      extra.classList.remove('expand-hidden');   // igual timeline
+      triggerDiv.classList.add('open');
+      label.textContent = 'Ver menos';
+    } else {
+      extra.classList.add('expand-hidden');      // igual timeline
+      triggerDiv.classList.remove('open');
+      label.textContent = 'Ver mais';
+    }
+  });
+}
+
 /* ── MOBILE MENU ─────────────────────────────────────── */
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks   = document.getElementById('nav-links');
 
 menuToggle.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
+  // Sincroniza a animação hamburger → X com o estado do menu
+  menuToggle.classList.toggle('active', open);
   menuToggle.setAttribute('aria-expanded', open);
 });
 
-// Fecha ao clicar em um link
+// Fecha ao clicar em um link e reverte o hamburger para o estado inicial
 navLinks.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
+    menuToggle.classList.remove('active');
     menuToggle.setAttribute('aria-expanded', 'false');
   });
 });
