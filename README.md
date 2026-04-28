@@ -1,4 +1,4 @@
-# Curriculo virtual — Raphael C. Martins
+# Currículo Virtual — Raphael C. Martins
 
 Site do currículo pessoal e portfólio tecnológico projetado sob rigorosos padrões de performance (Zero-Dependencies) e estruturação visual avançada.
 
