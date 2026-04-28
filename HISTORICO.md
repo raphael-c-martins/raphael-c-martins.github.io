@@ -85,5 +85,12 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Sistema de Duties Expansível (Ver mais/menos):** Introdução de lógica em JS para truncar listas longas de responsabilidades profissionais. Exibe-se apenas os 3 primeiros itens por padrão no mobile, com um trigger estilizado (`.expand-trigger`) para revelar o conteúdo completo, reduzindo drasticamente a fadiga de scroll.
   - **Ajustes de Viewport Lightbox:** Reposicionamento das setas de navegação da galeria para o interior da tela (`left: 8px` / `right: 8px`) em telas menores que 768px, prevenindo que os controles fiquem fora da área de toque.
 
+### [2026-04-28] - Indexação de Novo Projeto (I Love Security) e Atualização de Copy
+- **Decisão:** Inclusão do projeto open-source "I Love Security" e atualização da descrição do "Otimizador Ultimate" no portfólio.
+- **Racional:** Manter a vitrine técnica atualizada com ferramentas focadas em Privacidade (Zero Data Leak) e Alta Disponibilidade, alinhando as descrições de projetos legados ao padrão de "Brutalidade Operacional" e cibersegurança defensiva.
+- **Execução:**
+  - `index.html` atualizado com o card do I Love Security enfatizando arquitetura SPA e processamento offline (Vanilla JS / FastAPI).
+  - Descrição do Otimizador reescrita para destacar os benefícios de Hardening e mitigação de telemetria.
+
 ---
 *Este arquivo é atualizado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*

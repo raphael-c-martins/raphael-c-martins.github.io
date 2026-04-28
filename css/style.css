@@ -140,7 +140,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .nav-logo {
   font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 700;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;  
   /* Impede o logo de ser espremido por outros elementos */
   flex-shrink: 0;
   position: relative; z-index: 101;
