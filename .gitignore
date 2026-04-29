@@ -1,0 +1,13 @@
+# Pastas Temporárias e de Trabalho do Agente
+TEMPORARIO/
+temporario/
+scratch/
+
+# IDEs e Logs
+.vscode/
+/logs/
+
+# Dependências (se houver no futuro)
+node_modules/
+.DS_Store
+Thumbs.db

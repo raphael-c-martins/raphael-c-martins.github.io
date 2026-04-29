@@ -268,29 +268,41 @@ function updateLightboxImage() {
   }
 }
 
-document.querySelectorAll('.btn-cert').forEach(btn => {
-  btn.addEventListener('click', (e) => {
+function openLightbox(gallery, index = 0) {
+  currentGallery = gallery;
+  currentIndex = index;
+  lightboxPrev.style.display = currentGallery.length > 1 ? 'flex' : 'none';
+  lightboxNext.style.display = currentGallery.length > 1 ? 'flex' : 'none';
+  updateLightboxImage();
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+document.querySelectorAll('.btn-cert, .sub-card-mini').forEach(el => {
+  el.addEventListener('click', (e) => {
     e.preventDefault();
-    const certSrc = btn.getAttribute('data-cert');
-    const gallerySrc = btn.getAttribute('data-gallery');
+    
+    // Se for um mini card, busca a galeria no botão principal do card pai
+    let gallerySrc = el.getAttribute('data-gallery');
+    let startIndex = 0;
+
+    if (el.classList.contains('sub-card-mini')) {
+      const parentCard = el.closest('.cert-card');
+      const mainBtn = parentCard.querySelector('.btn-cert');
+      gallerySrc = mainBtn.getAttribute('data-gallery');
+      startIndex = parseInt(el.getAttribute('data-gallery-index')) || 0;
+      
+      // Se for o botão "+more", abre a galeria no primeiro sub-certificado
+      if (el.classList.contains('sub-card-mini--more')) startIndex = 1;
+    }
+
+    const certSrc = el.getAttribute('data-cert');
 
     if (gallerySrc) {
-      currentGallery = gallerySrc.split(',');
-      currentIndex = 0;
-      lightboxPrev.style.display = 'flex';
-      lightboxNext.style.display = 'flex';
-      updateLightboxImage();
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      openLightbox(gallerySrc.split(','), startIndex);
     } 
     else if (certSrc) {
-      currentGallery = [certSrc];
-      currentIndex = 0;
-      lightboxPrev.style.display = 'none';
-      lightboxNext.style.display = 'none';
-      updateLightboxImage();
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      openLightbox([certSrc], 0);
     }
   });
 });

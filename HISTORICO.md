@@ -92,5 +92,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - `index.html` atualizado com o card do I Love Security enfatizando arquitetura SPA e processamento offline (Vanilla JS / FastAPI).
   - Descrição do Otimizador reescrita para destacar os benefícios de Hardening e mitigação de telemetria.
 
+### [2026-04-29] - Integração Bootcamp DIO Santander & UX de Mini Cards
+- **Decisão:** Inclusão do Bootcamp de Cibersegurança #2 (Santander/DIO) com exibição hierárquica de 22 certificados.
+- **Racional:** O curso entrega uma grande quantidade de sub-certificados modulares. Para evitar poluição visual e "encher linguiça" de forma elegante, implementei uma estrutura de "mini cards" empilhados que servem como atalhos para a galeria, mantendo o foco no certificado de conclusão principal.
+- **Execução:**
+  - **Conversão Automatizada:** Script PowerShell via Ghostscript para converter 22 PDFs em imagens PNG otimizadas (150 DPI) para web.
+  - **Interface de Empilhamento (Stack UI):** Criação de `.cert-sub-stack` no CSS com margens negativas e efeito de profundidade (box-shadow + z-index no hover) para simular um maço de certificados físicos.
+  - **Aprimoramento do Lightbox JS:** Refatoração da lógica de abertura para suportar `startIndex`, permitindo que o clique em um sub-certificado específico abra a galeria exatamente naquela imagem.
+  - **SEO & Contexto:** Extração de tópicos técnicos dos certificados (Pentest, Ransomware, Engenharia Social) para fortalecer as keywords da seção de cursos.
+
 ---
 *Este arquivo é atualizado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
