@@ -7,7 +7,7 @@
 const cursorGlow = document.getElementById('cursor-glow');
 document.addEventListener('mousemove', ({ clientX: x, clientY: y }) => {
   cursorGlow.style.left = `${x}px`;
-  cursorGlow.style.top  = `${y}px`;
+  cursorGlow.style.top = `${y}px`;
 });
 
 /* ── NAVBAR SCROLL ───────────────────────────────────── */
@@ -44,9 +44,9 @@ function initExpandableDuties() {
   firstDuties.appendChild(triggerLi);
 
   // Toggle bidirecional: Ver mais ↔ Ver menos
-  const btn     = triggerLi.querySelector('.expand-btn');
-  const label   = triggerLi.querySelector('span');
-  let expanded  = false;
+  const btn = triggerLi.querySelector('.expand-btn');
+  const label = triggerLi.querySelector('span');
+  let expanded = false;
 
   btn.addEventListener('click', () => {
     expanded = !expanded;
@@ -77,7 +77,7 @@ if (window.matchMedia('(max-width: 768px)').matches) {
  * Mesmo padrão do initExpandableDuties().
  */
 function initExpandableProject() {
-  const main  = document.querySelector('[data-project-main]');
+  const main = document.querySelector('[data-project-main]');
   const extra = document.querySelector('[data-project-extra]');
   if (!main || !extra) return;
 
@@ -98,8 +98,8 @@ function initExpandableProject() {
   // Expandido: extra aparece → botão fica abaixo de todo o conteúdo
   extra.parentNode.insertBefore(triggerDiv, extra.nextSibling);
 
-  const btn    = triggerDiv.querySelector('.expand-btn');
-  const label  = triggerDiv.querySelector('span');
+  const btn = triggerDiv.querySelector('.expand-btn');
+  const label = triggerDiv.querySelector('span');
   let expanded = false;
 
   btn.addEventListener('click', () => {
@@ -120,7 +120,7 @@ function initExpandableProject() {
 
 /* ── MOBILE MENU ─────────────────────────────────────── */
 const menuToggle = document.getElementById('menu-toggle');
-const navLinks   = document.getElementById('nav-links');
+const navLinks = document.getElementById('nav-links');
 
 menuToggle.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
@@ -209,8 +209,8 @@ sections.forEach(s => sectionObserver.observe(s));
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const name    = document.getElementById('form-name').value.trim();
-  const email   = document.getElementById('form-email').value.trim();
+  const name = document.getElementById('form-name').value.trim();
+  const email = document.getElementById('form-email').value.trim();
   const message = document.getElementById('form-message').value.trim();
 
   if (!name || !email || !message) {
@@ -220,7 +220,7 @@ contactForm.addEventListener('submit', (e) => {
 
   // Abre cliente de e-mail (mailto) — fallback sem backend
   const subject = encodeURIComponent(`Contato pelo Portfólio — ${name}`);
-  const body    = encodeURIComponent(`Olá Raphael,\n\n${message}\n\nDe: ${name}\nE-mail: ${email}`);
+  const body = encodeURIComponent(`Olá Raphael,\n\n${message}\n\nDe: ${name}\nE-mail: ${email}`);
   window.location.href = `mailto:raphaelchernicharo@gmail.com?subject=${subject}&body=${body}`;
   showToast('Abrindo seu cliente de e-mail... 📨', 'success');
   contactForm.reset();
@@ -281,7 +281,7 @@ function openLightbox(gallery, index = 0) {
 document.querySelectorAll('.btn-cert, .sub-card-mini').forEach(el => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
-    
+
     // Se for um mini card, busca a galeria no botão principal do card pai
     let gallerySrc = el.getAttribute('data-gallery');
     let startIndex = 0;
@@ -291,7 +291,7 @@ document.querySelectorAll('.btn-cert, .sub-card-mini').forEach(el => {
       const mainBtn = parentCard.querySelector('.btn-cert');
       gallerySrc = mainBtn.getAttribute('data-gallery');
       startIndex = parseInt(el.getAttribute('data-gallery-index')) || 0;
-      
+
       // Se for o botão "+more", abre a galeria no primeiro sub-certificado
       if (el.classList.contains('sub-card-mini--more')) startIndex = 1;
     }
@@ -300,7 +300,7 @@ document.querySelectorAll('.btn-cert, .sub-card-mini').forEach(el => {
 
     if (gallerySrc) {
       openLightbox(gallerySrc.split(','), startIndex);
-    } 
+    }
     else if (certSrc) {
       openLightbox([certSrc], 0);
     }
@@ -335,7 +335,7 @@ lightboxOverlay.addEventListener('click', closeLightbox);
 
 document.addEventListener('keydown', (e) => {
   if (!lightbox.classList.contains('active')) return;
-  
+
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft' && currentGallery.length > 1) {
     currentIndex = (currentIndex === 0) ? currentGallery.length - 1 : currentIndex - 1;
