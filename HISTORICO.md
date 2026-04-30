@@ -101,5 +101,13 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Aprimoramento do Lightbox JS:** Refatoração da lógica de abertura para suportar `startIndex`, permitindo que o clique em um sub-certificado específico abra a galeria exatamente naquela imagem.
   - **SEO & Contexto:** Extração de tópicos técnicos dos certificados (Pentest, Ransomware, Engenharia Social) para fortalecer as keywords da seção de cursos.
 
+### [2026-04-30] - Evolução do Card: Interactive Anniversary Template
+- **Decisão:** Atualização do card de projeto "Landing Page Interativa" para refletir as melhorias de animação 3D e disponibilizar links de acesso direto.
+- **Racional:** O projeto evoluiu significativamente, ganhando maturidade técnica com CSS 3D e hospedagem oficial. A inclusão de botões de Site e GitHub melhora a conversão e prova a capacidade de deploy e UX de alta densidade.
+- **Execução:**
+- **UI Upgrade:** Troca de ícones e descrição técnica enfatizando a imersão visual e o "unboxing" digital.
+- **Componentização:** Criação da classe `.project-links` no CSS para gerenciar grids de botões em cards, com empilhamento responsivo para mobile.
+- **Simplificação de Tags:** Remoção da tag "Autoral" por redundância, substituindo-a por labels mais descritivos como **"Automação Desktop"** ou apenas **"Open Source"**, otimizando a semântica da grade de projetos.
+
 ---
 *Este arquivo é atualizado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
