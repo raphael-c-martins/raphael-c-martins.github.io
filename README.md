@@ -34,9 +34,9 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 
 | Projeto | Categoria | Tecnologias Principais | Status |
 |---|---|---|---|
+| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Bot Assistente IA ("Jarvis"), Active Directory, Proxmox VE, Storage NAS, SRE | Em Produção 🏢 (12 Telas) |
 | **How To Complete Dex** | Web Application | React 19, TypeScript, Vite, Tailwind v4, Zustand, Supabase | [Online 🟢](https://how-to-complete-dex.vercel.app) |
 | **BugSync Bot** | QA & Confiabilidade | Python, discord.py, Google Sheets API, Apps Script Webhooks | Ativo ⚡ |
-| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Bot Assistente IA ("Jarvis"), Active Directory, Proxmox VE, Storage NAS, SRE | Em Produção 🏢 (12 Telas) |
 | **DevPad** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Open Source 📦 |
 | **FrameStudio PRO** | Desktop & Mídia | Python, OpenCV, PyAV (FFmpeg), Canvas RGB, RAM Cache | Open Source 📦 |
 | **MediaDownloader Pro** | Full-Stack / Utilitário | FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, SQLite | Open Source 📦 |

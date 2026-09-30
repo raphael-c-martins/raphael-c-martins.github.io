@@ -587,6 +587,16 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 22px;
+  grid-auto-flow: dense;
+}
+
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project-card--featured {
+    grid-column: span 2;
+  }
 }
 
 .project-card {
@@ -610,7 +620,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .project-card--featured {
   border-left: 4px solid var(--accent);
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.03) 0%, var(--surface-card) 60%);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.05) 0%, rgba(13, 16, 26, 0.95) 50%, var(--surface-card) 100%);
 }
 .project-card--qa {
   border-left: 3px solid var(--accent);

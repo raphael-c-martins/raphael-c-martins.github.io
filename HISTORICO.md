@@ -198,6 +198,17 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ---
 
+### [2026-09-30] - Layout Flagship Assíncrono: Suíte de Ferramentas Web em 2 Colunas & Paridade Visual
+- **Decisão:** Reestruturação da grade de projetos (`.projects-grid`) em desktops (`@media (min-width: 900px)`), atribuindo `grid-column: span 2` e `grid-auto-flow: dense` para o card da *Suíte de Ferramentas Web (Hub Operacional)*, posicionado como projeto carro-chefe na primeira fileira ao lado de *How To Complete Dex* (1 coluna).
+- **Racional:** A Suíte corporativa concentra alta densidade de recursos (Active Directory, Proxmox VE, storage NAS, telemetria de 62 estações e assistente Jarvis), tornando um card padrão de 1 coluna verticalmente esticado e sobrecarregado, o que gerava vazios visuais nos cards adjacentes. Ao conceder 2 espaços horizontais (largura de ~734px), a descrição e as 8 tags técnicas respiram naturalmente, nivelando a altura final do card pixel a pixel com o card vizinho e eliminando qualquer assimetria na visualização.
+- **Execução:**
+  - **CSS Grid (`style.css`):** Implementada regra `@media (min-width: 900px)` com `.projects-grid { grid-template-columns: repeat(3, 1fr); }` e `.project-card--featured { grid-column: span 2; }`.
+  - **Hierarquia no HTML (`index.html`):** *Suíte de Ferramentas Web* posicionada como Item 1 (2 colunas) e *How To Complete Dex* como Item 2 (1 coluna), completando com perfeição matemática as 3 colunas da primeira linha.
+  - **Preenchimento Automático (`grid-auto-flow: dense`):** Garante fluxo contínuo e responsivo na fileira seguinte (*BugSync Bot*, *DevPad*, *FrameStudio PRO*) e durante a filtragem dinâmica por categorias (*Web Applications*, *QA*, *Infra*).
+  - **Validação E2E com Playwright MCP:** Auditado em 1920x1080 com alinhamento vertical dos botões de ação e verificação de todos os filtros de categoria.
+
+---
+
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
 > **Aviso Permanente:** É expressamente proibido a qualquer agente ou desenvolvedor apagar, truncar ou resetar bancos de dados locais/remotos e diretórios de logs persistentes em qualquer rotina de manutenção. Modificações devem ocorrer sempre de forma incremental, reversível e protegida por controle de versão.
 
