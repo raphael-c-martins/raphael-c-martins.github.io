@@ -233,6 +233,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Filtros por Categoria (`index.html`):** Abas atualizadas com contagens estáticas exatas (`Todos 12`, `Web Applications 7`, `QA & Automação 1`, `Desktop & Mídia 3`, `Infra & Hardening 2`).
   - **Documentação Geral (`README.md`):** Título da vitrine atualizado para `(12 Aplicações)` e linha do Monitor de Skins removida da tabela comparativa.
 
+### [2026-09-30] - Refinamento Visual Sênior: Abas de Filtro Sólidas e Eliminação de Estética "Neon IA"
+- **Decisão:** Redesenho completo do estado ativo das abas de filtro de projetos (`.filter-btn.active`), substituindo o contorno neon com fundo transparente (`rgba(212, 175, 55, 0.12)`) por preenchimento sólido em amarelo-ouro institucional (`#b8860b`) com tipografia e números em branco puro (`#ffffff`), além da remoção de classes residuais de cores artificiais (`project-subtitle--cyan`).
+- **Racional:** Atendimento estrito à diretriz de identidade visual corporativa do agente. Padrões vazados com bordas coloridas fluorescentes e transparências excessivas conferem um aspecto genérico de "template gerado por IA" que destoa de portfólios seniores de engenharia e SRE. A adoção de botões preenchidos sólidos com alto contraste entre o amarelo-ouro e os caracteres brancos garante legibilidade imediata, sofisticação editorial e acabamento de produto nativo.
+- **Execução:**
+  - **CSS (`css/style.css`):** `.filter-btn.active` configurado com `background: #b8860b`, `border-color: #b8860b`, `color: #ffffff; font-weight: 600`. Contador interno (`.filter-btn.active .filter-count`) estilizado com fundo escurecido sutil (`rgba(0, 0, 0, 0.25)`) e dígito em branco puro (`#ffffff`). Hover dos botões inativos simplificado para borda sutil branca (`rgba(255, 255, 255, 0.15)`).
+  - **HTML (`index.html`):** Eliminada classe residual `project-subtitle--cyan` no card do BugSync Bot em favor da tipografia padrão corporativa.
+  - **Auditoria de QA via Playwright MCP:** Renderização e alternância de abas validadas visualmente com screenshots Full HD gerados sem erros de console ou regressões de layout.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
