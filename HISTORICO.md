@@ -209,6 +209,16 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ---
 
+### [2026-09-30] - Adequação do Projeto DevPad: Transição para Projeto Privado e Preparação de Galeria
+- **Decisão:** Atualização do status do projeto **DevPad** na vitrine (`index.html`) e documentação (`README.md`) para **Projeto Privado** (`<i class="fa-solid fa-lock"></i> Projeto Privado`), removendo a badge de *Open Source* e o link externo para o repositório GitHub privado.
+- **Racional:** Como o repositório é de código fechado/privado, manter links para o GitHub geraria erro 404 para visitantes e recrutadores externos. A abordagem correta para projetos proprietários ou em desenvolvimento restrito é a apresentação visual através da galeria de capturas (Lightbox Modal), preservando o sigilo do código-fonte enquanto exibe a maturidade de interface e arquitetura (Next.js 16, Prisma, Supabase RLS).
+- **Execução:**
+  - **Status Badge:** Substituído `Open Source` por `Projeto Privado` com ícone de cadeado.
+  - **Ação do Card:** Substituído o botão de GitHub pelo botão `Visualizar Galeria do Sistema`, integrado nativamente ao modal Lightbox via atributo `data-gallery`.
+  - **Tabela Geral:** Atualizado no `README.md` como `Projeto Privado 🔒`.
+
+---
+
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
 > **Aviso Permanente:** É expressamente proibido a qualquer agente ou desenvolvedor apagar, truncar ou resetar bancos de dados locais/remotos e diretórios de logs persistentes em qualquer rotina de manutenção. Modificações devem ocorrer sempre de forma incremental, reversível e protegida por controle de versão.
 
