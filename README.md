@@ -40,7 +40,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 | **DevPad** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Projeto Privado 🔒 |
 | **FrameStudio PRO** | Desktop & Mídia | Python, OpenCV, PyAV (FFmpeg), Canvas RGB, RAM Cache | Open Source 📦 |
 | **MediaDownloader Pro** | Full-Stack / Utilitário | FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, SQLite | Open Source 📦 |
-| **Finance App & Investment Hub** | Web Application | Next.js App Router, TypeScript, Zustand, APIs Real-Time | Open Source 📦 |
+| **Finance App & Investment Hub** | Web Application | Next.js App Router, TypeScript, Zustand, APIs Real-Time | Projeto Privado 🔒 |
 | **I Love Security** | Cibersegurança & Privacidade | Python, FastAPI, IA Local (Zero Data Leak), Canvas | Open Source 📦 |
 | **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, PostgreSQL, Vercel | [Online 🟢](https://site-reliquias-itaborai.vercel.app) |
 | **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Online 🟢 |

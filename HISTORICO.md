@@ -209,13 +209,13 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ---
 
-### [2026-09-30] - Adequação do Projeto DevPad: Transição para Projeto Privado e Preparação de Galeria
-- **Decisão:** Atualização do status do projeto **DevPad** na vitrine (`index.html`) e documentação (`README.md`) para **Projeto Privado** (`<i class="fa-solid fa-lock"></i> Projeto Privado`), removendo a badge de *Open Source* e o link externo para o repositório GitHub privado.
-- **Racional:** Como o repositório é de código fechado/privado, manter links para o GitHub geraria erro 404 para visitantes e recrutadores externos. A abordagem correta para projetos proprietários ou em desenvolvimento restrito é a apresentação visual através da galeria de capturas (Lightbox Modal), preservando o sigilo do código-fonte enquanto exibe a maturidade de interface e arquitetura (Next.js 16, Prisma, Supabase RLS).
+### [2026-09-30] - Adequação de Projetos Privados: DevPad & Finance App (Transição para Galerias de Telas)
+- **Decisão:** Atualização do status dos projetos **DevPad** e **Finance App & Investment Hub** na vitrine (`index.html`) e documentação (`README.md`) para **Projeto Privado** (`<i class="fa-solid fa-lock"></i> Projeto Privado`), com a remoção das badges de *Open Source* e dos botões com links externos para repositórios privados do GitHub.
+- **Racional:** Ambos os sistemas tratam de ferramentas de engenharia e gestão patrimonial de código fechado/privado. Apontar para URLs privadas de GitHub geraria erros de acesso (HTTP 404) para recrutadores e o público geral. Ao transacionar os cards para o modelo de galeria de telas (*Lightbox Modal* nativo), o código-fonte permanece seguro enquanto a maturidade de interface, Next.js App Router, TypeScript, APIs financeiras e Prisma/Supabase são atestadas visualmente.
 - **Execução:**
-  - **Status Badge:** Substituído `Open Source` por `Projeto Privado` com ícone de cadeado.
-  - **Ação do Card:** Substituído o botão de GitHub pelo botão `Visualizar Galeria do Sistema`, integrado nativamente ao modal Lightbox via atributo `data-gallery`.
-  - **Tabela Geral:** Atualizado no `README.md` como `Projeto Privado 🔒`.
+  - **Status Badge:** Substituído `Open Source` por `Projeto Privado` com ícone de cadeado em ambos os cards.
+  - **Ação dos Cards:** Botões de link externo para o GitHub substituídos pelo botão interativo `Visualizar Galeria do Sistema`, preparados com `data-gallery="imgs/projetos/finance1.png,..."` e `devpad1.png,...` para o modal em tela cheia.
+  - **Tabela Geral:** Atualizado no `README.md` como `Projeto Privado 🔒` para ambos os registros.
 
 ---
 
