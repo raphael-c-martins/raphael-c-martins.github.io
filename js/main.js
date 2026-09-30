@@ -18,6 +18,39 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
+/* ── TYPED EFFECT ────────────────────────────────────── */
+const phrases = [
+  'Suporte Técnico (HelpDesk) 🔧',
+  'Infraestrutura & Redes 🌐',
+  'Automação de Rotinas com Python ⚡',
+  'Garantia de Qualidade & QA 🧪',
+  'Desenvolvimento Full-Stack 💻',
+  'Cibersegurança Defensiva 🛡️',
+];
+let pIdx = 0, cIdx = 0, deleting = false;
+const typedEl = document.getElementById('typed-text');
+
+function typeLoop() {
+  if (!typedEl) return;
+  const current = phrases[pIdx];
+  typedEl.textContent = deleting
+    ? current.slice(0, --cIdx)
+    : current.slice(0, ++cIdx);
+
+  let delay = deleting ? 40 : 75;
+
+  if (!deleting && cIdx === current.length) {
+    delay = 2200;
+    deleting = true;
+  } else if (deleting && cIdx === 0) {
+    deleting = false;
+    pIdx = (pIdx + 1) % phrases.length;
+    delay = 400;
+  }
+  setTimeout(typeLoop, delay);
+}
+if (typedEl) typeLoop();
+
 /* ── EXPANDABLE DUTIES (Mobile Only) ─────────────────── */
 function initExpandableDuties() {
   const firstDuties = document.querySelector('.timeline-item .timeline-duties');
