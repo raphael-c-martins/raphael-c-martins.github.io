@@ -155,6 +155,29 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Cache Busting:** Inclusão de versionamento no stylesheet (`style.css?v=2`) para garantir propagação instantânea sem retenção de cache pelo navegador.
   - **Validação E2E:** Auditado e aprovado com Playwright MCP nos filtros *Todos*, *Web Applications* e *QA & Automação*.
 
+### [2026-09-30] - Auditoria Completa da Suíte de Ferramentas Web: Mapeamento de 11 Módulos, Nova Galeria & Orquestração Multi-Sistemas
+- **Decisão:** Acesso ao ambiente corporativo em produção (`https://suite-de-ferramentas/`), varredura minuciosa de todos os subsistemas integrados, captura de 11 prints em alta resolução para a galeria e atualização aprofundada da descrição e tags do projeto, evidenciando sua arquitetura corporativa distribuída.
+- **Racional:** A Suíte de Ferramentas Web não é apenas um painel administrativo pontual, mas o núcleo operacional (Hub SRE) de sustentação tecnológica do 2º Ofício de Itaboraí. Ela orquestra múltiplos protocolos e sistemas em simultâneo (Active Directory, Proxmox VE, Storage NAS via SMB/NFS, monitoramento 24/7 de 62 estações de trabalho, SACL NTFS de auditoria de arquivos e motor assíncrono para TIFF/PDF). Documentar toda essa envergadura técnica valoriza imensamente o portfólio.
+- **Execução:**
+  - **Mapeamento e Captura dos 11 Módulos Operacionais:**
+    1. `suite1.png`: **Dashboard Central SRE & AD** — Telemetria de CPU/RAM/Disco local, monitoramento ICMP contínuo de 8 hosts (Servidores Windows, VMs, Proxmox, NAS e estações) e feed de últimos logons.
+    2. `suite2.png`: **Inventário de Hardware/Software** — Mapeamento massivo de 62 computadores da rede com triagem de HD Crítico, antivírus, sistema operacional e alertas de permissão no AD.
+    3. `suite3.png`: **Modal de Auditoria de Hardware Detalhado** — Ficha técnica profunda de cada estação (ex: ADM01), exibindo placa-mãe, CPU, memórias, discos e diagnósticos de conformidade.
+    4. `suite4.png`: **Monitor de Acesso (Active Directory)** — Leitura em tempo real de eventos de logon/logoff com filtros por usuário, IP, MAC, data e sumarização diária.
+    5. `suite5.png`: **Comparador de Arquivos Cartorários** — Ferramenta Side-by-Side com navegação por teclado e zoom para conferência e higienização de lotes RGI em rede SMB.
+    6. `suite6.png`: **Deletor de Arquivos & Repositório Central RGI** — Mapeamento direto ao ponto de montagem Linux `/mnt/rgi/MATRMANUSCRITA` com busca exata/parcial e exclusão em lote.
+    7. `suite7.png`: **Auditoria e Segurança (SRE)** — Terminal de logs 24/7 com live polling, rotação automática, histórico arquivado de meses e rastreabilidade total de exclusões com identificação de autor.
+    8. `suite8.png`: **Auditoria de Protocolos (SACL NTFS)** — Rastreamento cirúrgico de criação, edição, deleção e permissões de arquivos na pasta de protocolos com telemetria contínua.
+    9. `suite9.png`: **Central de Scripts e Automações** — Web Scraper automatizado para extração de tabelas com exportação Excel, auditoria de sequência de matrículas e renomeador em lote.
+    10. `suite10.png`: **Testador de Hardware & Periféricos** — Interface de diagnóstico rápido para validação de teclas e botões de teclados (Logitech MK295 ABNT2/ANSI/TKL) e mouses em rotinas de HelpDesk.
+    11. `suite11.png`: **Assistente Virtual Inteligente** — Chatbot interno integrado para consultas em linguagem natural de último acesso de usuários, saúde de servidores e atalhos rápidos.
+  - **Atualização da Vitrine de Projetos:**
+    - Subtítulo atualizado para: *Hub Central SRE, Active Directory & Orquestração Multi-Sistemas*.
+    - Descrição reescrita evidenciando a complexidade do ecossistema distribuído e suas integrações simultâneas.
+    - Tags atualizadas: *React + FastAPI*, *Active Directory & SACL*, *Cluster Proxmox VE*, *Auditoria Contínua 24/7*, *Storage NAS & SMB/NFS*, *WebSockets & SRE*, *Processamento .TIFF/PDF*.
+    - Botão da galeria expandido para **11 Telas** com navegação contínua no Lightbox Modal.
+  - **Segurança de Credenciais:** Assegurado estritamente que nenhuma credencial de acesso ou dado sensível seja exposto no código ou controle de versão.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
