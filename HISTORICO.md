@@ -181,6 +181,23 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ---
 
+### [2026-09-30] - Destaque do Bot Assistente Operacional IA ("Jarvis") & Expansão da Galeria para 12 Telas
+- **Decisão:** Destaque arquitetural de primeiro nível para o **Bot Assistente Virtual Inteligente (estilo "Jarvis")** integrado à Suíte de Ferramentas Web, com captura de prints reais em conversação viva (`suite11.png` e `suite12.png`), enriquecimento do texto do card no portfólio e expansão da galeria para 12 telas.
+- **Racional:** O assistente operacional opera como um copiloto autônomo (análogo ao Jarvis do Homem de Ferro), permitindo que a equipe de suporte e infraestrutura faça perguntas diretas em linguagem natural via chat modal. O bot consome em tempo real as APIs de telemetria e o histórico de eventos do Active Directory/SRE, entregando diagnósticos imediatos com botões de ação interativos dentro das mensagens, sem necessidade de navegar manualmente por múltiplos dashboards.
+- **Execução:**
+  - **Interação Viva e Capturas em Alta Resolução:**
+    - `suite11.png`: Demonstração de pergunta em linguagem natural (*"o usuário raphael.martins se logou hoje?"*), com retorno analítico instantâneo do assistente listando as estações acessadas (`SV-2OFICIO-01`, `INFO03`), horários exatos, IPs e botão de atalho `[Ver Acessos de raphael.martins]`.
+    - `suite12.png`: Consulta rápida de diagnóstico sistêmico (*"Saúde do Servidor"*), com retorno detalhado da telemetria (9 hosts online, 0 offline, status dos daemons de Ping Monitor, Discos e Auditoria 24/7 ativos) e atalho `[Ver Saúde dos Servidores]`.
+  - **Refinamento no Portfólio (`index.html`):**
+    - Subtítulo ajustado para: *Hub Central SRE, Active Directory & Assistente Operacional Inteligente*.
+    - Descrição atualizada ressaltando o papel do Assistente Virtual integrado estilo "Jarvis" na tomada de decisões e suporte diário.
+    - Nova tag com destaque visual: `<span class="tag--highlight">Bot Assistente IA ("Jarvis")</span>`.
+    - Galeria modal ampliada para 12 imagens (`suite1.png` até `suite12.png`) com contador `(12 Telas)`.
+  - **Documentação de Projeto (`README.md`):** Tabela de vitrine atualizada com o Bot Assistente IA e a nova contagem de telas.
+  - **Telemetria de QA & Sincronização Google Sheets (`/qa-sheets-sync`):** Bateria de testes do Assistente Jarvis persistida na planilha central *playwright-qa-testes* na aba `suite-de-ferramentas` (ID da Execução `RUN-20260930-140414`, cenários `TC-JARVIS-01` e `TC-JARVIS-02` PASSED com validação de resposta estruturada e HTTP 200).
+
+---
+
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
 > **Aviso Permanente:** É expressamente proibido a qualquer agente ou desenvolvedor apagar, truncar ou resetar bancos de dados locais/remotos e diretórios de logs persistentes em qualquer rotina de manutenção. Modificações devem ocorrer sempre de forma incremental, reversível e protegida por controle de versão.
 
