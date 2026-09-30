@@ -145,6 +145,16 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
     - Reestruturação do bloco de DevTools para "DevTools, IA Agêntica & APIs", destacando competências modernas em engenharia de agentes: *Anti-Gravity*, *Claude Code*, *MCP (Model Context Protocol)*, *Skills & Workflows* e *APIs REST & Integrações*.
   - **Validação Visual Rigorosa:** Verificação e aprovação de cada viewport e seção via Playwright MCP.
 
+### [2026-09-30] - Harmonização da Grade de Projetos & Correção de Quebras de Layout e Tipografia
+- **Decisão:** Unificação da grade da vitrine de projetos (`.projects-grid`) em um layout contínuo de 3 colunas, eliminando o esticamento forçado (`grid-column: 1 / -1`) do card da Suíte de Ferramentas Web e substituindo o alinhamento justificado (`text-align: justify`) por alinhamento natural à esquerda (`text-align: left`).
+- **Racional:** A presença de um único card com largura total no meio da grade (após dois cards padrão) causava uma quebra visual abrupta e criava um vão preto (espaço vazio de 1 coluna) na primeira fileira em telas desktop (1920x1080), além de provocar desbalanceamento na filtragem por categorias. Paralelamente, o `text-align: justify` em cartões de largura moderada gerava espaçamentos artificiais entre palavras e quebras estranhas (como "Living-" e "Dex." separados).
+- **Execução:**
+  - **Grade Uniforme:** Remoção de `grid-column: 1 / -1` de `.project-card--featured`, permitindo que a *Suíte de Ferramentas Web* ocupe a terceira coluna da primeira fileira lado a lado com *How To Complete Dex* e *BugSync Bot*.
+  - **Síntese de Conteúdo:** Descrição do Hub Operacional sintetizada com precisão (destacando tanto o monitoramento de AD quanto o motor de alta velocidade para .TIFF/PDF), mantendo a altura do cartão 100% alinhada com os cartões vizinhos.
+  - **Tipografia Fluida:** Aplicação de `text-align: left` com `word-break: normal` e `hyphens: none` nas descrições e `Living&#8209;Dex` com hífen inquebrável, eliminando espaçamentos forçados.
+  - **Cache Busting:** Inclusão de versionamento no stylesheet (`style.css?v=2`) para garantir propagação instantânea sem retenção de cache pelo navegador.
+  - **Validação E2E:** Auditado e aprovado com Playwright MCP nos filtros *Todos*, *Web Applications* e *QA & Automação*.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade

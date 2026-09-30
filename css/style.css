@@ -609,7 +609,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: none !important;
 }
 .project-card--featured {
-  grid-column: 1 / -1;
   border-left: 4px solid var(--accent);
   background: linear-gradient(135deg, rgba(201, 168, 76, 0.03) 0%, var(--surface-card) 60%);
 }
@@ -707,7 +706,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--text-2);
   line-height: 1.65;
   margin-bottom: 16px;
-  text-align: justify;
+  text-align: left;
+  word-break: normal;
+  hyphens: none;
 }
 .project-tags {
   display: flex;
