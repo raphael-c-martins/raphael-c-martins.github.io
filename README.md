@@ -23,8 +23,9 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 
 - **Suporte Técnico & HelpDesk:** Atendimento a incidentes críticos, totens NextQS, parque de impressão, controle de chamados via GLPI e suporte presencial/remoto a usuários.
 - **Infraestrutura, Redes & Servidores:** Windows Server, Active Directory (GPOs, controle de acessos), Linux, switches, roteamento e gestão de nobreaks.
-- **Garantia de Qualidade (QA) & Confiabilidade:** Automação de testes ponta a ponta (E2E) com Playwright, planos e cenários de testes, triagem e ciclo de vida de bugs (P0/P1/P2), validação de schemas (Zod/Pydantic) e telemetria de rede/console.
+- **Garantia de Qualidade (QA) & Confiabilidade:** Automação de testes ponta a ponta (E2E) com Playwright, planos e cenários de testes, triagem e ciclo de vida de bugs (P0/P1/P2), testes de regressão e telemetria de rede/console.
 - **Automação & Full-Stack:** Desenvolvimento de bots, utilitários em Python, scripts PowerShell/Batch, ferramentas web com FastAPI, React e Next.js.
+- **IA Agêntica, DevTools & APIs:** Engenharia de agentes e pair programming com Anti-Gravity e Claude Code, servidores MCP (Model Context Protocol), criação de Skills e Workflows autônomos, Git/GitHub e consumo de APIs REST.
 - **Cibersegurança Defensiva:** Kaspersky EDR, conformidade LGPD, políticas de MFA, hardening de estações de trabalho e estratégias de backup resilientes.
 
 ---
