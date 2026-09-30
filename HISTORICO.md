@@ -217,6 +217,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Ação dos Cards:** Botões de link externo para o GitHub substituídos pelo botão interativo `Visualizar Galeria do Sistema`, preparados com `data-gallery` para o modal em tela cheia.
   - **Tabela Geral:** Atualizado no `README.md` como `Projeto Privado 🔒` para os três registros.
 
+### [2026-09-30] - Expansão de Atribuições: Gestão de Servidores Físicos, RAID 0 e Virtualização Proxmox VE
+- **Decisão:** Inclusão de atribuições formais de Infraestrutura Avançada e Sysadmin no cargo de *Auxiliar de Cartório no Setor de TI*, destacando a configuração autônoma de servidor físico bare-metal com arranjo RAID 0 e hipervisor Proxmox VE (Debian) para sustentação de sistemas locais em produção (como a *Suíte de Ferramentas Web* e o *I Love Security*).
+- **Racional:** Evidenciar competências reais de alto valor técnico que vão além do suporte tradicional: capacidade de montagem, dimensionamento de storage para alta vazão (throughput de I/O em RAID 0), instalação e administração de ambiente de virtualização com criação de VMs/containers e hospedagem de aplicações corporativas internas em ambiente isolado e de alta performance.
+- **Execução:**
+  - **Experiência (`index.html`):** Adicionada atribuição dedicada `Gestão de Servidores & Virtualização (Proxmox VE)` e atualizada a atribuição da Suíte Web (`Sistema Proprietário de Monitoramento (Hub SRE)`), com novas tags de stack: `Proxmox VE` e `Virtualização & RAID`.
+  - **Habilidades (`index.html`):** Inseridas pills em destaque para `Proxmox VE (Virtualização)` e `RAID 0 & Storage Bare-Metal`.
+  - **Posicionamento Geral (`README.md`):** Atualizada a seção de Infraestrutura destacando virtualização bare-metal, RAID 0 e gestão de VMs.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
