@@ -234,10 +234,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .hero-greeting-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: .82rem; font-weight: 600; color: var(--accent);
+  font-size: .82rem; font-weight: 500; color: var(--text-2);
   letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px;
   padding: 6px 16px; border-radius: 50px;
-  background: rgba(201, 168, 76, 0.06); border: 1px solid rgba(201, 168, 76, 0.18);
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border);
   font-family: var(--font-mono);
 }
 .hero-greeting-badge span.dot {
@@ -246,12 +246,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   box-shadow: 0 0 6px var(--accent-green);
 }
 .hero-name {
-  font-size: clamp(2.4rem, 6.5vw, 4.4rem); font-weight: 800;
-  line-height: 1.1; margin-bottom: 16px; letter-spacing: -.03em;
-}
-.hero-name--accent {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-size: clamp(2rem, 5.2vw, 3.8rem); font-weight: 800;
+  line-height: 1.15; margin-bottom: 16px; letter-spacing: -.03em;
+  color: #ffffff;
 }
 .hero-subtitle {
   font-size: clamp(1rem, 2.2vw, 1.25rem);
@@ -300,7 +297,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transition: var(--transition);
 }
 .hero-stat-card:hover {
-  border-color: rgba(212, 175, 55, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
   background: var(--surface-hover);
 }
@@ -309,11 +306,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-family: var(--font-heading);
   font-size: 1.45rem;
   font-weight: 800;
-  color: var(--accent);
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 4px;
 }
-.hero-stat-num--cyan { color: var(--accent); }
+.hero-stat-num--cyan { color: #ffffff; }
 .hero-stat-label {
   font-size: 0.76rem;
   color: var(--text-2);
