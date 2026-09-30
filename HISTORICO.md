@@ -209,13 +209,13 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ---
 
-### [2026-09-30] - Adequação de Projetos Privados: DevPad & Finance App (Transição para Galerias de Telas)
-- **Decisão:** Atualização do status dos projetos **DevPad** e **Finance App & Investment Hub** na vitrine (`index.html`) e documentação (`README.md`) para **Projeto Privado** (`<i class="fa-solid fa-lock"></i> Projeto Privado`), com a remoção das badges de *Open Source* e dos botões com links externos para repositórios privados do GitHub.
-- **Racional:** Ambos os sistemas tratam de ferramentas de engenharia e gestão patrimonial de código fechado/privado. Apontar para URLs privadas de GitHub geraria erros de acesso (HTTP 404) para recrutadores e o público geral. Ao transacionar os cards para o modelo de galeria de telas (*Lightbox Modal* nativo), o código-fonte permanece seguro enquanto a maturidade de interface, Next.js App Router, TypeScript, APIs financeiras e Prisma/Supabase são atestadas visualmente.
+### [2026-09-30] - Adequação de Projetos Privados: DevPad, Finance App & Relíquias Itaboraí (Transição para Galerias de Telas)
+- **Decisão:** Atualização do status dos projetos **DevPad**, **Finance App & Investment Hub** e **Relíquias Itaboraí — The Motor Hub** na vitrine (`index.html`) e documentação (`README.md`) para **Projeto Privado** (`<i class="fa-solid fa-lock"></i> Projeto Privado`), com a remoção de badges inadequadas (*Open Source* e *Online*) e a eliminação de botões com links externos para repositórios privados do GitHub.
+- **Racional:** Ambos os sistemas tratam de plataformas proprietárias ou projetos em desenvolvimento fechado (fora do ar publicamente ou com repositórios privados). Apontar para URLs privadas de GitHub geraria erros de acesso (HTTP 404) para recrutadores e o público geral. Ao transacionar os cards para o modelo de galeria de telas (*Lightbox Modal* nativo), o código-fonte permanece seguro enquanto a maturidade de interface, Vanilla JS/Next.js, Supabase e integrações são comprovadas através de capturas reais.
 - **Execução:**
-  - **Status Badge:** Substituído `Open Source` por `Projeto Privado` com ícone de cadeado em ambos os cards.
-  - **Ação dos Cards:** Botões de link externo para o GitHub substituídos pelo botão interativo `Visualizar Galeria do Sistema`, preparados com `data-gallery="imgs/projetos/finance1.png,..."` e `devpad1.png,...` para o modal em tela cheia.
-  - **Tabela Geral:** Atualizado no `README.md` como `Projeto Privado 🔒` para ambos os registros.
+  - **Status Badge:** Substituídos `Open Source` e `Online` por `Projeto Privado` com ícone de cadeado nos três cards.
+  - **Ação dos Cards:** Botões de link externo para o GitHub substituídos pelo botão interativo `Visualizar Galeria do Sistema`, preparados com `data-gallery` para o modal em tela cheia.
+  - **Tabela Geral:** Atualizado no `README.md` como `Projeto Privado 🔒` para os três registros.
 
 ---
 
