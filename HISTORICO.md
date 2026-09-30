@@ -136,6 +136,7 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
     1. Desenvolvimento da *Suíte de Ferramentas Web* proprietária para monitoramento de infraestrutura, Active Directory e processamento massivo de arquivos.
     2. Atuação no redesenho e reestruturação da rede corporativa interna para ganhos de estabilidade e segmentação.
   - **Correção da Formação Acadêmica:** Sincronização da previsão de formatura no curso de Ciência da Computação para dezembro de 2027.
+  - **Hero Minimalista e Alta Legibilidade:** Nome exibido integralmente como "Raphael Chernicharo Martins" em branco puro (`#ffffff`), sem divisão de cores artificiais. As métricas executivas na grade inferior tiveram suas letras e números convertidos para branco sólido, eliminando o ofuscamento causado pelo tom amarelado anterior, e o badge de status foi neutralizado com texto discreto e apenas o ponto verde de status ativo.
   - **Validação Visual Rigorosa:** Verificação e aprovação de cada viewport e seção via Playwright MCP.
 
 ---
