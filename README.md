@@ -11,7 +11,7 @@ Site do currículo pessoal e portfólio de engenharia de software e infraestrutu
 
 O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScript)**:
 1. **Zero Frameworks Client-Side:** Nenhuma biblioteca pesada de frontend (React, Vue, jQuery) no client. Toda a navegação, filtros dinâmicos e modais rodam no motor nativo do navegador.
-2. **Identidade Visual Dark Slate & Ouro Nobre:** Design limpo, profissional e elegante, afastando-se de clichês visuais genéricos de IA para focar em alto contraste, superfícies sólidas, tipografia refinada (*Plus Jakarta Sans* e *Inter*) e toques sutis de dourado e ciano.
+2. **Identidade Visual Dark Slate & Ouro Nobre:** Design limpo, sóbrio e profissional, afastando-se de clichês visuais e excesso de cores para focar em alto contraste, superfícies sólidas, tipografia refinada (*Plus Jakarta Sans* e *Inter*) e toques sutis em ouro suave.
 3. **Filtros Dinâmicos por Categoria:** Sistema instantâneo de abas na seção de projetos (`Todos`, `Web Applications`, `QA & Automação`, `Desktop & Mídia`, `Infra & Hardening`).
 4. **Lightbox Modal Nativo com Carrossel:** Visualização de certificados e telas de projetos com paginação por setas, clique externo e atalhos de teclado (`ESC`, `←`, `→`).
 5. **Responsividade Mobile-First:** Suporte completo à área segura de iPhones (Dynamic Island / Notch via `env(safe-area-inset-top)`), menu hambúrguer com transição suave e expansores de texto para reduzir a fadiga de rolagem.
@@ -36,16 +36,16 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 | **How To Complete Dex** | Web Application | React 19, TypeScript, Vite, Tailwind v4, Zustand, Supabase | [Online 🟢](https://how-to-complete-dex.vercel.app) |
 | **BugSync Bot** | QA & Confiabilidade | Python, discord.py, Google Sheets API, Apps Script Webhooks | Ativo ⚡ |
 | **Suíte de Ferramentas Web** | Ferramenta Corporativa | ReactJS, FastAPI, WebSockets, Active Directory, Engine TIFF | Em Produção 🏢 |
-| **DevPad 🦾** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Open Source 📦 |
-| **FrameStudio PRO 🎬** | Desktop & Mídia | Python, OpenCV, PyAV (FFmpeg), Canvas RGB, RAM Cache | Open Source 📦 |
+| **DevPad** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Open Source 📦 |
+| **FrameStudio PRO** | Desktop & Mídia | Python, OpenCV, PyAV (FFmpeg), Canvas RGB, RAM Cache | Open Source 📦 |
 | **MediaDownloader Pro** | Full-Stack / Utilitário | FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, SQLite | Open Source 📦 |
 | **Finance App & Investment Hub** | Web Application | Next.js App Router, TypeScript, Zustand, APIs Real-Time | Open Source 📦 |
-| **I Love Security 🛡️❤️** | Cibersegurança & Privacidade | Python, FastAPI, IA Local (Zero Data Leak), Canvas | Open Source 📦 |
+| **I Love Security** | Cibersegurança & Privacidade | Python, FastAPI, IA Local (Zero Data Leak), Canvas | Open Source 📦 |
 | **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, PostgreSQL, Vercel | [Online 🟢](https://site-reliquias-itaborai.vercel.app) |
 | **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Online 🟢 |
-| **⚡ Otimizador de Windows 10/11** | Infra & Hardening | PowerShell, Batch Script, Mitigação de Telemetria | Open Source 📦 |
+| **Otimizador de Windows 10/11** | Infra & Hardening | PowerShell, Batch Script, Mitigação de Telemetria | Open Source 📦 |
 | **Monitor de Preços de Skins (Steam)** | Automação Desktop | Python, HTTP REST Polling, Plyer OS Alerts | Open Source 📦 |
-| **Interactive Anniversary Template 💌** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) |
+| **Interactive Anniversary Template** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) |
 
 ---
 

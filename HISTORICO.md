@@ -125,6 +125,19 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Novos Bootcamps:** Inclusão do *Bootcamp Bradesco — GenAI, Dados & Cybersecurity* e *Heineken — IA Aplicada a Dados com Copilot*.
   - **Garantia de Qualidade E2E:** Validação visual e funcional completa realizada via Playwright MCP nos viewports Desktop (1920x1080) e Mobile (390x844), confirmando 0 erros de JavaScript no console.
 
+### [2026-09-30] - Refinamento Estético, Sobriedade Visual e Reequilíbrio de Conteúdo
+- **Decisão:** Refinamento geral da identidade visual e reequilíbrio textual do portfólio para afastar qualquer aspecto de "código genérico de IA" ou sobrecarga sensorial (vibecoding), eliminando cores neon concorrentes, retirando emojis de títulos e reposicionando o escopo de atuação profissional.
+- **Racional:** O excesso de cores vibrantes simultâneas (ciano, roxo, laranja) e o uso de emojis nos títulos comprometiam a sobriedade executiva e o profissionalismo do currículo. Além disso, embora haja interesse em vagas de QA, o perfil do profissional é multidisciplinar (com forte vivência prática em suporte, infraestrutura, desenvolvimento e cibersegurança), exigindo que a narrativa do portfólio equilibrasse esses pilares sem hiperfocar exclusivamente em QA.
+- **Execução:**
+  - **Paleta Unificada e Sóbria:** Eliminação de `--accent-cyan`, `--accent-purple` e `--accent-orange`. Adoção de uma paleta coesa em tom de ouro suave (`#c9a84c`) com superfícies em cinza ardósia neutro e verde discreto apenas no indicador de status "Online".
+  - **Remoção de Emojis:** Todos os títulos de projetos na vitrine foram limpos (ex: *DevPad*, *FrameStudio PRO*, *Finance App*, *I Love Security*, *Otimizador de Windows*, *Interactive Anniversary Template*).
+  - **Reequilíbrio do "Sobre mim" e Hero:** Subtítulo do hero reordenado para `Infraestrutura & Suporte · Desenvolvimento Full-Stack · Automação & QA`. Texto biográfico reescrito para exaltar a versatilidade operacional, posicionando QA como área de aprendizado contínuo e aprofundamento.
+  - **Trajetória no Cartório Ampliada:** Inclusão formal de dois marcos técnicos fundamentais na experiência do 2º Ofício:
+    1. Desenvolvimento da *Suíte de Ferramentas Web* proprietária para monitoramento de infraestrutura, Active Directory e processamento massivo de arquivos.
+    2. Atuação no redesenho e reestruturação da rede corporativa interna para ganhos de estabilidade e segmentação.
+  - **Correção da Formação Acadêmica:** Sincronização da previsão de formatura no curso de Ciência da Computação para dezembro de 2027.
+  - **Validação Visual Rigorosa:** Verificação e aprovação de cada viewport e seção via Playwright MCP.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
