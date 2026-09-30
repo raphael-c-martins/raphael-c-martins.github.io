@@ -16,13 +16,12 @@
   --border-subtle:#1c2336;
   --border-h:     #d4af37;
 
-  /* Paleta Temática e Semântica */
-  --accent:       #d4af37;        /* Ouro Nobre */
-  --accent-2:     #e5c158;
-  --accent-cyan:  #38bdf8;        /* Ciano para QA & Confiabilidade */
-  --accent-green: #34d399;        /* Verde para Online/Produção */
-  --accent-purple:#c084fc;        /* Roxo para Web Apps */
-  --accent-orange:#fb923c;        /* Laranja para Hardening/Infra */
+  /* Paleta — Sóbria e Profissional */
+  --accent:       #c9a84c;        /* Ouro suave (menos saturado) */
+  --accent-2:     #d4b85c;
+  --accent-soft:  #a89460;        /* Ouro rebaixado para elementos secundários */
+  --accent-green: #34d399;        /* Verde apenas para indicador de status Online */
+  --accent-muted: #94a3b8;        /* Cinza usado em badges e categorias */
 
   --text-1: #f8fafc;
   --text-2: #94a3b8;
@@ -78,8 +77,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transition: var(--transition);
 }
 .glass:hover {
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(201, 168, 76, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
@@ -99,11 +98,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .btn:hover::after { opacity: 1; }
 .btn--primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #07080c; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+  color: #07080c; box-shadow: 0 4px 16px rgba(201, 168, 76, 0.25);
 }
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 6px 22px rgba(201, 168, 76, 0.35);
 }
 .btn--outline {
   border: 1px solid var(--border);
@@ -133,13 +132,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .tag {
   font-size: .72rem; font-weight: 600; letter-spacing: .05em;
   padding: 3px 10px; border-radius: 50px;
-  background: rgba(212, 175, 55, 0.12); color: var(--accent);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(201, 168, 76, 0.1); color: var(--accent);
+  border: 1px solid rgba(201, 168, 76, 0.22);
   font-family: var(--font-mono);
 }
 .tag--cyan {
-  background: rgba(56, 189, 248, 0.12); color: var(--accent-cyan);
-  border-color: rgba(56, 189, 248, 0.25);
+  background: rgba(201, 168, 76, 0.1); color: var(--accent);
+  border-color: rgba(201, 168, 76, 0.22);
 }
 .skill-pill {
   font-size: .8rem; font-weight: 500; padding: 6px 14px;
@@ -150,14 +149,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .skill-pill:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 .skill-pill--primary {
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(201, 168, 76, 0.08);
   color: var(--accent);
-  border-color: rgba(212, 175, 55, 0.28);
+  border-color: rgba(201, 168, 76, 0.22);
 }
 .skill-pill--qa {
-  background: rgba(56, 189, 248, 0.1);
-  color: var(--accent-cyan);
-  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(201, 168, 76, 0.08);
+  color: var(--accent);
+  border-color: rgba(201, 168, 76, 0.22);
 }
 
 /* ── REVEAL ANIMATION ────────────────────────────────── */
@@ -238,13 +237,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-size: .82rem; font-weight: 600; color: var(--accent);
   letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px;
   padding: 6px 16px; border-radius: 50px;
-  background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(201, 168, 76, 0.06); border: 1px solid rgba(201, 168, 76, 0.18);
   font-family: var(--font-mono);
 }
 .hero-greeting-badge span.dot {
   width: 7px; height: 7px; border-radius: 50%;
   background: var(--accent-green);
-  box-shadow: 0 0 8px var(--accent-green);
+  box-shadow: 0 0 6px var(--accent-green);
 }
 .hero-name {
   font-size: clamp(2.4rem, 6.5vw, 4.4rem); font-weight: 800;
@@ -262,7 +261,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   line-height: 1.4;
 }
 .hero-subtitle .sub-focus {
-  color: var(--accent-cyan);
+  color: var(--text-2);
+  font-weight: 400;
 }
 .hero-summary {
   font-size: 1rem; color: var(--text-2); max-width: 660px;
@@ -313,7 +313,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   line-height: 1.2;
   margin-bottom: 4px;
 }
-.hero-stat-num--cyan { color: var(--accent-cyan); }
+.hero-stat-num--cyan { color: var(--accent); }
 .hero-stat-label {
   font-size: 0.76rem;
   color: var(--text-2);
@@ -462,19 +462,19 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .skill-group { padding: 24px; transition: var(--transition); }
 .skill-group--highlight {
-  border-left: 3px solid var(--accent-cyan);
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.04) 0%, var(--surface) 100%);
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.03) 0%, var(--surface) 100%);
 }
 .skill-group__header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .skill-group__icon {
   width: 40px; height: 40px; border-radius: 10px;
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(201, 168, 76, 0.1);
   display: flex; align-items: center; justify-content: center;
   color: var(--accent); font-size: 1.05rem;
 }
 .skill-group__icon--cyan {
-  background: rgba(56, 189, 248, 0.12);
-  color: var(--accent-cyan);
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--accent);
 }
 .skill-group__title { font-size: 1rem; font-weight: 700; }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -604,10 +604,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .project-card--featured {
   grid-column: 1 / -1;
   border-left: 4px solid var(--accent);
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, var(--surface-card) 60%);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.03) 0%, var(--surface-card) 60%);
 }
 .project-card--qa {
-  border-left: 3px solid var(--accent-cyan);
+  border-left: 3px solid var(--accent);
 }
 
 .card-top-meta {
@@ -631,24 +631,24 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--text-2);
 }
 .badge-cat--qa {
-  background: rgba(56, 189, 248, 0.12);
-  border-color: rgba(56, 189, 248, 0.3);
-  color: var(--accent-cyan);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border);
+  color: var(--text-2);
 }
 .badge-cat--web {
-  background: rgba(192, 132, 252, 0.12);
-  border-color: rgba(192, 132, 252, 0.3);
-  color: var(--accent-purple);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border);
+  color: var(--text-2);
 }
 .badge-cat--corp {
-  background: rgba(212, 175, 55, 0.12);
-  border-color: rgba(212, 175, 55, 0.3);
+  background: rgba(201, 168, 76, 0.08);
+  border-color: rgba(201, 168, 76, 0.2);
   color: var(--accent);
 }
 .badge-cat--desktop {
-  background: rgba(251, 146, 60, 0.12);
-  border-color: rgba(251, 146, 60, 0.3);
-  color: var(--accent-orange);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border);
+  color: var(--text-2);
 }
 
 .badge-status {
@@ -687,13 +687,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .project-subtitle {
   font-size: 0.82rem;
-  color: var(--accent);
+  color: var(--accent-soft);
   margin-bottom: 12px;
   font-family: var(--font-mono);
   font-weight: 500;
 }
 .project-subtitle--cyan {
-  color: var(--accent-cyan);
+  color: var(--accent-soft);
 }
 .project-desc {
   font-size: 0.92rem;
@@ -719,14 +719,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--text-2);
 }
 .project-tags span.tag--highlight {
-  border-color: rgba(212, 175, 55, 0.35);
+  border-color: rgba(201, 168, 76, 0.3);
   color: var(--accent);
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(201, 168, 76, 0.06);
 }
 .project-tags span.tag--qa {
-  border-color: rgba(56, 189, 248, 0.35);
-  color: var(--accent-cyan);
-  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(201, 168, 76, 0.3);
+  color: var(--accent);
+  background: rgba(201, 168, 76, 0.06);
 }
 
 .card-actions {
