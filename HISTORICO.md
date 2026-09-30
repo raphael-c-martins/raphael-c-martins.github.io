@@ -257,6 +257,13 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **HTML (`index.html`):** Atributo `data-gallery` atualizado para conter as 11 imagens e texto do botão ajustado para `Visualizar Galeria do Sistema (11 Telas)`.
   - **Documentação (`README.md`):** Tabela da vitrine atualizada com o indicador `Em Produção 🏢 (11 Telas)`.
 
+### [2026-09-30] - Posicionamento & Roadmap: Relíquias Itaboraí como Extensão Web do Instagram
+- **Decisão:** Atualização do escopo do projeto *Relíquias Itaboraí — The Motor Hub* no portfólio (`index.html`) e documentação (`README.md`), explicitando sua finalidade como complemento aprofundado em formato de portal (estilo blog e fórum) para a página existente no Instagram, mantendo o status de projeto privado por estar em fase ativa de desenvolvimento.
+- **Racional:** Alinhar o portfólio com a visão real de produto do autor. O Instagram atua como canal rápido de mídia, enquanto a plataforma web centraliza matérias detalhadas, acervo histórico e cobertura aprofundada de encontros automotivos, com roadmap prevendo consulta de placas de veículos e álbum colaborativo de flagras urbanos.
+- **Execução:**
+  - **HTML (`index.html`):** Subtítulo atualizado para *"Blog, Fórum & Acervo Automotivo (Extensão do Instagram)"*; descrição reescrita detalhando o propósito editorial, recursos futuros e status privado; tags atualizadas com `Blog & Fórum` e `Integração Instagram`.
+  - **Documentação (`README.md`):** Tabela da vitrine ajustada com a nova síntese funcional.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
