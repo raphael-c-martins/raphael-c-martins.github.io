@@ -264,6 +264,34 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **HTML (`index.html`):** Subtítulo atualizado para *"Blog, Fórum & Acervo Automotivo (Extensão do Instagram)"*; descrição reescrita detalhando o propósito editorial, recursos futuros e status privado; tags atualizadas com `Blog & Fórum` e `Integração Instagram`.
   - **Documentação (`README.md`):** Tabela da vitrine ajustada com a nova síntese funcional.
 
+### [2026-09-30] - Padronização Editorial de CTAs, Status em Desenvolvimento e Galeria do Template de Aniversário
+- **Decisão:** Padronização integral dos botões de ação (CTAs) em toda a vitrine de projetos, transição de status para *Em Desenvolvimento* nos projetos em construção (*Relíquias Itaboraí* e *RMS Marcenaria*), e renovação das capturas de tela do *Interactive Anniversary Template* a partir do deploy online ativo.
+- **Racional:** 
+  - **Consistência de Interface (Design System):** Eliminar discrepâncias textuais entre botões que exerciam a mesma função (unificando todos os links de repositório exclusivamente como `GitHub` e todos os gatilhos de modais como `Visualize Imagens do Projeto`), fortalecendo a coesão visual e diminuindo a carga cognitiva de recrutadores.
+  - **Transparência de Status:** Projetos que ainda não foram finalizados ou publicados não devem ostentar selos de *Online* ou *Privado* de forma ambígua; a inclusão do status explícito `Em Desenvolvimento` comunica maturidade e honestidade sobre o ciclo de vida do software.
+  - **Contraste de Acessibilidade (WCAG):** O botão `.btn--live` (*Acessar Online*) passou a forçar cor branca pura (`#ffffff`) tanto no rótulo quanto no ícone (tanto em repouso quanto em hover), garantindo nitidez cristalina sobre o fundo translúcido esmeralda.
+  - **Fidelidade Visual do Template de Aniversário:** O projeto teve suas imagens antigas substituídas por capturas reais em Full HD (1920x1080) do deploy ativo no Netlify (Hero com envelope interativo, Carta 3D com texto e Galeria fotográfica de Polaroids), acompanhado de botão de galeria modal de 3 telas.
+- **Execução:**
+  - **HTML (`index.html`):**
+    - Todos os links de repositório padronizados como `<i class="fa-brands fa-github"></i> GitHub`.
+    - Todos os botões de galeria padronizados como `<i class="fa-solid fa-images"></i> Visualize Imagens do Projeto`.
+    - Cards de *Relíquias Itaboraí* e *RMS Marcenaria* atualizados com badge `<span class="badge-status badge-status--dev"><i class="fa-solid fa-code"></i> Em Desenvolvimento</span>`.
+    - Card do *Interactive Anniversary Template* enriquecido com o botão de galeria modal de 3 telas (`data-gallery`).
+  - **Suíte de Ferramentas Web (`index.html` & `css/style.css`):**
+    - Descrição do card expandida com riqueza de detalhes operacionais: auditoria contínua de Active Directory (logons em 60+ estações), auditoria de File System 24/7 (SACL 4660/4663 via WinRM NTLM com auto-recuperação/backfill de 30 dias), inventário de hardware e software com alertas para discos <20%, monitoramento de RAID/SMART dos servidores e processamento em memória de `.TIFF`/PDF com PyMuPDF.
+    - Remoção definitiva de termos como "Jarvis", padronizando a nomenclatura exclusivamente como `Chatbot / Assistente IA` com rota rápida *Zero-Token Fast Path* (respostas a 0ms) em modo seguro Read-Only.
+    - Eliminação completa de tipografia amarela em `.badge-cat--corp`, `.tag--highlight`, `.tag--qa` e `.project-subtitle`, mantendo apenas o fundo suave/bordas institucionais e fixando letras em branco puro (`#ffffff`) ou slate neutro (`#cbd5e1`).
+  - **CSS (`css/style.css`):**
+    - `.btn--live` e `.btn--live i`: cor branca pura `#ffffff` aplicada em repouso e `:hover`.
+    - `.badge-status--dev`: estilização com `var(--accent-soft)` para indicação dourada sóbria.
+    - `.badge-cat--corp`, `.tag--highlight`, `.tag--qa`: `color: #ffffff` com fundos e bordas preservados.
+    - `.project-subtitle`: `color: #cbd5e1` para legibilidade refinada sem reflexos amarelos.
+    - `.project-desc p + p`: margem superior para respiração de múltiplos parágrafos.
+  - **Recursos Visuais (`imgs/projetos/`):**
+    - `webpage-aniversario_1.png`, `webpage-aniversario_2.png` e `webpage-aniversario_3.png` capturados em Full HD e integrados.
+    - Atualização dos prints censurados da Suíte de Ferramentas Web.
+  - **Documentação (`README.md`):** Tabela de projetos sincronizada com os status `Em Desenvolvimento 🚧` para os dois projetos, indicação de galeria de 3 telas no template e renomeação de Jarvis para `Chatbot / Assistente IA`.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade

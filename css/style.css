@@ -116,15 +116,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   background: rgba(212, 175, 55, 0.06);
 }
 .btn--live {
-  background: rgba(52, 211, 153, 0.12);
-  border: 1px solid rgba(52, 211, 153, 0.3);
-  color: var(--accent-green);
+  background: rgba(52, 211, 153, 0.14);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #ffffff;
+}
+.btn--live i {
+  color: #ffffff;
 }
 .btn--live:hover {
-  background: rgba(52, 211, 153, 0.22);
+  background: rgba(52, 211, 153, 0.25);
   border-color: var(--accent-green);
-  color: #fff;
+  color: #ffffff;
   transform: translateY(-2px);
+}
+.btn--live:hover i {
+  color: #ffffff;
 }
 .btn--full { width: 100%; justify-content: center; }
 
@@ -664,9 +670,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--text-2);
 }
 .badge-cat--corp {
-  background: rgba(201, 168, 76, 0.08);
-  border-color: rgba(201, 168, 76, 0.2);
-  color: var(--accent);
+  background: rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.3);
+  color: #ffffff;
 }
 .badge-cat--desktop {
   background: rgba(255, 255, 255, 0.04);
@@ -700,6 +706,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   50% { transform: scale(1.2); opacity: 1; }
   100% { transform: scale(0.95); opacity: 0.8; }
 }
+.badge-status--dev {
+  color: var(--accent-soft);
+}
 
 .project-title {
   font-family: var(--font-heading);
@@ -710,13 +719,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .project-subtitle {
   font-size: 0.82rem;
-  color: var(--accent-soft);
+  color: #cbd5e1;
   margin-bottom: 12px;
   font-family: var(--font-mono);
   font-weight: 500;
 }
 .project-subtitle--cyan {
-  color: var(--accent-soft);
+  color: #cbd5e1;
 }
 .project-desc {
   font-size: 0.92rem;
@@ -726,6 +735,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   text-align: left;
   word-break: normal;
   hyphens: none;
+}
+.project-desc p + p {
+  margin-top: 10px;
 }
 .project-tags {
   display: flex;
@@ -744,14 +756,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   color: var(--text-2);
 }
 .project-tags span.tag--highlight {
-  border-color: rgba(201, 168, 76, 0.3);
-  color: var(--accent);
-  background: rgba(201, 168, 76, 0.06);
+  border-color: rgba(201, 168, 76, 0.35);
+  color: #ffffff;
+  background: rgba(201, 168, 76, 0.12);
 }
 .project-tags span.tag--qa {
-  border-color: rgba(201, 168, 76, 0.3);
-  color: var(--accent);
-  background: rgba(201, 168, 76, 0.06);
+  border-color: rgba(201, 168, 76, 0.35);
+  color: #ffffff;
+  background: rgba(201, 168, 76, 0.12);
 }
 
 .card-actions {

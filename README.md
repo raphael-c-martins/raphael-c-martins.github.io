@@ -34,7 +34,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 
 | Projeto | Categoria | Tecnologias Principais | Status |
 |---|---|---|---|
-| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Bot Assistente IA ("Jarvis"), Active Directory, Proxmox VE, Storage NAS, SRE | Em Produção 🏢 (11 Telas) |
+| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Chatbot / Assistente IA, Active Directory, Proxmox VE, Storage NAS, SRE | Em Produção 🏢 (11 Telas) |
 | **How To Complete Dex** | Web Application | React 19, TypeScript, Vite, Tailwind v4, Zustand, Supabase | [Online 🟢](https://how-to-complete-dex.vercel.app) |
 | **BugSync Bot** | QA & Confiabilidade | Python, discord.py, Google Sheets API, Apps Script Webhooks | Ativo ⚡ |
 | **DevPad** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Projeto Privado 🔒 |
@@ -42,10 +42,10 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 | **MediaDownloader Pro** | Full-Stack / Utilitário | FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, SQLite | Open Source 📦 |
 | **Finance App & Investment Hub** | Web Application | Next.js App Router, TypeScript, Zustand, APIs Real-Time | Projeto Privado 🔒 |
 | **I Love Security** | Cibersegurança & Privacidade | Python, FastAPI, IA Local (Zero Data Leak), Canvas | Open Source 📦 |
-| **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, Blog/Fórum & Extensão Instagram | Projeto Privado 🔒 |
-| **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Online 🟢 |
+| **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, Blog/Fórum & Extensão Instagram | Em Desenvolvimento 🚧 |
+| **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Em Desenvolvimento 🚧 |
 | **Otimizador de Windows 10/11** | Infra & Hardening | PowerShell, Batch Script, Limpeza e Desempenho do Windows | Open Source 📦 |
-| **Interactive Anniversary Template** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) |
+| **Interactive Anniversary Template** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) (3 Telas) |
 
 ---
 

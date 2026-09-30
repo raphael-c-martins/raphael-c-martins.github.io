@@ -790,28 +790,33 @@
             <span class="badge-status"><i class="fa-solid fa-building"></i> Em Produção</span>
           </div>
           <h3 class="project-title">Suíte de Ferramentas Web (Hub Operacional)</h3>
-          <p class="project-subtitle">Painel Interno de Gestão de TI & Assistente Virtual</p>
-          <p class="project-desc">
-            Sistema web desenvolvido para centralizar a rotina de TI do 2º Ofício de Itaboraí. Conecta servidores Windows
-            (Active Directory), virtualização com Proxmox e armazenamento em rede, monitorando a integridade de 62 computadores
-            em tempo real. Conta com um <strong>Assistente Virtual integrado (estilo "Jarvis")</strong> pelo qual é possível fazer
-            perguntas em linguagem natural (ex: checar se determinado usuário fez login hoje ou consultar a saúde dos servidores)
-            e obter respostas na hora, além de ferramentas rápidas para visualização e conversão de documentos pesados (.TIFF/PDF).
-          </p>
+          <p class="project-subtitle">Plataforma Integrada de Gestão de TI, Auditoria 24/7 & Chatbot Assistente IA</p>
+          <div class="project-desc">
+            <p>
+              Plataforma corporativa full-stack desenvolvida para centralizar, automatizar e sustentar toda a operação de TI e infraestrutura do 2º Ofício de Itaboraí, rodando em produção 24/7 em máquina virtual dedicada (Ubuntu Server) orquestrada em Proxmox VE com arquitetura assíncrona desacoplada (FastAPI e React).
+            </p>
+            <p>
+              O sistema reúne módulos vitais de governança e suporte diário: <strong>auditoria em tempo real de logons do Active Directory</strong> em mais de 60 estações de trabalho para rastreabilidade de acessos e detecção de contas bloqueadas; <strong>auditoria contínua de File System 24/7</strong> via WinRM com monitoramento de criação, alteração e deleção de arquivos críticos (SACL 4660/4663), gravação atômica diária e auto-recuperação (backfill); <strong>inventário automatizado de hardware e software</strong> de 62 computadores da rede com alertas preventivos de espaço em disco (&lt;20%) e monitoramento remoto de saúde SMART e arranjos RAID dos servidores.
+            </p>
+            <p>
+              Conta também com um <strong>Chatbot / Assistente IA integrado</strong> flutuante em todas as telas, desenvolvido com Google Gemini Flash e roteador local <em>Zero-Token Fast Path</em> (respostas instantâneas a 0ms), operando em modo seguro (Read-Only) para consultar histórico de logins de usuários, checar disponibilidade de máquinas e tirar dúvidas técnicas sobre rotinas internas; além de ferramentas de <strong>processamento em memória de arquivos pesados .TIFF/PDF</strong> (PyMuPDF) com conversão para WebP, visualizador comparativo lado a lado de matrículas, testador interativo de hardware (teclado e mouse) e streaming de logs via WebSockets ao vivo.
+            </p>
+          </div>
           <div class="project-tags">
             <span class="tag--highlight">React + FastAPI</span>
-            <span class="tag--highlight">Bot Assistente IA ("Jarvis")</span>
+            <span class="tag--highlight">Chatbot / Assistente IA</span>
             <span>Active Directory & SACL</span>
             <span>Cluster Proxmox VE</span>
             <span>Auditoria Contínua 24/7</span>
-            <span>Storage NAS & SMB/NFS</span>
-            <span>WebSockets & SRE</span>
+            <span>Monitoramento SRE & RAID</span>
+            <span>Inventário de 62 Hosts</span>
             <span>Processamento .TIFF/PDF</span>
+            <span>WebSockets em Tempo Real</span>
           </div>
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
               data-gallery="imgs/projetos/suite1.png,imgs/projetos/suite2.png,imgs/projetos/suite3.png,imgs/projetos/suite4.png,imgs/projetos/suite5.png,imgs/projetos/suite6.png,imgs/projetos/suite7.png,imgs/projetos/suite8.png,imgs/projetos/suite9.png,imgs/projetos/suite10.png,imgs/projetos/suite11.png">
-              <i class="fa-solid fa-images"></i> Visualizar Galeria do Sistema (11 Telas)
+              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto (11 Telas)
             </button>
           </div>
         </article>
@@ -875,7 +880,7 @@
           <div class="card-actions">
             <a href="https://github.com/raphael-c-martins/bot-ds-goparty" target="_blank" rel="noopener noreferrer"
               class="btn btn--outline">
-              <i class="fa-brands fa-github"></i> Ver Repositório & Documentação
+              <i class="fa-brands fa-github"></i> GitHub
             </a>
           </div>
         </article>
@@ -904,7 +909,7 @@
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
               data-gallery="imgs/projetos/devpad1.png,imgs/projetos/devpad2.png">
-              <i class="fa-solid fa-images"></i> Visualizar Galeria do Sistema
+              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto
             </button>
           </div>
         </article>
@@ -991,7 +996,7 @@
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
               data-gallery="imgs/projetos/finance1.png,imgs/projetos/finance2.png">
-              <i class="fa-solid fa-images"></i> Visualizar Galeria do Sistema
+              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto
             </button>
           </div>
         </article>
@@ -1028,7 +1033,7 @@
         <article class="project-card" data-category="web" data-reveal>
           <div class="card-top-meta">
             <span class="badge-cat badge-cat--web">Web Application</span>
-            <span class="badge-status"><i class="fa-solid fa-lock"></i> Projeto Privado</span>
+            <span class="badge-status badge-status--dev"><i class="fa-solid fa-code"></i> Em Desenvolvimento</span>
           </div>
           <h3 class="project-title">Relíquias Itaboraí — The Motor Hub</h3>
           <p class="project-subtitle">Blog, Fórum & Acervo Automotivo (Extensão do Instagram)</p>
@@ -1049,7 +1054,7 @@
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
               data-gallery="imgs/projetos/reliquias1.png,imgs/projetos/reliquias2.png">
-              <i class="fa-solid fa-images"></i> Visualizar Galeria do Sistema
+              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto
             </button>
           </div>
         </article>
@@ -1058,7 +1063,7 @@
         <article class="project-card" data-category="web" data-reveal>
           <div class="card-top-meta">
             <span class="badge-cat badge-cat--web">Landing Page</span>
-            <span class="badge-status badge-status--online">Online</span>
+            <span class="badge-status badge-status--dev"><i class="fa-solid fa-code"></i> Em Desenvolvimento</span>
           </div>
           <h3 class="project-title">RMS Marcenaria e Reformas</h3>
           <p class="project-subtitle">Site Comercial com Simulador de Orçamentos para Marcenaria</p>
@@ -1135,6 +1140,10 @@
               class="btn btn--live">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Online
             </a>
+            <button class="btn btn--outline btn-cert"
+              data-gallery="imgs/projetos/webpage-aniversario_1.png,imgs/projetos/webpage-aniversario_2.png,imgs/projetos/webpage-aniversario_3.png">
+              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto (3 Telas)
+            </button>
             <a href="https://github.com/raphael-c-martins/Interactive-Anniversary-Template" target="_blank" rel="noopener noreferrer"
               class="btn btn--outline">
               <i class="fa-brands fa-github"></i> GitHub
