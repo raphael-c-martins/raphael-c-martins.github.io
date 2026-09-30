@@ -136,7 +136,10 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
     1. Desenvolvimento da *Suíte de Ferramentas Web* proprietária para monitoramento de infraestrutura, Active Directory e processamento massivo de arquivos.
     2. Atuação no redesenho e reestruturação da rede corporativa interna para ganhos de estabilidade e segmentação.
   - **Correção da Formação Acadêmica:** Sincronização da previsão de formatura no curso de Ciência da Computação para dezembro de 2027.
-  - **Hero Minimalista e Alta Legibilidade:** Nome exibido integralmente como "Raphael Chernicharo Martins" em branco puro (`#ffffff`), sem divisão de cores artificiais. As métricas executivas na grade inferior tiveram suas letras e números convertidos para branco sólido, eliminando o ofuscamento causado pelo tom amarelado anterior, e o badge de status foi neutralizado com texto discreto e apenas o ponto verde de status ativo.
+  - **Hero Monumental & Typed Effect Dinâmico:**
+    - Restauração da arquitetura monumental do nome em três níveis: `Raphael` (branco), `Chernicharo` (ouro nobre) e `Martins` (branco), conferindo simetria vertical e valorizando a identidade visual do sobrenome com alto impacto.
+    - Reativação do efeito de digitação dinâmico (*Typed Effect*) com cursor pulsante, alternando entre as competências: *Suporte Técnico (HelpDesk)*, *Infraestrutura & Redes*, *Automação de Rotinas com Python*, *Garantia de Qualidade & QA*, *Desenvolvimento Full-Stack* e *Cibersegurança Defensiva*.
+    - Preservação da saudação de abertura `OLÁ, MUNDO 👋` e dos 4 cartões executivos de métricas de impacto logo abaixo (`13 Projetos`, `QA & E2E`, `Infra & AD`, `500h+`).
   - **Autenticidade Técnica & Expansão em IA Agêntica:**
     - Remoção de "Validação de Schemas (Zod / Pydantic)" para manter 100% de autenticidade no bloco de QA.
     - Reestruturação do bloco de DevTools para "DevTools, IA Agêntica & APIs", destacando competências modernas em engenharia de agentes: *Anti-Gravity*, *Claude Code*, *MCP (Model Context Protocol)*, *Skills & Workflows* e *APIs REST & Integrações*.
