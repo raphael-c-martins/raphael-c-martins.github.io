@@ -249,6 +249,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Saneamento de Tags:** Removidas expressões exageradas nas pílulas de tags (ex: *Otimização Extrema* -> *Alto Desempenho*, *Hardening de SO* -> *Limpeza de SO*, *Glassmorphism UI* -> *Design Responsivo*).
   - **Alinhamento Documental (`README.md`):** Tabela de projetos sincronizada com terminologias diretas.
 
+### [2026-09-30] - Conformidade & Privacidade: Consolidação de Prints Censurados da Suíte Web (11 Telas)
+- **Decisão:** Atualização dos recursos visuais da *Suíte de Ferramentas Web*, integrando o lote de capturas de tela devidamente censuradas pelo usuário para proteção de dados confidenciais e conformidade estrita com normas de privacidade/LGPD. A galeria foi redimensionada de 12 para 11 telas (`suite1.png` até `suite11.png`), com descarte dos arquivos excedentes que não agregavam valor à apresentação.
+- **Racional:** Preservação absoluta do sigilo operacional do 2º Ofício de Itaboraí. Informações nominais, dados sensíveis de usuários ou rotas internas de rede foram suprimidas das capturas, mantendo em evidência a maturidade técnica da interface, o design do sistema operacional de TI e a interação com o bot Jarvis.
+- **Execução:**
+  - **Recursos (`imgs/projetos/`):** 11 arquivos censurados consolidados (`suite1.png` a `suite11.png`) e exclusão de `suite12.png`.
+  - **HTML (`index.html`):** Atributo `data-gallery` atualizado para conter as 11 imagens e texto do botão ajustado para `Visualizar Galeria do Sistema (11 Telas)`.
+  - **Documentação (`README.md`):** Tabela da vitrine atualizada com o indicador `Em Produção 🏢 (11 Telas)`.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
