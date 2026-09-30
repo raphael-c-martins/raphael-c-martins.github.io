@@ -241,6 +241,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **HTML (`index.html`):** Eliminada classe residual `project-subtitle--cyan` no card do BugSync Bot em favor da tipografia padrão corporativa.
   - **Auditoria de QA via Playwright MCP:** Renderização e alternância de abas validadas visualmente com screenshots Full HD gerados sem erros de console ou regressões de layout.
 
+### [2026-09-30] - Humanização Editorial: Desmistificação de Jargões e Simplificação Didática das Descrições
+- **Decisão:** Revisão integral dos textos, subtítulos e descrições dos 12 projetos da vitrine (`index.html` e `README.md`), substituindo termos hiperinflados, prolixos ou com vocabulário artificial de IA (ex: *"script agressivo"*, *"expurga bloatware"*, *"neutraliza telemetria invasiva"*) por uma linguagem limpa, humana, objetiva e de fácil absorção por recrutadores e gestores.
+- **Racional:** O excesso de jargões técnicos herméticos sobrecarrega a cognição do leitor e transmite um aspecto artificial ("gerado por máquina"), ocultando o verdadeiro valor operacional e prático do software. A comunicação madura e sênior prioriza clareza: explica o que o sistema faz, qual problema ele resolve e como ele funciona na prática, preservando apenas os termos técnicos essenciais (como Windows, Active Directory, React, Python, Discord e Google Sheets).
+- **Execução:**
+  - **Reescrita dos 12 Cards (`index.html`):** Todos os subtítulos foram adaptados para títulos diretos de funcionalidade (ex: *Otimizador de Windows* -> *"Script de Limpeza, Desempenho e Privacidade para Windows"*). As descrições detalham o fluxo real de uso em parágrafos fluídos e agradáveis.
+  - **Saneamento de Tags:** Removidas expressões exageradas nas pílulas de tags (ex: *Otimização Extrema* -> *Alto Desempenho*, *Hardening de SO* -> *Limpeza de SO*, *Glassmorphism UI* -> *Design Responsivo*).
+  - **Alinhamento Documental (`README.md`):** Tabela de projetos sincronizada com terminologias diretas.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
