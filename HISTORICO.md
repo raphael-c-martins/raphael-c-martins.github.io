@@ -177,6 +177,7 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
     - Tags atualizadas: *React + FastAPI*, *Active Directory & SACL*, *Cluster Proxmox VE*, *Auditoria Contínua 24/7*, *Storage NAS & SMB/NFS*, *WebSockets & SRE*, *Processamento .TIFF/PDF*.
     - Botão da galeria expandido para **11 Telas** com navegação contínua no Lightbox Modal.
   - **Segurança de Credenciais:** Assegurado estritamente que nenhuma credencial de acesso ou dado sensível seja exposto no código ou controle de versão.
+  - **Telemetria de QA & Sincronização Google Sheets (`/qa-sheets-sync`):** Baterias de testes E2E sincronizadas com sucesso na planilha central *playwright-qa-testes* tanto na aba `raphael-c-martins.github.io` (ID da Execução `RUN-20260930-135253`, 5 cenários PASSED) quanto na aba `suite-de-ferramentas` (ID da Execução `RUN-20260930-135300`, 11 cenários PASSED cobrindo todos os 11 módulos corporativos).
 
 ---
 
