@@ -30,7 +30,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 
 ---
 
-## 📦 Projetos Exibidos na Vitrine (13 Aplicações)
+## 📦 Projetos Exibidos na Vitrine (12 Aplicações)
 
 | Projeto | Categoria | Tecnologias Principais | Status |
 |---|---|---|---|
@@ -45,7 +45,6 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 | **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, PostgreSQL | Projeto Privado 🔒 |
 | **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Online 🟢 |
 | **Otimizador de Windows 10/11** | Infra & Hardening | PowerShell, Batch Script, Mitigação de Telemetria | Open Source 📦 |
-| **Monitor de Preços de Skins (Steam)** | Automação Desktop | Python, HTTP REST Polling, Plyer OS Alerts | Open Source 📦 |
 | **Interactive Anniversary Template** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) |
 
 ---

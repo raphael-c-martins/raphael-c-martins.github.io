@@ -225,6 +225,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Habilidades (`index.html`):** Inseridas pills em destaque para `Proxmox VE (Virtualização)` e `RAID 0 & Storage Bare-Metal`.
   - **Posicionamento Geral (`README.md`):** Atualizada a seção de Infraestrutura destacando virtualização bare-metal, RAID 0 e gestão de VMs.
 
+### [2026-09-30] - Curadoria Técnica da Vitrine: Remoção do Monitor de Skins da Steam e Consolidação do Portfólio (12 Aplicações)
+- **Decisão:** Remoção do card e das referências ao projeto *Monitor de Preços de Skins (Steam)* do portfólio (`index.html`), documentação (`README.md`) e contadores executivos de projetos (ajustados de 13 para 12 aplicações).
+- **Racional:** O script de automação para monitoramento de skins no mercado da Steam possuía escopo simplificado e caráter de estudo inicial, destoando da densidade técnica, robustez arquitetural e maturidade dos demais projetos corporativos e autorais da vitrine (como a *Suíte de Ferramentas Web*, o *BugSync Bot* e o *DevPad*). Além disso, a ausência de um repositório público consolidado geraria atrito na navegação de recrutadores. A eliminação do card fortalece a imagem profissional, mantendo o portfólio 100% focado em projetos de alto impacto, infraestrutura, QA e engenharia de software sênior.
+- **Execução:**
+  - **Grid de Projetos (`index.html`):** Card removido; renumerada a sequência dos cards restantes; contador da Hero Section atualizado para `12 Projetos Construídos`; botão de ação ajustado para `Explorar Projetos (12)`.
+  - **Filtros por Categoria (`index.html`):** Abas atualizadas com contagens estáticas exatas (`Todos 12`, `Web Applications 7`, `QA & Automação 1`, `Desktop & Mídia 3`, `Infra & Hardening 2`).
+  - **Documentação Geral (`README.md`):** Título da vitrine atualizado para `(12 Aplicações)` e linha do Monitor de Skins removida da tabela comparativa.
+
 ---
 
 ## 🔒 Diretrizes Mandatórias de Preservação e Integridade
