@@ -101,13 +101,35 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
   - **Aprimoramento do Lightbox JS:** Refatoração da lógica de abertura para suportar `startIndex`, permitindo que o clique em um sub-certificado específico abra a galeria exatamente naquela imagem.
   - **SEO & Contexto:** Extração de tópicos técnicos dos certificados (Pentest, Ransomware, Engenharia Social) para fortalecer as keywords da seção de cursos.
 
-### [2026-04-30] - Evolução do Card: Interactive Anniversary Template
-- **Decisão:** Atualização do card de projeto "Landing Page Interativa" para refletir as melhorias de animação 3D e disponibilizar links de acesso direto.
-- **Racional:** O projeto evoluiu significativamente, ganhando maturidade técnica com CSS 3D e hospedagem oficial. A inclusão de botões de Site e GitHub melhora a conversão e prova a capacidade de deploy e UX de alta densidade.
+### [2026-09-30] - Grande Atualização de Portfólio, Catálogo Completo de Projetos & Foco em QA
+- **Decisão:** Refatoração visual e estrutural completa do portfólio pessoal, com inclusão de todos os 13 projetos desenvolvidos na raiz do ambiente, destaque especial para a área de Garantia de Qualidade (QA & Automação de Testes) e novo Design System sofisticado (Dark Slate & Gold) livre do aspecto genérico de IA.
+- **Racional:** Desde a versão inicial do currículo, diversos novos sistemas de alta complexidade foram construídos (como o *How To Complete Dex*, *BugSync Bot*, *DevPad*, *FrameStudio PRO*, *Finance App* e *MediaDownloader*). Além disso, a evolução profissional recente direcionou o foco para vagas em Garantia de Qualidade (QA) e Confiabilidade de Software, exigindo uma vitrine técnica com filtros claros por categoria, métricas de impacto e copywriting humanizado e autêntico.
 - **Execução:**
-- **UI Upgrade:** Troca de ícones e descrição técnica enfatizando a imersão visual e o "unboxing" digital.
-- **Componentização:** Criação da classe `.project-links` no CSS para gerenciar grids de botões em cards, com empilhamento responsivo para mobile.
-- **Simplificação de Tags:** Remoção da tag "Autoral" por redundância, substituindo-a por labels mais descritivos como **"Automação Desktop"** ou apenas **"Open Source"**, otimizando a semântica da grade de projetos.
+  - **Filtros Dinâmicos de Projetos:** Implementação nativa via JavaScript (`data-filter` / `.is-hidden`) com 5 abas ativas: *Todos (13)*, *Web Applications (7)*, *QA & Automação (2)*, *Desktop & Mídia (3)* e *Infra & Hardening (2)*, permitindo que recrutadores filtrem instantaneamente as soluções desejadas sem recarregar a página.
+  - **Destaque em Qualidade de Software (QA):** Criação de um bloco destacado na seção de Habilidades (*Playwright E2E*, *Triagem P0-P2*, *Test Plans*, *Sincronização Discord/Sheets* com o *BugSync Bot* e *Auditoria de Rede/Console*) e adição de curso prático de QA na seção de certificações.
+  - **Design System sem Cara de IA:** Substituição do efeito de digitação mecânico por uma Hero Executiva com cartões de métricas de impacto (13 projetos, QA Playwright, Infra no 2º Ofício, 500h+ de formação). Adoção da fonte *Plus Jakarta Sans* para títulos encorpados combinada com *Inter* para leitura suave e *JetBrains Mono* para metadados e tags.
+  - **Indexação dos 13 Projetos:**
+    1. *How To Complete Dex* (Web App / Tracker & Map Editor no Vercel)
+    2. *BugSync Bot* (QA & Discord & Sheets)
+    3. *Suíte de Ferramentas Web* (Corporativo Cartório - destaque com galeria de 7 telas)
+    4. *DevPad* (Next.js 16, Prisma ORM, Supabase RLS)
+    5. *FrameStudio PRO* (Desktop, OpenCV, PyAV, Caching RAM)
+    6. *MediaDownloader Pro* (FastAPI, Vanilla JS, SSE em tempo real)
+    7. *Finance App & Investment Hub* (Next.js App Router, cotações em tempo real)
+    8. *I Love Security* (FastAPI, IA Local, Zero Data Leak)
+    9. *Relíquias Itaboraí* (Acervo automotivo, painel administrativo e CRM)
+    10. *RMS Marcenaria e Reformas* (Landing page comercial com simulador WhatsApp)
+    11. *Otimizador de Windows 10/11* (PowerShell/Batch, hardening SO)
+    12. *Monitor de Preços de Skins Steam* (Automação Python)
+    13. *Interactive Anniversary Template* (CSS 3D e animações imersivas)
+  - **Novos Bootcamps:** Inclusão do *Bootcamp Bradesco — GenAI, Dados & Cybersecurity* e *Heineken — IA Aplicada a Dados com Copilot*.
+  - **Garantia de Qualidade E2E:** Validação visual e funcional completa realizada via Playwright MCP nos viewports Desktop (1920x1080) e Mobile (390x844), confirmando 0 erros de JavaScript no console.
 
 ---
-*Este arquivo é atualizado a cada iteração significativa com o anti-gravity, cobrindo introdução de async/await, pydantic, e regras de HA sempre que aplicável no backend, ou decisões estruturais no frontend.*
+
+## 🔒 Diretrizes Mandatórias de Preservação e Integridade
+> **Aviso Permanente:** É expressamente proibido a qualquer agente ou desenvolvedor apagar, truncar ou resetar bancos de dados locais/remotos e diretórios de logs persistentes em qualquer rotina de manutenção. Modificações devem ocorrer sempre de forma incremental, reversível e protegida por controle de versão.
+
+---
+*Este arquivo atua como diário de bordo contínuo, registrando a evolução técnica e arquitetural de cada etapa do projeto.*
+

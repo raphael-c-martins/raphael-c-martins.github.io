@@ -1,74 +1,73 @@
-# Currículo Virtual — Raphael C. Martins
+# Currículo Virtual & Portfólio Tecnológico — Raphael C. Martins
 
-Site do currículo pessoal e portfólio tecnológico projetado sob rigorosos padrões de performance (Zero-Dependencies) e estruturação visual avançada.
+Site do currículo pessoal e portfólio de engenharia de software e infraestrutura, construído sob rigorosos padrões de performance (Zero Dependências externas no client-side), acessibilidade e design de alta densidade.
 
-## 🔗 Acesso
-> **URL:** [https://raphael-c-martins.github.io/](https://raphael-c-martins.github.io/)
+## 🔗 Acesso Online
+> **Deploy:** [https://raphael-c-martins.github.io/](https://raphael-c-martins.github.io/)
 
 ---
 
-## 🏛️ Filosofia da Arquitetura (O que está sob o capô?)
+## 🏛️ Filosofia de Construção & Arquitetura
 
-O projeto foi escrito do zero obedecendo o paradigma **Vanilla Pura**:
-1. **Zero Frameworks:** Nenhuma biblioteca de JavaScript (como React, Vue ou JQuery) pesa no client-side. A lógica flui instintivamente pelo motor nativo do navegador.
-2. **Identidade "Lotus JPS":** Uma paleta visual premium (Black & Gold / Dark Mode) mesclada à estética moderna do *Glassmorphism* (Vidro Fosco), garantindo contraste, imersão e elegância corporativa.
-3. **Lightbox Carousel Nativo:** Sistema de Modal para visualização de certificados e mockups de interface totalmente "caseiro", suportando paginação via Setas, Click Outside, e Binding direto com teclas de atalho (ESC, setas direcionais) — zero Bootstrap.
-4. **IntersectionObserver Duplo:** Scroll Reveal progressivo (`data-reveal`) e marcação ativa do link da navbar correspondente à seção visível, usando dois Observers independentes para máxima performance.
-5. **Typed Effect Nativo:** Efeito de digitação construído sem bibliotecas externas, ciclando as especialidades: HelpDesk, Infraestrutura & Redes, Automação de Rotinas e Cibersegurança Defensiva.
-6. **Toast Notifications:** Sistema de feedback visual instantâneo nativo para ações do formulário (sucesso / erro), sem dependência de bibliotecas de UI.
+O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScript)**:
+1. **Zero Frameworks Client-Side:** Nenhuma biblioteca pesada de frontend (React, Vue, jQuery) no client. Toda a navegação, filtros dinâmicos e modais rodam no motor nativo do navegador.
+2. **Identidade Visual Dark Slate & Ouro Nobre:** Design limpo, profissional e elegante, afastando-se de clichês visuais genéricos de IA para focar em alto contraste, superfícies sólidas, tipografia refinada (*Plus Jakarta Sans* e *Inter*) e toques sutis de dourado e ciano.
+3. **Filtros Dinâmicos por Categoria:** Sistema instantâneo de abas na seção de projetos (`Todos`, `Web Applications`, `QA & Automação`, `Desktop & Mídia`, `Infra & Hardening`).
+4. **Lightbox Modal Nativo com Carrossel:** Visualização de certificados e telas de projetos com paginação por setas, clique externo e atalhos de teclado (`ESC`, `←`, `→`).
+5. **Responsividade Mobile-First:** Suporte completo à área segura de iPhones (Dynamic Island / Notch via `env(safe-area-inset-top)`), menu hambúrguer com transição suave e expansores de texto para reduzir a fadiga de rolagem.
+6. **Toast System:** Notificações visuais nativas para feedback de ações do usuário.
+
+---
 
 ## 🎯 Posicionamento Profissional
 
-O portfólio está calibrado para comunicar com clareza e honestidade o perfil real:
-- **Infraestrutura & Redes:** Windows Server, Active Directory, GPOs, switches, cabeamento lógico.
-- **Suporte HelpDesk:** Atendimento a incidentes (hardware, software, impressão, totens NextQS), controle de ativos via GLPI.
-- **Cibersegurança Defensiva:** Kaspersky EDR, LGPD, gestão de acessos, hardening de redes.
-- **Automação de Rotinas:** Scripts Python/PowerShell/Batch, inventário lógico, visualizadores de LOGs customizados.
+- **Suporte Técnico & HelpDesk:** Atendimento a incidentes críticos, totens NextQS, parque de impressão, controle de chamados via GLPI e suporte presencial/remoto a usuários.
+- **Infraestrutura, Redes & Servidores:** Windows Server, Active Directory (GPOs, controle de acessos), Linux, switches, roteamento e gestão de nobreaks.
+- **Garantia de Qualidade (QA) & Confiabilidade:** Automação de testes ponta a ponta (E2E) com Playwright, planos e cenários de testes, triagem e ciclo de vida de bugs (P0/P1/P2), validação de schemas (Zod/Pydantic) e telemetria de rede/console.
+- **Automação & Full-Stack:** Desenvolvimento de bots, utilitários em Python, scripts PowerShell/Batch, ferramentas web com FastAPI, React e Next.js.
+- **Cibersegurança Defensiva:** Kaspersky EDR, conformidade LGPD, políticas de MFA, hardening de estações de trabalho e estratégias de backup resilientes.
 
-## 📦 Projetos Exibidos
+---
 
-| Projeto | Tipo | Tecnologias |
-|---|---|---|
-| **Suíte de Ferramentas Web (Hub Operacional)** | Ferramenta Interna Corporativa | ReactJS + FastAPI + WebSockets |
-| **Otimizador Ultimate — Windows 10/11** | Open Source | PowerShell / Batch |
-| **Monitor de Preços de Skins (Steam)** | Autoral | Python + REST API |
-| **Landing Page Interativa** | Autoral | HTML5 + CSS3 + JS |
+## 📦 Projetos Exibidos na Vitrine (13 Aplicações)
 
-## 🗂️ Estrutura de Pastas
+| Projeto | Categoria | Tecnologias Principais | Status |
+|---|---|---|---|
+| **How To Complete Dex** | Web Application | React 19, TypeScript, Vite, Tailwind v4, Zustand, Supabase | [Online 🟢](https://how-to-complete-dex.vercel.app) |
+| **BugSync Bot** | QA & Confiabilidade | Python, discord.py, Google Sheets API, Apps Script Webhooks | Ativo ⚡ |
+| **Suíte de Ferramentas Web** | Ferramenta Corporativa | ReactJS, FastAPI, WebSockets, Active Directory, Engine TIFF | Em Produção 🏢 |
+| **DevPad 🦾** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Open Source 📦 |
+| **FrameStudio PRO 🎬** | Desktop & Mídia | Python, OpenCV, PyAV (FFmpeg), Canvas RGB, RAM Cache | Open Source 📦 |
+| **MediaDownloader Pro** | Full-Stack / Utilitário | FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, SQLite | Open Source 📦 |
+| **Finance App & Investment Hub** | Web Application | Next.js App Router, TypeScript, Zustand, APIs Real-Time | Open Source 📦 |
+| **I Love Security 🛡️❤️** | Cibersegurança & Privacidade | Python, FastAPI, IA Local (Zero Data Leak), Canvas | Open Source 📦 |
+| **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, PostgreSQL, Vercel | [Online 🟢](https://site-reliquias-itaborai.vercel.app) |
+| **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Online 🟢 |
+| **⚡ Otimizador de Windows 10/11** | Infra & Hardening | PowerShell, Batch Script, Mitigação de Telemetria | Open Source 📦 |
+| **Monitor de Preços de Skins (Steam)** | Automação Desktop | Python, HTTP REST Polling, Plyer OS Alerts | Open Source 📦 |
+| **Interactive Anniversary Template 💌** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) |
+
+---
+
+## 🗂️ Estrutura do Repositório
 
 ```text
 /
-├── index.html          # Núcleo estrutural (Semântica W3C + SEO + Open Graph)
+├── index.html          # Estrutura semântica (W3C, SEO, Open Graph e Acessibilidade)
 ├── css/
-│   └── style.css       # Estilização Glass, Media Queries Mobile-First e Animações
+│   └── style.css       # Design System Dark Slate & Gold, grid responsivo e microinterações
 ├── js/
-│   └── main.js         # DOM Manipulation, Observers, Lightbox Carousel e Toast System
-└── imgs/
-    ├── foto-rosto.jfif     # Foto profissional
-    ├── certificados/       # Imagens dos diplomas (.jpg)
-    └── projetos/           # Screenshots dos projetos (suite1-7.png, webpage-aniversario_1-3.png)
+│   └── main.js         # Filtros dinâmicos, Lightbox Modal com carrossel e Observers
+├── imgs/
+│   ├── foto-rosto.jfif # Fotografia de perfil profissional
+│   ├── certificados/   # Diplomas em imagem (.jpg e .png) e sub-certificados modulares
+│   └── projetos/       # Capturas de tela dos sistemas em produção
+├── README.md           # Manual de operação e síntese do projeto
+└── HISTORICO.md        # Diário de bordo e decisões arquiteturais
 ```
 
-## 🚀 Status e Deploy
-- **Plataforma:** GitHub Pages (`master` branch, raiz `/`).
-- **Ações Recentes:**
-  - [x] Indexação da **Suíte de Ferramentas** como card Full-Width de destaque (primeiro projeto).
-  - [x] Seção de Experiência atualizada com cargo atual: Auxiliar de Cartório no Setor de TI (jun 2025 – atual).
-  - [x] Experiência de marcenaria removida — foco 100% em TI.
-  - [x] Typed Effect e Hero Summary reorientados para perfil Infra/HelpDesk.
-  - [x] Lightbox Carousel com suporte a `data-gallery` (múltiplas imagens via split por vírgula).
-  - [x] Links reais de LinkedIn, GitHub e WhatsApp API (`wa.me/`) anexados.
-  - [x] Layout cirurgicamente alinhado (Flexbox/Grid Híbridos nos cards de projetos).
-  - [x] Formulário de contato via `mailto:` sem dependência de sub-servidores.
-  - [x] Toast Notifications para feedback visual de ações.
-  - [x] Cursor Glow seguindo o mouse (efeito glassmorphism no cursor).
-  - [x] Deploy configurado na raiz do domínio `raphael-c-martins.github.io` (sem sub-path).
-  - [x] **[Mobile] Hamburger Menu** com animação de transição `☰ → ✕` e overlay Glassmorphism (`blur(24px)`).
-  - [x] **[Mobile] Navbar Safe-Area** com `env(safe-area-inset-top)` para suporte a notch/Dynamic Island (iPhone).
-  - [x] **[Mobile] Botão CTA compacto** (`width: auto; align-self: center`) no menu mobile — sem ocupar a largura total.
-  - [x] **[Mobile] Overlay de menu** com tríade robusta `transform + visibility + pointer-events` para garantir que itens não vazem para a navbar quando fechado.
-  - [x] **[Mobile] Ver mais / Ver menos** — sistema expansível (`expand-hidden` / `expand-trigger`) nas duties de experiência profissional, exibindo apenas 3 itens inicialmente e revelando o restante sob demanda via JS puro.
-  - [x] **[Mobile] Lightbox navegável** com setas reposicionadas para dentro da tela (`left: 8px` / `right: 8px`) em viewports ≤ 768px.
-
 ---
-> *Refinado com muito código suado e focado na Brutalidade Operacional.*
+
+## 🚀 Status e Deploy
+- **Ambiente:** GitHub Pages na raiz (`https://raphael-c-martins.github.io/`).
+- **Validação:** Auditado via Playwright MCP em viewport Full HD (1920x1080) e Mobile (390x844), com 0 erros de JavaScript no console.

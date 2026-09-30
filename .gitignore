@@ -6,8 +6,11 @@ scratch/
 # IDEs e Logs
 .vscode/
 /logs/
+*.log
+.playwright-mcp/
 
 # Dependências (se houver no futuro)
 node_modules/
 .DS_Store
 Thumbs.db
+
