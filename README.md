@@ -22,7 +22,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 ## 🎯 Posicionamento Profissional
 
 - **Suporte Técnico & HelpDesk:** Atendimento a incidentes críticos, totens NextQS, parque de impressão, controle de chamados via GLPI e suporte presencial/remoto a usuários.
-- **Infraestrutura, Redes & Servidores:** Windows Server, Active Directory (GPOs, controle de acessos), virtualização bare-metal com Proxmox VE (gestão de VMs e containers), configuração de arranjos RAID (RAID 0 de alta performance), Linux (Debian/Ubuntu), switches, roteamento e nobreaks.
+- **Infraestrutura, Redes & Servidores:** Windows Server, Active Directory (GPOs, controle de acessos), virtualização bare-metal com Proxmox VE (gestão de VMs e containers), configuração de arranjos RAID (RAID 1 com espelhamento e redundância), Linux (Debian/Ubuntu), switches, roteamento e nobreaks.
 - **Garantia de Qualidade (QA) & Confiabilidade:** Automação de testes ponta a ponta (E2E) com Playwright, planos e cenários de testes, triagem e ciclo de vida de bugs (P0/P1/P2), testes de regressão e telemetria de rede/console.
 - **Automação & Full-Stack:** Desenvolvimento de bots, utilitários em Python, scripts PowerShell/Batch, ferramentas web com FastAPI, React e Next.js.
 - **IA Agêntica, DevTools & APIs:** Engenharia de agentes e pair programming com Anti-Gravity e Claude Code, servidores MCP (Model Context Protocol), criação de Skills e Workflows autônomos, Git/GitHub e consumo de APIs REST.
@@ -34,9 +34,9 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 
 | Projeto | Categoria | Tecnologias Principais | Status |
 |---|---|---|---|
-| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Chatbot / Assistente IA, Active Directory, Proxmox VE, Storage NAS, SRE | Em Produção 🏢 (11 Telas) |
+| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Chatbot / Assistente IA, Active Directory (GPOs), Proxmox VE, Storage NAS, SRE | Projeto Privado 🔒 (11 Telas) |
 | **How To Complete Dex** | Web Application | React 19, TypeScript, Vite, Tailwind v4, Zustand, Supabase | [Online 🟢](https://how-to-complete-dex.vercel.app) |
-| **BugSync Bot** | QA & Confiabilidade | Python, discord.py, Google Sheets API, Apps Script Webhooks | Ativo ⚡ |
+| **BugSync Bot** | QA & Confiabilidade | Python, discord.py, Google Sheets API, Apps Script Webhooks | Projeto Privado 🔒 |
 | **DevPad** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Projeto Privado 🔒 |
 | **FrameStudio PRO** | Desktop & Mídia | Python, OpenCV, PyAV (FFmpeg), Canvas RGB, RAM Cache | Open Source 📦 |
 | **MediaDownloader Pro** | Full-Stack / Utilitário | FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, SQLite | Open Source 📦 |
@@ -45,7 +45,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 | **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, Blog/Fórum & Extensão Instagram | Em Desenvolvimento 🚧 |
 | **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Em Desenvolvimento 🚧 |
 | **Otimizador de Windows 10/11** | Infra & Hardening | PowerShell, Batch Script, Limpeza e Desempenho do Windows | Open Source 📦 |
-| **Interactive Anniversary Template** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) (3 Telas) |
+| **Interactive Anniversary Template** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) |
 
 ---
 
@@ -61,7 +61,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 ├── imgs/
 │   ├── foto-rosto.jfif # Fotografia de perfil profissional
 │   ├── certificados/   # Diplomas em imagem (.jpg e .png) e sub-certificados modulares
-│   └── projetos/       # Capturas de tela dos sistemas em produção
+│   └── projetos/       # Capturas de tela organizadas em subpastas por projeto
 ├── README.md           # Manual de operação e síntese do projeto
 └── HISTORICO.md        # Diário de bordo e decisões arquiteturais
 ```

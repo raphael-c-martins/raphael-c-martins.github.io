@@ -247,7 +247,7 @@
                 preventiva de hardware, switches, nobreaks e gerenciamento do cabeamento lógico estruturado.
                 Participação ativa no redesenho da rede corporativa interna para melhorar desempenho e segmentação.</li>
               <li><strong>Gestão de Servidores & Virtualização (Proxmox VE):</strong> Configuração física e lógica autônoma de
-                servidor dedicado com arranjo RAID 0 (focado em máxima taxa de transferência de I/O) e implantação de
+                servidor dedicado com arranjo RAID 1 (focado em espelhamento, redundância e tolerância a falhas) e implantação de
                 hipervisor bare-metal Proxmox VE (Debian). Criação, dimensionamento e administração contínua de Máquinas
                 Virtuais (VMs) e containers para sustentação de sistemas locais corporativos em ambiente isolado (hospedando a
                 própria Suíte de Ferramentas Web e o I Love Security).</li>
@@ -256,7 +256,7 @@
                 acessos por privilégios mínimos.</li>
               <li><strong>Sistema Proprietário de Monitoramento (Hub SRE):</strong> Desenvolvimento e deploy de uma suíte completa de
                 ferramentas web internas (React + FastAPI) hospedada nas VMs locais para monitoramento de infraestrutura,
-                Active Directory, processamento em lote de documentos pesados e telemetria de 62 estações em tempo real via WebSockets.</li>
+                Active Directory, processamento em lote de documentos pesados e telemetria de 62 estações (coletada via GPOs customizadas) em tempo real via WebSockets.</li>
               <li><strong>Automação de Rotinas com Python:</strong> Desenvolvimento de scripts para inventário lógico e
                 físico de máquinas, visualizadores de logs customizados e cruzamento de dados.</li>
               <li><strong>Operações & Contingência (SRE):</strong> Gestão diária de rotinas de Backup (servidores locais,
@@ -332,13 +332,14 @@
             </div>
             <ul class="timeline-duties">
               <li>Suporte técnico a alunos e manutenção do laboratório com mais de 30 máquinas em rede.</li>
-              <li>Elaboração de materiais didáticos e apoio no ensino de lógica de programação, pacote Office e noções de web.</li>
+              <li>Elaboração de materiais didáticos e apoio no ensino de sistemas operacionais (família Windows e introdução a distribuições Linux como Ubuntu e Debian), noções de redes de computadores (protocolo DHCP, operação de switches e categorias de cabos Cat5e/Cat6), lógica de programação, pacote Office e noções de web.</li>
               <li>Orientação individual para resolução de dúvidas e desenvolvimento de autonomia técnica nos estudantes.</li>
             </ul>
             <div class="timeline-tags">
-              <span class="tag">Didática</span>
+              <span class="tag">Didática & Treinamento</span>
+              <span class="tag">Windows & Linux (Ubuntu/Debian)</span>
+              <span class="tag">Redes (DHCP & Switches)</span>
               <span class="tag">Manutenção de Laboratório</span>
-              <span class="tag">Treinamento</span>
               <span class="tag">Suporte a Usuários</span>
             </div>
           </div>
@@ -400,10 +401,7 @@
             <div class="skill-group__icon">
               <i class="fa-solid fa-vial-circle-check" aria-hidden="true"></i>
             </div>
-            <div>
-              <h3 class="skill-group__title">Qualidade de Software (QA) & Testes</h3>
-              <span class="tag">Em Aprendizado Contínuo</span>
-            </div>
+            <h3 class="skill-group__title">Qualidade de Software (QA) & Testes</h3>
           </div>
           <div class="skill-pills">
             <span class="skill-pill skill-pill--qa"><i class="fa-solid fa-robot"></i> Playwright (E2E)</span>
@@ -451,7 +449,7 @@
             <span class="skill-pill skill-pill--primary">Active Directory (GPOs)</span>
             <span class="skill-pill skill-pill--primary">Proxmox VE (Virtualização)</span>
             <span class="skill-pill skill-pill--primary">Linux (Debian / Ubuntu)</span>
-            <span class="skill-pill">RAID 0 & Storage Bare-Metal</span>
+            <span class="skill-pill">RAID 1 & Storage Bare-Metal</span>
             <span class="skill-pill">Redes TCP/IP & Subnets</span>
             <span class="skill-pill">Switches & Roteamento</span>
             <span class="skill-pill">Gestão de TI (GLPI)</span>
@@ -787,7 +785,7 @@
         <article class="project-card project-card--featured" data-category="web infra" data-reveal>
           <div class="card-top-meta">
             <span class="badge-cat badge-cat--corp">Ferramenta Corporativa</span>
-            <span class="badge-status"><i class="fa-solid fa-building"></i> Em Produção</span>
+            <span class="badge-status"><i class="fa-solid fa-lock"></i> Projeto Privado</span>
           </div>
           <h3 class="project-title">Suíte de Ferramentas Web (Hub Operacional)</h3>
           <p class="project-subtitle">Plataforma Integrada de Gestão de TI, Auditoria 24/7 & Chatbot Assistente IA</p>
@@ -796,7 +794,7 @@
               Plataforma corporativa full-stack desenvolvida para centralizar, automatizar e sustentar toda a operação de TI e infraestrutura do 2º Ofício de Itaboraí, rodando em produção 24/7 em máquina virtual dedicada (Ubuntu Server) orquestrada em Proxmox VE com arquitetura assíncrona desacoplada (FastAPI e React).
             </p>
             <p>
-              O sistema reúne módulos vitais de governança e suporte diário: <strong>auditoria em tempo real de logons do Active Directory</strong> em mais de 60 estações de trabalho para rastreabilidade de acessos e detecção de contas bloqueadas; <strong>auditoria contínua de File System 24/7</strong> via WinRM com monitoramento de criação, alteração e deleção de arquivos críticos (SACL 4660/4663), gravação atômica diária e auto-recuperação (backfill); <strong>inventário automatizado de hardware e software</strong> de 62 computadores da rede com alertas preventivos de espaço em disco (&lt;20%) e monitoramento remoto de saúde SMART e arranjos RAID dos servidores.
+              A coleta e ingestão distribuída de dados e telemetria de todo o parque de máquinas é viabilizada por meio de <strong>Políticas de Grupo (GPOs) customizadas, criadas e configuradas de forma autônoma no Active Directory</strong> (orquestrando scripts de coleta, inventário e parâmetros de auditoria). A partir dessa esteira, o sistema reúne módulos vitais de governança e suporte diário: <strong>auditoria em tempo real de logons do Active Directory</strong> em mais de 60 estações de trabalho para rastreabilidade de acessos e detecção de contas bloqueadas; <strong>auditoria contínua de File System 24/7</strong> via WinRM com monitoramento de criação, alteração e deleção de arquivos críticos (SACL 4660/4663), gravação atômica diária e auto-recuperação (backfill); <strong>inventário automatizado de hardware e software</strong> de 62 computadores da rede com alertas preventivos de espaço em disco (&lt;20%) e monitoramento remoto de saúde SMART e arranjos RAID dos servidores.
             </p>
             <p>
               Conta também com um <strong>Chatbot / Assistente IA integrado</strong> flutuante em todas as telas, desenvolvido com Google Gemini Flash e roteador local <em>Zero-Token Fast Path</em> (respostas instantâneas a 0ms), operando em modo seguro (Read-Only) para consultar histórico de logins de usuários, checar disponibilidade de máquinas e tirar dúvidas técnicas sobre rotinas internas; além de ferramentas de <strong>processamento em memória de arquivos pesados .TIFF/PDF</strong> (PyMuPDF) com conversão para WebP, visualizador comparativo lado a lado de matrículas, testador interativo de hardware (teclado e mouse) e streaming de logs via WebSockets ao vivo.
@@ -805,7 +803,7 @@
           <div class="project-tags">
             <span class="tag--highlight">React + FastAPI</span>
             <span class="tag--highlight">Chatbot / Assistente IA</span>
-            <span>Active Directory & SACL</span>
+            <span>GPOs & Active Directory (SACL)</span>
             <span>Cluster Proxmox VE</span>
             <span>Auditoria Contínua 24/7</span>
             <span>Monitoramento SRE & RAID</span>
@@ -815,7 +813,7 @@
           </div>
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
-              data-gallery="imgs/projetos/suite1.png,imgs/projetos/suite2.png,imgs/projetos/suite3.png,imgs/projetos/suite4.png,imgs/projetos/suite5.png,imgs/projetos/suite6.png,imgs/projetos/suite7.png,imgs/projetos/suite8.png,imgs/projetos/suite9.png,imgs/projetos/suite10.png,imgs/projetos/suite11.png">
+              data-gallery="imgs/projetos/suite-de-ferramentas/suite1.png,imgs/projetos/suite-de-ferramentas/suite2.png,imgs/projetos/suite-de-ferramentas/suite3.png,imgs/projetos/suite-de-ferramentas/suite4.png,imgs/projetos/suite-de-ferramentas/suite5.png,imgs/projetos/suite-de-ferramentas/suite6.png,imgs/projetos/suite-de-ferramentas/suite7.png,imgs/projetos/suite-de-ferramentas/suite8.png,imgs/projetos/suite-de-ferramentas/suite9.png,imgs/projetos/suite-de-ferramentas/suite10.png,imgs/projetos/suite-de-ferramentas/suite11.png">
               <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto (11 Telas)
             </button>
           </div>
@@ -830,10 +828,7 @@
           <h3 class="project-title">How To Complete Dex</h3>
           <p class="project-subtitle">Guia Interativo para Completar a Pokédex (FireRed & LeafGreen)</p>
           <p class="project-desc">
-            Aplicação web criada para ajudar jogadores de Pokémon FireRed e LeafGreen a completarem 100% da Pokédex sem precisar
-            de guias longos em texto. Traz um mapa interativo com zoom suave onde você clica nas rotas e vê na hora quais Pokémon
-            aparecem, controle visual de monstrinhos já capturados, login para salvar o progresso na nuvem e um editor visual
-            com ferramenta de balde de tinta para limpar imagens.
+            Aplicação web desenvolvida para auxiliar jogadores de Pokémon a completarem 100% da Pokédex de forma visual e intuitiva, sem depender de guias longos em texto. A princípio, o projeto cobre os jogos Pokémon FireRed e LeafGreen (ainda não finalizado, em desenvolvimento ativo), com a pretensão de expandir a cobertura para todos os jogos da franquia no futuro. Traz um mapa interativo com zoom suave para consulta rápida de encontros por rota, controle visual de capturas, sincronização de progresso na nuvem via Supabase e uma área restrita a administradores com editor visual e ferramenta de balde de tinta (Canvas API) para limpar imagens e implementar novas seções do mapa.
           </p>
           <div class="project-tags">
             <span class="tag--highlight">React 19</span>
@@ -842,7 +837,7 @@
             <span>Tailwind v4</span>
             <span>Zustand</span>
             <span>Supabase BaaS</span>
-            <span>Canvas API</span>
+            <span>Canvas API (Admin)</span>
           </div>
           <div class="card-actions">
             <a href="https://how-to-complete-dex.vercel.app" target="_blank" rel="noopener noreferrer"
@@ -860,7 +855,7 @@
         <article class="project-card project-card--qa" data-category="qa" data-reveal>
           <div class="card-top-meta">
             <span class="badge-cat badge-cat--qa">QA & Confiabilidade</span>
-            <span class="badge-status"><i class="fa-solid fa-bolt"></i> Ativo</span>
+            <span class="badge-status"><i class="fa-solid fa-lock"></i> Projeto Privado</span>
           </div>
           <h3 class="project-title">BugSync Bot</h3>
           <p class="project-subtitle">Bot de Discord para Registro e Gestão de Testes de QA</p>
@@ -876,12 +871,6 @@
             <span>Webhooks Apps Script</span>
             <span>Triagem de Bugs (P0-P2)</span>
             <span>Automação QA</span>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/raphael-c-martins/bot-ds-goparty" target="_blank" rel="noopener noreferrer"
-              class="btn btn--outline">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
           </div>
         </article>
 
@@ -908,7 +897,7 @@
           </div>
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
-              data-gallery="imgs/projetos/devpad1.png,imgs/projetos/devpad2.png">
+              data-gallery="imgs/projetos/devpad/devpad1.png,imgs/projetos/devpad/devpad2.png">
               <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto
             </button>
           </div>
@@ -923,9 +912,7 @@
           <h3 class="project-title">FrameStudio PRO</h3>
           <p class="project-subtitle">Extrator de Fotos em Alta Resolução a partir de Vídeos</p>
           <p class="project-desc">
-            Programa para computador que permite navegar quadro a quadro por qualquer vídeo e salvar fotos na qualidade máxima
-            original, sem distorção ou perda. Funciona 100% offline para garantir a privacidade dos arquivos, oferece visualização rápida,
-            lupa de zoom de até 6x para checar o foco do corte e botão para extrair várias fotos em sequência com um clique.
+            Aplicativo desktop autônomo desenvolvido para eliminar a dependência de ferramentas comerciais saturadas de anúncios, bloatwares e rastreadores. Executa <strong>100% localmente e offline na própria máquina</strong>, garantindo privacidade absoluta dos arquivos e zero distrações. Permite navegar quadro a quadro por qualquer vídeo e salvar fotos na resolução nativa máxima (sem compressão ou marcas d'água), contando com visualização ultrarrápida, lupa de zoom de até 6x para inspeção fina de foco e extração contínua em lote com um clique.
           </p>
           <div class="project-tags">
             <span class="tag--highlight">Python</span>
@@ -933,6 +920,7 @@
             <span>PyAV (FFmpeg)</span>
             <span>Canvas RGB</span>
             <span>RAM Caching</span>
+            <span>100% Local & Sem Ads</span>
             <span>One-Hand Workflow</span>
           </div>
           <div class="card-actions">
@@ -952,15 +940,14 @@
           <h3 class="project-title">MediaDownloader Pro</h3>
           <p class="project-subtitle">Baixador de Vídeos e Músicas da Web com Player Integrado</p>
           <p class="project-desc">
-            Ferramenta prática e rápida para baixar vídeos e áudios da internet na melhor resolução disponível. Permite cortar apenas
-            o trecho desejado antes de baixar, reproduzir o conteúdo direto na tela, acompanhar a barra de download em tempo real
-            e baixar múltiplos arquivos juntos compactados em formato .ZIP.
+            Ferramenta full-stack desenvolvida como uma alternativa segura e limpa aos incontáveis sites suspeitos e invasivos da internet. É <strong>100% livre de qualquer anúncio, pop-ups maliciosos ou redirecionamentos</strong>, permitindo baixar vídeos e áudios na máxima resolução disponível com rapidez. Permite cortar apenas o trecho desejado antes de baixar, reproduzir o conteúdo em player integrado, acompanhar o progresso em tempo real via Server-Sent Events (SSE) e baixar múltiplos arquivos compactados em .ZIP.
           </p>
           <div class="project-tags">
             <span class="tag--highlight">FastAPI</span>
             <span>Vanilla JS SPA</span>
             <span>Server-Sent Events</span>
             <span>yt-dlp & FFmpeg</span>
+            <span>100% Sem Anúncios</span>
             <span>aiosqlite</span>
             <span>Vite</span>
           </div>
@@ -995,7 +982,7 @@
           </div>
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
-              data-gallery="imgs/projetos/finance1.png,imgs/projetos/finance2.png">
+              data-gallery="imgs/projetos/finance-app/finance1.png,imgs/projetos/finance-app/finance2.png">
               <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto
             </button>
           </div>
@@ -1010,16 +997,15 @@
           <h3 class="project-title">I Love Security</h3>
           <p class="project-subtitle">Edição e Processamento Seguro de Documentos Offline</p>
           <p class="project-desc">
-            Conjunto de ferramentas para manipular, organizar e converter arquivos confidenciais (PDFs e imagens) sem precisar
-            enviá-los para a internet, protegendo dados sigilosos. Inclui organizador de páginas em PDF, removedor de fundo de
-            imagens que roda direto no computador e compressor para reduzir o tamanho de arquivos pesados.
+            Inspirado no <em>iLovePDF</em> — a maior referência mundial do segmento —, o projeto foi desenvolvido como uma alternativa soberana para quem busca controle total sobre seus arquivos. Embora grandes serviços em nuvem sigam normativas rigorosas como LGPD e ISO 27001, o I Love Security elimina na raiz qualquer risco de vazamento de dados (<em>data leak</em>) ao executar <strong>100% localmente no hardware da própria máquina</strong>, sendo ideal para ambientes corporativos com alto fluxo documental. Reúne organizador visual de páginas em PDF, removedor de fundo de imagens com IA local offline e compressor de arquivos de alta performance.
           </p>
           <div class="project-tags">
             <span class="tag--highlight">Python & FastAPI</span>
             <span>IA Local (Zero Leak)</span>
-            <span>Vanilla JS & Canvas</span>
+            <span>100% Local (Anti-Data Leak)</span>
             <span>Manipulação PDF</span>
-            <span>Segurança Defensiva</span>
+            <span>Soberania de Dados</span>
+            <span>Vanilla JS & Canvas</span>
           </div>
           <div class="card-actions">
             <a href="https://github.com/raphael-c-martins/i-love-security" target="_blank" rel="noopener noreferrer"
@@ -1051,12 +1037,6 @@
             <span>Blog & Fórum</span>
             <span>Integração Instagram</span>
           </div>
-          <div class="card-actions">
-            <button class="btn btn--outline btn-cert"
-              data-gallery="imgs/projetos/reliquias1.png,imgs/projetos/reliquias2.png">
-              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto
-            </button>
-          </div>
         </article>
 
         <!-- 10. RMS MARCENARIA (Landing Page Comercial) -->
@@ -1078,12 +1058,6 @@
             <span>Tailwind CSS v4</span>
             <span>Lucide React</span>
             <span>WhatsApp Integration</span>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/raphael-c-martins/site-rms-marcenaria" target="_blank" rel="noopener noreferrer"
-              class="btn btn--outline">
-              <i class="fa-brands fa-github"></i> GitHub
-            </a>
           </div>
         </article>
 
@@ -1140,10 +1114,6 @@
               class="btn btn--live">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Acessar Online
             </a>
-            <button class="btn btn--outline btn-cert"
-              data-gallery="imgs/projetos/webpage-aniversario_1.png,imgs/projetos/webpage-aniversario_2.png,imgs/projetos/webpage-aniversario_3.png">
-              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto (3 Telas)
-            </button>
             <a href="https://github.com/raphael-c-martins/Interactive-Anniversary-Template" target="_blank" rel="noopener noreferrer"
               class="btn btn--outline">
               <i class="fa-brands fa-github"></i> GitHub
@@ -1209,9 +1179,14 @@
             <label for="form-name">Nome Completo</label>
             <input type="text" id="form-name" name="name" placeholder="Seu nome ou empresa" required autocomplete="name" />
           </div>
-          <div class="form-group">
+          <div class="form-group form-group--relative">
             <label for="form-email">Seu E-mail</label>
             <input type="email" id="form-email" name="email" placeholder="seu@email.com" required autocomplete="email" />
+            <ul id="email-suggestions" class="email-suggestions" role="listbox" aria-label="Sugestões de domínio de e-mail" hidden></ul>
+          </div>
+          <div class="form-group">
+            <label for="form-extra-contact">Outro Meio de Contato <span class="label-optional">(Opcional)</span></label>
+            <input type="text" id="form-extra-contact" name="extra_contact" placeholder="WhatsApp, Telefone ou rede social..." autocomplete="tel" />
           </div>
           <div class="form-group">
             <label for="form-message">Mensagem</label>

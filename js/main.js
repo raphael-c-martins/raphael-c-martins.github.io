@@ -214,20 +214,203 @@ filterButtons.forEach(btn => {
 
 /* ── CONTACT FORM ────────────────────────────────────── */
 const contactForm = document.getElementById('contact-form');
+const nameInput = document.getElementById('form-name');
+const emailInput = document.getElementById('form-email');
+const extraContactInput = document.getElementById('form-extra-contact');
+const emailSuggestions = document.getElementById('email-suggestions');
+
+// 1. Capitalização Automática de Nome e Sobrenome (Title Case)
+if (nameInput) {
+  nameInput.addEventListener('input', () => {
+    const start = nameInput.selectionStart;
+    const end = nameInput.selectionEnd;
+    const original = nameInput.value;
+    const formatted = original.replace(/(^|[\s\-])([^\s\-])/g, (_, sep, char) => sep + char.toUpperCase());
+    if (original !== formatted) {
+      nameInput.value = formatted;
+      nameInput.setSelectionRange(start, end);
+    }
+  });
+
+  nameInput.addEventListener('blur', () => {
+    if (!nameInput.value.trim()) return;
+    const connectives = ['de', 'da', 'do', 'das', 'dos', 'e'];
+    const words = nameInput.value.trim().split(/\s+/);
+    nameInput.value = words.map((w, i) => {
+      const lower = w.toLowerCase();
+      if (i > 0 && connectives.includes(lower)) return lower;
+      return lower.charAt(0).toUpperCase() + lower.slice(1);
+    }).join(' ');
+  });
+}
+
+// 2. Sugestão Inteligente de Domínios de E-mail
+if (emailInput && emailSuggestions) {
+  const commonDomains = [
+    'gmail.com',
+    'outlook.com',
+    'hotmail.com',
+    'yahoo.com',
+    'yahoo.com.br',
+    'icloud.com',
+    'live.com',
+    'proton.me'
+  ];
+  let activeIndex = -1;
+
+  function closeSuggestions() {
+    emailSuggestions.hidden = true;
+    emailSuggestions.innerHTML = '';
+    activeIndex = -1;
+  }
+
+  function renderSuggestions(userPart, matchingDomains) {
+    emailSuggestions.innerHTML = '';
+    matchingDomains.forEach((domain, idx) => {
+      const li = document.createElement('li');
+      li.className = 'email-suggestion-item';
+      li.setAttribute('role', 'option');
+      li.setAttribute('id', `email-sugg-${idx}`);
+      li.innerHTML = `
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+        <span>${userPart}<strong>@${domain}</strong></span>
+      `;
+      li.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        selectDomain(userPart, domain);
+      });
+      emailSuggestions.appendChild(li);
+    });
+    emailSuggestions.hidden = false;
+    activeIndex = -1;
+  }
+
+  function selectDomain(userPart, domain) {
+    emailInput.value = `${userPart}@${domain}`;
+    closeSuggestions();
+    if (extraContactInput) {
+      extraContactInput.focus();
+    }
+  }
+
+  emailInput.addEventListener('input', () => {
+    const val = emailInput.value;
+    const atIndex = val.indexOf('@');
+
+    if (atIndex <= 0) {
+      closeSuggestions();
+      return;
+    }
+
+    // Se houver mais de um '@', oculta as sugestões
+    if (val.indexOf('@', atIndex + 1) !== -1) {
+      closeSuggestions();
+      return;
+    }
+
+    const userPart = val.slice(0, atIndex);
+    const domainQuery = val.slice(atIndex + 1).toLowerCase();
+
+    // Se já digitou o domínio completo com exatidão, fecha
+    const exactMatch = commonDomains.find(d => d === domainQuery);
+    if (exactMatch) {
+      closeSuggestions();
+      return;
+    }
+
+    const matches = commonDomains.filter(d => d.startsWith(domainQuery));
+    if (matches.length > 0) {
+      renderSuggestions(userPart, matches);
+    } else {
+      closeSuggestions();
+    }
+  });
+
+  emailInput.addEventListener('keydown', (e) => {
+    if (emailSuggestions.hidden) return;
+
+    const items = emailSuggestions.querySelectorAll('.email-suggestion-item');
+    if (!items.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIndex = (activeIndex + 1) % items.length;
+      updateActiveItem(items);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIndex = (activeIndex - 1 + items.length) % items.length;
+      updateActiveItem(items);
+    } else if (e.key === 'Enter' || e.key === 'Tab') {
+      if (activeIndex >= 0 && items[activeIndex]) {
+        e.preventDefault();
+        items[activeIndex].dispatchEvent(new MouseEvent('mousedown'));
+      }
+    } else if (e.key === 'Escape') {
+      closeSuggestions();
+    }
+  });
+
+  function updateActiveItem(items) {
+    items.forEach((item, idx) => {
+      const isActive = idx === activeIndex;
+      item.classList.toggle('active', isActive);
+      if (isActive) {
+        item.scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }
+
+  emailInput.addEventListener('blur', () => {
+    setTimeout(closeSuggestions, 180);
+  });
+}
+
+// 3. Formatação Inteligente do Campo "Outro Meio de Contato"
+if (extraContactInput) {
+  extraContactInput.addEventListener('input', () => {
+    const val = extraContactInput.value;
+    // Se o usuário estiver digitando números e pontuação telefônica, formata como telefone brasileiro
+    if (!/[a-zA-Z]/.test(val) && /\d/.test(val)) {
+      const digits = val.replace(/\D/g, '').slice(0, 11);
+      if (!digits) {
+        extraContactInput.value = '';
+        return;
+      }
+      let formatted = '';
+      if (digits.length <= 2) {
+        formatted = `(${digits}`;
+      } else if (digits.length <= 6) {
+        formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+      } else if (digits.length <= 10) {
+        formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+      } else {
+        formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+      }
+      extraContactInput.value = formatted;
+    }
+  });
+}
+
+// 4. Submissão do Formulário com Validação e Feedback Instantâneo
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('form-name').value.trim();
     const email = document.getElementById('form-email').value.trim();
+    const extraContact = document.getElementById('form-extra-contact')?.value.trim();
     const message = document.getElementById('form-message').value.trim();
 
     if (!name || !email || !message) {
-      showToast('Por favor, preencha todos os campos!', 'error');
+      showToast('Por favor, preencha todos os campos obrigatórios!', 'error');
       return;
     }
 
     const subject = encodeURIComponent(`Contato pelo Portfólio — ${name}`);
-    const body = encodeURIComponent(`Olá Raphael,\n\n${message}\n\nDe: ${name}\nE-mail: ${email}`);
+    let bodyText = `Olá Raphael,\n\n${message}\n\nDe: ${name}\nE-mail: ${email}`;
+    if (extraContact) {
+      bodyText += `\nOutro Contato: ${extraContact}`;
+    }
+    const body = encodeURIComponent(bodyText);
     window.location.href = `mailto:raphaelchernicharo@gmail.com?subject=${subject}&body=${body}`;
     showToast('Abrindo seu aplicativo de e-mail...', 'success');
     contactForm.reset();
