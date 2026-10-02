@@ -703,10 +703,16 @@ function showToast(msg, type = 'success', duration = 4000) {
   const toast = document.createElement('div');
   toast.className = `toast toast--${type}`;
   const iconClass = type === 'success' ? 'circle-check' : (type === 'info' ? 'circle-info' : 'circle-exclamation');
-  toast.innerHTML = `
-    <i class="fa-solid fa-${iconClass}" aria-hidden="true"></i>
-    <span>${msg}</span>
-  `;
+  
+  const icon = document.createElement('i');
+  icon.className = `fa-solid fa-${iconClass}`;
+  icon.setAttribute('aria-hidden', 'true');
+
+  const span = document.createElement('span');
+  span.textContent = msg;
+
+  toast.appendChild(icon);
+  toast.appendChild(span);
   toastContainer.appendChild(toast);
   setTimeout(() => {
     toast.style.animation = 'toastOut .35s ease forwards';
