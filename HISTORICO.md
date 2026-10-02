@@ -4,27 +4,31 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ## 🚀 Entregas e Evolução
 
-### [2026-10-02] - Atualização Curricular, Theme Manager & Refinamento de UX/UI
-- **Decisão:** Reestruturação e modernização completa da grade de Cursos & Certificações, implementação do tema Claro como padrão com alternância fluida via View Transitions API, re-ancoragem do Lightbox Desktop e atualização estrita dos termos de propriedade intelectual (LICENSE).
-- **Racional:** Alinhar a vitrine do portfólio às competências reais de Infraestrutura, Nuvem, Cibersegurança e QA, entregando uma experiência visual de alto contraste e legibilidade imediata para recrutadores, eliminando redundâncias em galerias de certificados e protegendo a autoria do projeto.
+### [2026-10-02] - Atualização Curricular, Theme Manager, Hardening de Segurança & Calibração de UX
+- **Decisão:** Reestruturação e modernização completa da grade de Cursos & Certificações, consolidação dos 12 projetos em grade 3 colunas com visualizadores de galeria, implementação do tema Claro como padrão executivo via View Transitions API, hardening completo de segurança no formulário/toast e calibração fina de espaçamentos verticais.
+- **Racional:** Alinhar o portfólio às competências reais de Infraestrutura, Nuvem, Cibersegurança e QA, entregando uma experiência de alto padrão para recrutadores com código seguro, sem dead space e protegido contra exploração (XSS, spam de formulário, floods).
 - **Execução:**
+  - **Segurança Defensiva e Anti-Abuse:**
+    - **Rate Limiting Anti-Flood:** Bloqueio inteligente no envio de mensagens com cooldown temporal de 45s e persistência em `localStorage` para prevenir DoS/DDoS no cliente de e-mail.
+    - **Honeypot Invisível Anti-Bot:** Inclusão de input oculto para armadilha de crawlers automáticos, descartando envios maliciosos silenciosamente.
+    - **Limites Estritos de Input:** Adição de `maxlength` e `minlength` rigorosos em todos os campos do formulário (Nome até 70 chars, E-mail até 80 chars, Meio de Contato até 30 chars, Mensagem até 1500 chars com contador dinâmico e alertas visuais).
+    - **Blindagem XSS no Toast System:** Construção de toasts e sugestões de e-mail via manipulação de nós DOM nativos (`createElement`/`textContent`), eliminando qualquer risco de Cross-Site Scripting.
+    - **Política de Cabeçalho:** Adição de `Referrer-Policy: strict-origin-when-cross-origin` para preservação de integridade de tráfego.
   - **Padronização de Tema Claro (Light Default):**
     - Definição de `data-theme="light"` como padrão no `<html>`, `localStorage`, script anti-FOUC do `<head>` e no `js/main.js`.
-    - Implementação do alternador flutuante no canto inferior direito com suporte nativo à *View Transitions API* (expansão radial geométrica calculada com `Math.hypot` a partir da origem do clique) e fallback por ripple CSS.
-    - Otimização do tema escuro: ajuste de contraste em botões e blocos de texto para evitar ofuscamento ou ilegibilidade.
+    - Alternador flutuante no canto inferior direito com suporte à *View Transitions API* (expansão radial geométrica calculada com `Math.hypot` a partir da origem do clique) e fallback por ripple CSS.
+    - Paleta executiva Slate (`#0f172a`, `#334155`, `#64748b`) com alto contraste e legibilidade imediata.
+  - **Calibração de Layout & Densidade de Informação (UX):**
+    - **Eliminação de Vácuo no Hero:** Remoção do `min-height: 94vh` forçado, ajustando o espaçamento para uma transição suave e integrada até a seção Sobre.
+    - **Harmonização do Contato:** Reposicionamento do card de *Disponibilidade Profissional* no centro vertical entre o texto de abertura e os 4 botões de contato direto.
+    - **Grade de Projetos (12 Projetos):** Unificação em layout de 3 colunas perfeitamente alinhadas com carrosséis de telas censuradas/privadas e tags sem quebra indevida de texto.
   - **Reestruturação de Cursos & Certificações:**
-    - Substituição do bootcamp legado de Java pelo curso prático *Windows Server, Active Directory & Microsoft Azure (25h) — DICARJ (Udemy)*, com foco em Hyper-V HA, pfSense, Zabbix e nuvem Azure (AZ-900 / AZ-104).
-    - Remoção do card isolado de estudos de QA para evitar assimetria curricular, mantendo o posicionamento sênior de QA e automação nos tópicos do Hero, Tech Stack e nos projetos práticos (BugSync Bot, testes E2E).
-    - Adição de descrições técnicas densas e sênior para os cards *Endpoint Security (27h) — Cisco Networking Academy* e *Bootcamp Cibersegurança #2 (28h) — Santander (DIO.me)*, detalhando ementas de defesa de endpoints, sistemas Windows/Linux, HIPS, EDR, pentest, simulação MiTM e scripts Python.
-    - Separação de escopo na galeria Santander: o botão principal abre diretamente o diploma de 28h, enquanto o stack de mini-cards ativa a navegação nos 21 módulos especializados.
-  - **Correção e Polimento do Lightbox Modal:**
-    - Re-ancoragem do botão de fechamento (`.lightbox-close`) diretamente ao card do modal em telas desktop (`top: -16px; right: -16px;`), tornando o controle intuitivo em monitores ultrawide/Full HD.
-    - Expansão ergonômica da caixa de texto do modal em visualização mobile.
-  - **Atualização da Licença de Uso (LICENSE):**
-    - Conversão do arquivo `LICENSE` para o regime estrito de *Todos os Direitos Reservados (All Rights Reserved)*, garantindo proteção integral de autoria para o design, código e ideias do portfólio.
-  - **Melhorias de Usabilidade e Segurança:**
-    - Cópia instantânea de e-mail ao clicar no contato com Toast Notification e retenção de scroll position (`window.scrollTo`).
-    - Sanitização de sugestões de domínio no input de e-mail via manipulação de nós DOM nativos (`createElement`/`textContent`).
+    - Substituição do bootcamp legado de Java pelo curso prático *Windows Server, Active Directory & Microsoft Azure (25h) — DICARJ (Udemy)*, com foco em Hyper-V HA, pfSense, Zabbix e nuvem Azure.
+    - Adição de descrições técnicas densas para os cards *Endpoint Security (27h) — Cisco Networking Academy* e *Bootcamp Cibersegurança #2 (28h) — Santander (DIO.me)* com ementas aprofundadas.
+    - Separação de escopo na galeria Santander: diploma principal de 28h no topo e stack de 21 mini-certificados na navegação inferior.
+  - **Lightbox Modal & Licença:**
+    - Re-ancoragem do botão de fechamento (`.lightbox-close`) diretamente ao card do modal em telas desktop (`top: -16px; right: -16px;`).
+    - Conversão do arquivo `LICENSE` para o regime de *Todos os Direitos Reservados (All Rights Reserved)*.
 
 ### [2026-04-20] - Setup de Infraestrutura (GitHub Pages)
 - **Decisão:** Alteração do nome do repositório para `raphael-c-martins.github.io`.
