@@ -27,7 +27,9 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
     - Adição de descrições técnicas densas para os cards *Endpoint Security (27h) — Cisco Networking Academy* e *Bootcamp Cibersegurança #2 (28h) — Santander (DIO.me)* com ementas aprofundadas.
     - Separação de escopo na galeria Santander: diploma principal de 28h no topo e stack de 21 mini-certificados na navegação inferior.
   - **Lightbox Modal & Licença:**
-    - Re-ancoragem do botão de fechamento (`.lightbox-close`) diretamente ao card do modal em telas desktop (`top: -16px; right: -16px;`).
+    - **Ergonomia e Desobstrução Mobile:** Desacoplamento do botão de fechamento (`.lightbox-close`) do container de mídia para fixação nativa no canto superior direito da tela (`top: calc(18px + env(safe-area-inset-top)); right: 18px;`), eliminando qualquer sobreposição ao cabeçalho ou selos de certificados.
+    - **Navegação Elevada no Mobile:** Reposicionamento das setas (`.lightbox-nav`) a `110px` da base inferior, garantindo alcance ergonômico dos polegares (one-hand workflow) sem colisão com a barra de endereços do navegador móvel.
+    - **Desktop UX:** Botão de fechamento fixado no canto superior direito (`top: 24px; right: 28px;`) e setas laterais centralizadas.
     - Conversão do arquivo `LICENSE` para o regime de *Todos os Direitos Reservados (All Rights Reserved)*.
 
 ### [2026-04-20] - Setup de Infraestrutura (GitHub Pages)
