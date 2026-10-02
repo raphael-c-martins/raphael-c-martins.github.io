@@ -14,7 +14,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 2. **Identidade Visual Dual-Theme (Light & Dark):** Design limpo, sóbrio e profissional com tema Claro por padrão e suporte a Dark Mode com alternância fluida via *View Transitions API*. Alto contraste, superfícies sólidas, tipografia refinada (*Plus Jakarta Sans*, *Inter* e *JetBrains Mono*) e toques em azul ardósia e ouro nobre.
 3. **Filtros Dinâmicos por Categoria:** Sistema instantâneo de abas na seção de projetos (`Todos`, `Web Applications`, `QA & Automação`, `Desktop & Mídia`, `Infra & Hardening`).
 4. **Lightbox Modal Nativo com Carrossel:** Visualização de certificados e telas de projetos com paginação por setas, clique externo e atalhos de teclado (`ESC`, `←`, `→`).
-5. **Responsividade Mobile-First:** Suporte completo à área segura de iPhones (Dynamic Island / Notch via `env(safe-area-inset-top)`), menu hambúrguer com transição suave e expansores de texto para reduzir a fadiga de rolagem.
+5. **Responsividade Mobile-First:** Suporte completo à área segura de iPhones (Dynamic Island / Notch via `env(safe-area-inset-top)`), menu hambúrguer com transição suave, expansores de texto e botão flutuante arrastável (Draggable FAB) com snap magnético lateral para não obstruir conteúdos.
 6. **Toast System:** Notificações visuais nativas para feedback de ações do usuário.
 
 ---

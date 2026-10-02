@@ -4,6 +4,23 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ## 🚀 Entregas e Evolução
 
+### [2026-10-02] - Mobile UX: Botão Flutuante Arrastável (Draggable FAB) com Snap Magnético & Calibração de Navegação
+- **Decisão:** Implementação de capacidade de arraste inteligente (Draggable FAB) com snap magnético lateral e persistência local para o botão flutuante de alternância de tema, refinamento ergonômico dos links do menu mobile e harmonização do cabeçalho da barra de navegação.
+- **Racional:** Em telas compactas de smartphones, botões flutuantes fixos podem obstruir a leitura de textos, nomes de certificados ou detalhes de projetos. Permitir que o usuário reposicione o botão livremente para qualquer borda da tela sem disparar acidentalmente a troca de tema nem travar a rolagem da página eleva o nível de usabilidade a padrões nativos de sistemas móveis (semelhante ao AssistiveTouch do iOS).
+- **Execução:**
+  - **Draggable FAB com Snap Magnético e Prevenção de Falsos Toques:**
+    - Manipulação de eventos de ponteiro nativos (`Pointer Events`: `pointerdown`, `pointermove`, `pointerup`) com captura de ponteiro (`setPointerCapture`) e limite de sensibilidade de 6px (`Math.hypot`) para diferenciar cliques intencionais de arrastes.
+    - Bloqueio de gestos nativos de rolagem da tela sobre o botão móvel via `touch-action: none` e `-webkit-touch-callout: none`.
+    - Feedback tátil visual imediato durante o movimento: escala de 1.14 (`.is-dragging`) e elevação com sombreamento dinâmico adaptado a temas escuro e claro.
+    - Snap magnético automático para a lateral mais próxima (esquerda ou direita com margem de segurança de 16px) utilizando curva suave `cubic-bezier(0.18, 0.89, 0.32, 1.28)`.
+    - Preservação da altura vertical (`Y`) onde o elemento foi solto, com limitação de segurança para não ultrapassar a barra de navegação superior nem a barra inferior do dispositivo.
+    - Persistência da coordenada preferida no `localStorage` (`rcm_fab_pos`) e restauração automática ao navegar, recarregar a página ou rotacionar o aparelho.
+    - Limpeza de estilos inline e retorno à posição padrão (`bottom: 28px; right: 28px;`) em resoluções desktop (> 900px).
+  - **Menu Mobile e Responsividade:**
+    - Ajuste nos espaçamentos dos links de navegação mobile (`gap: 14px`, cards ergonômicos em pílula com `border-radius: 14px` e padding de 13px).
+    - Unificação do fundo do cabeçalho ao abrir o menu (`body.menu-locked #navbar`) eliminando qualquer descontinuidade de cor no topo.
+    - Ocultação suave do botão flutuante quando o menu mobile estiver expandido (`body.menu-locked .theme-toggle-wrapper`).
+
 ### [2026-10-02] - Atualização Curricular, Theme Manager, Hardening de Segurança & Calibração de UX
 - **Decisão:** Reestruturação e modernização completa da grade de Cursos & Certificações, consolidação dos 12 projetos em grade 3 colunas com visualizadores de galeria, implementação do tema Claro como padrão executivo via View Transitions API, hardening completo de segurança no formulário/toast e calibração fina de espaçamentos verticais.
 - **Racional:** Alinhar o portfólio às competências reais de Infraestrutura, Nuvem, Cibersegurança e QA, entregando uma experiência de alto padrão para recrutadores com código seguro, sem dead space e protegido contra exploração (XSS, spam de formulário, floods).

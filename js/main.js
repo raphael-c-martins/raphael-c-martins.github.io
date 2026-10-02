@@ -1037,6 +1037,192 @@ if (themeToggleBtn) {
   themeToggleBtn.addEventListener('click', toggleTheme);
 }
 
+/* ═══════════════════════════════════════════════════════
+   BOTÃO FLUTUANTE ARRASTÁVEL (Draggable FAB - Mobile)
+   Permite reposicionar livremente o botão flutuante de tema
+   com snap magnético nas laterais (estilo AssistiveTouch)
+   sem interferir no toque rápido de alternância de tema.
+   ═══════════════════════════════════════════════════════ */
+function initDraggableThemeToggle() {
+  const wrapper = document.querySelector('.theme-toggle-wrapper');
+  const btn = document.getElementById('theme-toggle');
+  if (!wrapper || !btn) return;
+
+  let isPointerDown = false;
+  let isDragging = false;
+  let hasMoved = false;
+  let startX = 0;
+  let startY = 0;
+  let initialLeft = 0;
+  let initialTop = 0;
+  let wasDragged = false;
+  let activePointerId = null;
+
+  // Carrega e restaura posição persistida se estiver em viewport mobile
+  function applySavedPosition() {
+    if (window.innerWidth > 900) return;
+    try {
+      const saved = localStorage.getItem('rcm_fab_pos');
+      if (saved) {
+        const { side, topPercent } = JSON.parse(saved);
+        const rect = wrapper.getBoundingClientRect();
+        const btnW = rect.width || 46;
+        const btnH = rect.height || 46;
+        const top = Math.max(70, Math.min(window.innerHeight - btnH - 24, (topPercent / 100) * window.innerHeight));
+        const left = side === 'left' ? 16 : (window.innerWidth - btnW - 16);
+        wrapper.style.left = `${left}px`;
+        wrapper.style.top = `${top}px`;
+        wrapper.style.bottom = 'auto';
+        wrapper.style.right = 'auto';
+      }
+    } catch (_) {}
+  }
+
+  // Previne que o evento de clique dispare a troca de tema se a ação foi um arraste
+  btn.addEventListener('click', (e) => {
+    if (wasDragged) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }, true);
+
+  btn.addEventListener('pointerdown', (e) => {
+    // Permite apenas o botão primário do ponteiro (toque ou botão esquerdo)
+    if (e.button !== 0) return;
+    // Em desktop largo com mouse comum, mantém a posição fixa no canto inferior
+    if (window.innerWidth > 900 && e.pointerType !== 'touch') return;
+
+    isPointerDown = true;
+    isDragging = false;
+    hasMoved = false;
+    startX = e.clientX;
+    startY = e.clientY;
+    activePointerId = e.pointerId;
+
+    const rect = wrapper.getBoundingClientRect();
+    initialLeft = rect.left;
+    initialTop = rect.top;
+
+    wrapper.classList.remove('is-snapping');
+
+    try {
+      btn.setPointerCapture(e.pointerId);
+    } catch (_) {}
+  });
+
+  btn.addEventListener('pointermove', (e) => {
+    if (!isPointerDown) return;
+
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+
+    // Tolerância de movimento de 6px para diferenciar toque rápido (tap) de intenção de arraste (drag)
+    if (!hasMoved) {
+      if (Math.hypot(dx, dy) > 6) {
+        hasMoved = true;
+        isDragging = true;
+        wrapper.classList.add('is-dragging');
+        wrapper.style.bottom = 'auto';
+        wrapper.style.right = 'auto';
+      }
+    }
+
+    if (isDragging) {
+      const rect = wrapper.getBoundingClientRect();
+      const minX = 8;
+      const maxX = window.innerWidth - rect.width - 8;
+      const minY = 65; // Margem para respeitar a navbar superior fixa
+      const maxY = window.innerHeight - rect.height - 20;
+
+      let currentLeft = initialLeft + dx;
+      let currentTop = initialTop + dy;
+
+      currentLeft = Math.max(minX, Math.min(currentLeft, maxX));
+      currentTop = Math.max(minY, Math.min(currentTop, maxY));
+
+      wrapper.style.left = `${currentLeft}px`;
+      wrapper.style.top = `${currentTop}px`;
+    }
+  });
+
+  function finishDrag(e) {
+    if (!isPointerDown) return;
+    isPointerDown = false;
+
+    if (activePointerId !== null) {
+      try {
+        if (btn.hasPointerCapture(activePointerId)) {
+          btn.releasePointerCapture(activePointerId);
+        }
+      } catch (_) {}
+      activePointerId = null;
+    }
+
+    wrapper.classList.remove('is-dragging');
+
+    if (hasMoved) {
+      wasDragged = true;
+      setTimeout(() => {
+        wasDragged = false;
+      }, 350);
+
+      // Efeito magnético de snap para a borda lateral mais próxima (AssistiveTouch UX)
+      wrapper.classList.add('is-snapping');
+      const rect = wrapper.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const side = centerX < window.innerWidth / 2 ? 'left' : 'right';
+      const snapLeft = side === 'left' ? 16 : (window.innerWidth - rect.width - 16);
+
+      const minY = 70;
+      const maxY = window.innerHeight - rect.height - 24;
+      const clampedTop = Math.max(minY, Math.min(rect.top, maxY));
+
+      wrapper.style.left = `${snapLeft}px`;
+      wrapper.style.top = `${clampedTop}px`;
+
+      // Persiste no localStorage a preferência para mobile
+      try {
+        const topPercent = (clampedTop / window.innerHeight) * 100;
+        localStorage.setItem('rcm_fab_pos', JSON.stringify({ side, topPercent }));
+      } catch (_) {}
+
+      setTimeout(() => {
+        wrapper.classList.remove('is-snapping');
+      }, 400);
+    }
+  }
+
+  btn.addEventListener('pointerup', finishDrag);
+  btn.addEventListener('pointercancel', finishDrag);
+
+  // Redimensionamento de janela ou rotação de tela (portrait/landscape)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      wrapper.style.left = '';
+      wrapper.style.top = '';
+      wrapper.style.bottom = '';
+      wrapper.style.right = '';
+      wrapper.classList.remove('is-dragging', 'is-snapping');
+    } else {
+      if (wrapper.style.left && wrapper.style.top) {
+        const rect = wrapper.getBoundingClientRect();
+        const side = (rect.left + rect.width / 2) < window.innerWidth / 2 ? 'left' : 'right';
+        const left = side === 'left' ? 16 : (window.innerWidth - rect.width - 16);
+        const top = Math.max(70, Math.min(window.innerHeight - rect.height - 24, rect.top));
+        wrapper.style.left = `${left}px`;
+        wrapper.style.top = `${top}px`;
+      } else {
+        applySavedPosition();
+      }
+    }
+  });
+
+  applySavedPosition();
+}
+
+// Inicializa o botão flutuante arrastável
+initDraggableThemeToggle();
+
 // Sincroniza estado inicial conforme persistência do usuário
 updateThemeUI(getStoredTheme());
 
