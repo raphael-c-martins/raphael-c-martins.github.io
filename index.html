@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -24,7 +24,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="alternate icon" type="image/png" href="favicon.svg" />
   <link rel="apple-touch-icon" href="favicon.svg" />
-  <meta name="theme-color" content="#090a10" />
+  <meta name="theme-color" content="#f8fafc" id="meta-theme-color" />
 
   <!-- Google Fonts: Plus Jakarta Sans + Inter + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,10 +37,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/style.css?v=20" />
+
+  <!-- Anti-FOUC Theme Init & Reset de Scroll no Topo -->
+  <script>
+    (function () {
+      // Garante que qualquer recarregamento (F5 / Shift+F5) inicie imediatamente no topo
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      if (window.location.hash) {
+        try {
+          history.replaceState(null, null, window.location.pathname + window.location.search);
+        } catch (e) {}
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+      try {
+        var savedTheme = localStorage.getItem('rcm_theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          var metaEl = document.getElementById('meta-theme-color');
+          if (metaEl) metaEl.setAttribute('content', '#090a10');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
 
 <body>
+
+  <!-- ═══════════════════════════ SCROLL PROGRESS BAR ═══════════════════ -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════ CURSOR GLOW ═══════════════════════════ -->
   <div id="cursor-glow" aria-hidden="true"></div>
@@ -51,24 +83,27 @@
       <a href="#hero" class="nav-logo" aria-label="Início">
         <span class="logo-bracket">&lt;</span>RCM<span class="logo-bracket">/&gt;</span>
       </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#sobre" class="nav-link">Sobre</a></li>
-        <li><a href="#experiencia" class="nav-link">Experiência</a></li>
-        <li><a href="#formacao" class="nav-link">Formação</a></li>
-        <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
-        <li><a href="#certificacoes" class="nav-link">Cursos</a></li>
-        <li><a href="#projetos" class="nav-link">Projetos</a></li>
-        <li><a href="#contato" class="nav-link nav-link--cta">Contato</a></li>
-      </ul>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+          <li><a href="#formacao" class="nav-link">Formação</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#certificacoes" class="nav-link">Cursos</a></li>
+          <li><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li><a href="#contato" class="nav-link nav-link--cta">Contato</a></li>
+        </ul>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- ═══════════════════════════ HERO ════════════════════════════════ -->
   <section id="hero" class="hero" aria-label="Apresentação">
     <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-ambient-glow" aria-hidden="true"></div>
 
     <div class="hero-content">
       <p class="hero-greeting" data-reveal>Olá, mundo 👋</p>
@@ -121,7 +156,7 @@
       <!-- Métricas Executivas de Impacto -->
       <div class="hero-stats" data-reveal>
         <div class="hero-stat-card">
-          <span class="hero-stat-num">12</span>
+          <span class="hero-stat-num" data-count="12">12</span>
           <span class="hero-stat-label">Projetos Construídos</span>
         </div>
         <div class="hero-stat-card">
@@ -133,15 +168,15 @@
           <span class="hero-stat-label">Cartório 2º Ofício</span>
         </div>
         <div class="hero-stat-card">
-          <span class="hero-stat-num">500h+</span>
+          <span class="hero-stat-num" data-count="500" data-suffix="h+">500h+</span>
           <span class="hero-stat-label">Cursos & Bootcamps</span>
         </div>
       </div>
-    </div>
 
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>scroll</span>
-      <i class="fa-solid fa-chevron-down"></i>
+      <div class="hero-scroll-hint" id="hero-scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
     </div>
   </section>
 
@@ -256,7 +291,7 @@
                 acessos por privilégios mínimos.</li>
               <li><strong>Sistema Proprietário de Monitoramento (Hub SRE):</strong> Desenvolvimento e deploy de uma suíte completa de
                 ferramentas web internas (React + FastAPI) hospedada nas VMs locais para monitoramento de infraestrutura,
-                Active Directory, processamento em lote de documentos pesados e telemetria de 62 estações (coletada via GPOs customizadas) em tempo real via WebSockets.</li>
+                Active Directory, processamento em lote de documentos pesados e telemetria de +60 estações (coletada via GPOs customizadas) em tempo real via WebSockets.</li>
               <li><strong>Automação de Rotinas com Python:</strong> Desenvolvimento de scripts para inventário lógico e
                 físico de máquinas, visualizadores de logs customizados e cruzamento de dados.</li>
               <li><strong>Operações & Contingência (SRE):</strong> Gestão diária de rotinas de Backup (servidores locais,
@@ -427,6 +462,10 @@
             <span class="skill-pill skill-pill--primary">Next.js 16</span>
             <span class="skill-pill skill-pill--primary">TypeScript</span>
             <span class="skill-pill skill-pill--primary">Python (FastAPI)</span>
+            <span class="skill-pill skill-pill--primary">CSS Animations & 3D</span>
+            <span class="skill-pill">Micro-interações & UX</span>
+            <span class="skill-pill">Motion Design & Keyframes</span>
+            <span class="skill-pill">Canvas API (2D Graphics)</span>
             <span class="skill-pill">Tailwind CSS v4</span>
             <span class="skill-pill">Zustand</span>
             <span class="skill-pill">Supabase (PostgreSQL)</span>
@@ -510,6 +549,8 @@
             <span class="skill-pill skill-pill--primary">Skills & Workflows</span>
             <span class="skill-pill skill-pill--primary">APIs REST & Integrações</span>
             <span class="skill-pill">Git & GitHub</span>
+            <span class="skill-pill">CI/CD & GitHub Actions</span>
+            <span class="skill-pill">Containers & Docker (LXC)</span>
             <span class="skill-pill">VS Code</span>
             <span class="skill-pill">Google Sheets API (gspread)</span>
             <span class="skill-pill">SQLite / PostgreSQL</span>
@@ -538,7 +579,7 @@
             <i class="fa-solid fa-brain cert-icon" aria-hidden="true"></i>
             <span class="cert-date">2026</span>
           </div>
-          <h3 class="cert-name">Bootcamp Bradesco — GenAI, Dados & Cybersecurity</h3>
+          <h3 class="cert-name">Bootcamp Bradesco — GenAI, Dados & Cybersecurity (52h)</h3>
           <p class="cert-issuer">DIO.me</p>
           <p>
             Formação completa abrangendo esteiras ETL com Python e Pandas, modelagem relacional em SQL, computação
@@ -554,47 +595,27 @@
           </div>
         </article>
 
-        <!-- BOOTCAMP HEINEKEN -->
+        <!-- WINDOWS SERVER, ACTIVE DIRECTORY & AZURE (UDEMY - DICARJ) -->
         <article class="cert-card glass" data-reveal>
           <div class="cert-card__header">
-            <i class="fa-solid fa-chart-line cert-icon" aria-hidden="true"></i>
-            <span class="cert-date">2026</span>
+            <i class="fa-solid fa-server cert-icon" aria-hidden="true"></i>
+            <span class="cert-date">em andamento</span>
           </div>
-          <h3 class="cert-name">Heineken — IA Aplicada a Dados com Copilot</h3>
-          <p class="cert-issuer">DIO.me</p>
+          <h3 class="cert-name">Windows Server, Active Directory & Microsoft Azure (25h)</h3>
+          <p class="cert-issuer">DICARJ — Udemy</p>
           <p>
-            Capacitação prática em arquitetura de bancos de dados relacionais (SGBD), elaboração de consultas SQL
-            complexas (JOINs, agrupamentos), processos de ETL e construção de dashboards com apoio de IA.
+            Capacitação prática em infraestrutura corporativa, abordando administração de Active Directory (usuários e GPOs),
+            virtualização de alta disponibilidade com Hyper-V, segurança de borda com pfSense, monitoramento com Zabbix e nuvem híbrida no Azure (AZ-900 / AZ-104).
           </p>
           <div class="cert-topics">
-            <span>SQL Avançado</span>
-            <span>Arquitetura de Banco</span>
-            <span>ETL Power Query</span>
-            <span>Dashboards</span>
-            <span>Microsoft Copilot</span>
+            <span>Microsoft Azure (AZ-104/AZ-900)</span>
+            <span>Active Directory & GPOs</span>
+            <span>Hyper-V & Cluster HA</span>
+            <span>Cloud Firewall (pfSense)</span>
+            <span>Monitoramento Zabbix</span>
           </div>
         </article>
 
-        <!-- AUTOMAÇÃO DE TESTES E QA -->
-        <article class="cert-card glass" data-reveal style="border-left: 3px solid var(--accent);">
-          <div class="cert-card__header">
-            <i class="fa-solid fa-vial-virus cert-icon" aria-hidden="true"></i>
-            <span class="cert-date">Em andamento</span>
-          </div>
-          <h3 class="cert-name">Garantia de Qualidade & Automação E2E (Playwright)</h3>
-          <p class="cert-issuer">Estudos Contínuos & Prática</p>
-          <p>
-            Aprofundamento na escrita de testes end-to-end com Playwright, auditoria de integridade de endpoints HTTP,
-            telemetria de console no navegador, mock de requisições e integração contínua de relatórios de QA.
-          </p>
-          <div class="cert-topics">
-            <span>Playwright E2E</span>
-            <span>Testes de Regressão</span>
-            <span>QA Telemetry</span>
-            <span>HTTP Inspection</span>
-            <span>Bug Lifecycle</span>
-          </div>
-        </article>
 
         <!-- BOOTCAMP SANTANDER CYBERSECURITY -->
         <article class="cert-card glass" data-reveal>
@@ -604,33 +625,36 @@
           </div>
           <h3 class="cert-name">Bootcamp Cibersegurança #2 — Santander (28h)</h3>
           <p class="cert-issuer">DIO.me</p>
+          <p>
+            Treinamento intensivo em segurança ofensiva e defensiva, cobrindo fundamentos de pentest, varredura e enumeração de redes, simulação de ataques MiTM e phishing via Kali Linux, análise de pós-exploração e desenvolvimento de scripts em Python para estudo de ransomware e mitigação de vulnerabilidades.
+          </p>
           <div class="cert-topics">
-            <span>Pentest & Red Teaming</span>
+            <span>Pentest & Enumeração</span>
             <span>Ransomware & Python</span>
-            <span>Engenharia Social</span>
             <span>Ataques MiTM & Phishing</span>
-            <span>Análise de Vulnerabilidades</span>
-            <span>Hardening de Redes</span>
+            <span>Engenharia Social</span>
+            <span>Varredura de Redes</span>
+            <span>Hardening & Pós-Exploração</span>
           </div>
 
-          <button class="btn btn--outline btn-cert"
-            data-gallery="imgs/certificados/dio/conclusao.png,imgs/certificados/dio/sub-01.png,imgs/certificados/dio/sub-02.png,imgs/certificados/dio/sub-03.png,imgs/certificados/dio/sub-04.png,imgs/certificados/dio/sub-05.png,imgs/certificados/dio/sub-06.png,imgs/certificados/dio/sub-07.png,imgs/certificados/dio/sub-08.png,imgs/certificados/dio/sub-09.png,imgs/certificados/dio/sub-10.png,imgs/certificados/dio/sub-11.png,imgs/certificados/dio/sub-12.png,imgs/certificados/dio/sub-13.png,imgs/certificados/dio/sub-14.png,imgs/certificados/dio/sub-15.png,imgs/certificados/dio/sub-16.png,imgs/certificados/dio/sub-17.png,imgs/certificados/dio/sub-18.png,imgs/certificados/dio/sub-19.png,imgs/certificados/dio/sub-20.png,imgs/certificados/dio/sub-21.png">
-            <i class="fa-solid fa-expand" aria-hidden="true"></i> Ver Certificados (22)
+          <button class="btn btn--outline btn-cert" data-cert="imgs/certificados/dio/conclusao.png">
+            <i class="fa-solid fa-expand" aria-hidden="true"></i> Ver Certificado
           </button>
 
-          <div class="cert-sub-label">Módulos especializados:</div>
-          <div class="cert-sub-stack">
-            <div class="sub-card-mini" data-gallery-index="1" title="Sistemas Operacionais"><img
+          <div class="cert-sub-label">Módulos especializados (21):</div>
+          <div class="cert-sub-stack"
+            data-gallery="imgs/certificados/dio/sub-01.png,imgs/certificados/dio/sub-02.png,imgs/certificados/dio/sub-03.png,imgs/certificados/dio/sub-04.png,imgs/certificados/dio/sub-05.png,imgs/certificados/dio/sub-06.png,imgs/certificados/dio/sub-07.png,imgs/certificados/dio/sub-08.png,imgs/certificados/dio/sub-09.png,imgs/certificados/dio/sub-10.png,imgs/certificados/dio/sub-11.png,imgs/certificados/dio/sub-12.png,imgs/certificados/dio/sub-13.png,imgs/certificados/dio/sub-14.png,imgs/certificados/dio/sub-15.png,imgs/certificados/dio/sub-16.png,imgs/certificados/dio/sub-17.png,imgs/certificados/dio/sub-18.png,imgs/certificados/dio/sub-19.png,imgs/certificados/dio/sub-20.png,imgs/certificados/dio/sub-21.png">
+            <div class="sub-card-mini" data-gallery-index="0" title="Sistemas Operacionais"><img
                 src="imgs/certificados/dio/sub-01.png" alt="Sub-cert"></div>
-            <div class="sub-card-mini" data-gallery-index="2" title="Varredura de Rede"><img
+            <div class="sub-card-mini" data-gallery-index="1" title="Varredura de Rede"><img
                 src="imgs/certificados/dio/sub-02.png" alt="Sub-cert"></div>
-            <div class="sub-card-mini" data-gallery-index="3" title="Phishing Kali Linux"><img
+            <div class="sub-card-mini" data-gallery-index="2" title="Phishing Kali Linux"><img
                 src="imgs/certificados/dio/sub-03.png" alt="Sub-cert"></div>
-            <div class="sub-card-mini" data-gallery-index="4" title="Lógica de Programação"><img
+            <div class="sub-card-mini" data-gallery-index="3" title="Lógica de Programação"><img
                 src="imgs/certificados/dio/sub-04.png" alt="Sub-cert"></div>
-            <div class="sub-card-mini" data-gallery-index="5" title="Ransomware Python"><img
+            <div class="sub-card-mini" data-gallery-index="4" title="Ransomware Python"><img
                 src="imgs/certificados/dio/sub-05.png" alt="Sub-cert"></div>
-            <div class="sub-card-mini sub-card-mini--more">+16</div>
+            <div class="sub-card-mini sub-card-mini--more" data-gallery-index="0" title="Ver todos os 21 módulos">+16</div>
           </div>
         </article>
 
@@ -640,13 +664,18 @@
             <i class="fa-solid fa-network-wired cert-icon" aria-hidden="true"></i>
             <span class="cert-date">set 2024</span>
           </div>
-          <h3 class="cert-name">Endpoint Security</h3>
+          <h3 class="cert-name">Endpoint Security (27h)</h3>
           <p class="cert-issuer">Cisco Networking Academy</p>
+          <p>
+            Capacitação técnica em defesa de endpoints e infraestrutura de rede, abordando análise e mitigação de vulnerabilidades (IP/TCP/UDP e WLAN), hardening em ambientes Windows e Linux, prevenção de intrusões (HIPS) e proteção antimalware avançada.
+          </p>
           <div class="cert-topics">
-            <span>Antimalware & EDR</span>
-            <span>Segurança de Dispositivos</span>
+            <span>Defesa de Endpoints</span>
+            <span>Hardening Windows & Linux</span>
             <span>Protocolos IP / TCP / UDP</span>
-            <span>Prevenção de Intrusões</span>
+            <span>Prevenção de Intrusões (HIPS)</span>
+            <span>Antimalware & EDR</span>
+            <span>Segurança em Redes & WLAN</span>
           </div>
           <button class="btn btn--outline btn-cert" data-cert="imgs/certificados/cisco-endpoint-1.jpg">
             <i class="fa-solid fa-expand" aria-hidden="true"></i> Ver Certificado
@@ -676,7 +705,7 @@
             <span class="cert-date">mai 2024</span>
           </div>
           <h3 class="cert-name">Segurança da Informação (80h)</h3>
-          <p class="cert-issuer">Curso em Vídeo (Módulos 00 ao 03)</p>
+          <p class="cert-issuer">Curso em Vídeo (Módulos 00, 01, 02 e 03)</p>
           <div class="cert-topics">
             <span>Conformidade LGPD</span>
             <span>Prevenção a Phishing</span>
@@ -814,7 +843,7 @@
           <div class="card-actions">
             <button class="btn btn--outline btn-cert"
               data-gallery="imgs/projetos/suite-de-ferramentas/suite1.png,imgs/projetos/suite-de-ferramentas/suite2.png,imgs/projetos/suite-de-ferramentas/suite3.png,imgs/projetos/suite-de-ferramentas/suite4.png,imgs/projetos/suite-de-ferramentas/suite5.png,imgs/projetos/suite-de-ferramentas/suite6.png,imgs/projetos/suite-de-ferramentas/suite7.png,imgs/projetos/suite-de-ferramentas/suite8.png,imgs/projetos/suite-de-ferramentas/suite9.png,imgs/projetos/suite-de-ferramentas/suite10.png,imgs/projetos/suite-de-ferramentas/suite11.png">
-              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto (11 Telas)
+              <i class="fa-solid fa-images"></i> Visualize Imagens do Projeto
             </button>
           </div>
         </article>
@@ -906,7 +935,7 @@
         <!-- 5. FRAMESTUDIO PRO (Desktop / Mídia) -->
         <article class="project-card" data-category="desktop" data-reveal>
           <div class="card-top-meta">
-            <span class="badge-cat badge-cat--desktop">Desktop & Mídia</span>
+            <span class="badge-cat badge-cat--desktop">Web App - Utilitário</span>
             <span class="badge-status"><i class="fa-solid fa-box-archive"></i> Open Source</span>
           </div>
           <h3 class="project-title">FrameStudio PRO</h3>
@@ -934,7 +963,7 @@
         <!-- 6. MEDIADOWNLOADER PRO (Desktop / Utilitário Web) -->
         <article class="project-card" data-category="desktop" data-reveal>
           <div class="card-top-meta">
-            <span class="badge-cat badge-cat--desktop">Full-Stack & Utilitário</span>
+            <span class="badge-cat badge-cat--desktop">Web App - Utilitário</span>
             <span class="badge-status"><i class="fa-solid fa-box-archive"></i> Open Source</span>
           </div>
           <h3 class="project-title">MediaDownloader Pro</h3>
@@ -991,7 +1020,7 @@
         <!-- 8. I LOVE SECURITY (Cibersegurança / Utilitário) -->
         <article class="project-card" data-category="desktop" data-reveal>
           <div class="card-top-meta">
-            <span class="badge-cat badge-cat--corp">Cibersegurança</span>
+            <span class="badge-cat badge-cat--corp">Web App - Utilitário</span>
             <span class="badge-status"><i class="fa-solid fa-box-archive"></i> Open Source</span>
           </div>
           <h3 class="project-title">I Love Security</h3>
@@ -1018,7 +1047,7 @@
         <!-- 9. RELÍQUIAS ITABORAÍ (Web App / Acervo) -->
         <article class="project-card" data-category="web" data-reveal>
           <div class="card-top-meta">
-            <span class="badge-cat badge-cat--web">Web Application</span>
+            <span class="badge-cat badge-cat--web">Blog</span>
             <span class="badge-status badge-status--dev"><i class="fa-solid fa-code"></i> Em Desenvolvimento</span>
           </div>
           <h3 class="project-title">Relíquias Itaboraí — The Motor Hub</h3>
@@ -1135,70 +1164,107 @@
 
       <div class="contact-grid">
         <div class="contact-info" data-reveal>
-          <p class="contact-intro">
-            Estou aberto a oportunidades profissionais nas áreas de <strong>Infraestrutura de TI, Suporte Técnico, Garantia
-            de Qualidade (QA) e Desenvolvimento</strong>, além de projetos e freelas. Respondo com rapidez!
-          </p>
+          <div class="contact-intro-wrap">
+            <p class="contact-intro">
+              Estou aberto a oportunidades profissionais nas áreas de <strong>Infraestrutura de TI, Suporte Técnico, Garantia
+              de Qualidade (QA) e Desenvolvimento</strong>, além de projetos e freelas. Respondo com rapidez!
+            </p>
+            <div class="contact-status-card">
+              <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-ping"></span>
+              </div>
+              <div class="status-info">
+                <span class="status-title">Disponibilidade Profissional</span>
+                <span class="status-desc">Aberto para contratação CLT, PJ, Estágio e Projetos de TI</span>
+              </div>
+            </div>
+          </div>
+
           <div class="contact-links">
             <a href="mailto:raphaelchernicharo@gmail.com" id="contact-email" class="contact-item">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <div>
+              <div class="contact-item__icon">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-item__content">
                 <span class="contact-item__label">E-mail Profissional</span>
                 <span class="contact-item__value">raphaelchernicharo@gmail.com</span>
               </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-item__arrow" aria-hidden="true"></i>
             </a>
             <a href="https://wa.me/5521980833930" id="contact-phone" target="_blank" rel="noopener noreferrer"
               class="contact-item">
-              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              <div>
+              <div class="contact-item__icon">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </div>
+              <div class="contact-item__content">
                 <span class="contact-item__label">WhatsApp</span>
                 <span class="contact-item__value">+55 (21) 98083-3930</span>
               </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-item__arrow" aria-hidden="true"></i>
             </a>
             <a href="https://github.com/raphael-c-martins" id="contact-github" target="_blank" rel="noopener noreferrer"
               class="contact-item">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-              <div>
+              <div class="contact-item__icon">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </div>
+              <div class="contact-item__content">
                 <span class="contact-item__label">GitHub</span>
                 <span class="contact-item__value">github.com/raphael-c-martins</span>
               </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-item__arrow" aria-hidden="true"></i>
             </a>
             <a href="https://www.linkedin.com/in/raphael-c-martins/" id="contact-linkedin" target="_blank"
               rel="noopener noreferrer" class="contact-item">
-              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-              <div>
+              <div class="contact-item__icon">
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              </div>
+              <div class="contact-item__content">
                 <span class="contact-item__label">LinkedIn</span>
                 <span class="contact-item__value">linkedin.com/in/raphael-c-martins</span>
               </div>
+              <i class="fa-solid fa-arrow-up-right-from-square contact-item__arrow" aria-hidden="true"></i>
             </a>
           </div>
         </div>
 
         <form id="contact-form" class="contact-form" data-reveal novalidate>
-          <div class="form-group">
-            <label for="form-name">Nome Completo</label>
-            <input type="text" id="form-name" name="name" placeholder="Seu nome ou empresa" required autocomplete="name" />
+          <div class="form-header">
+            <span class="form-header__tag"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Mensagem Direta</span>
+            <h3 class="form-title">Envie uma Mensagem</h3>
+            <p class="form-subtitle">Preencha os campos para iniciar uma conversa diretamente por e-mail.</p>
           </div>
-          <div class="form-group form-group--relative">
-            <label for="form-email">Seu E-mail</label>
-            <input type="email" id="form-email" name="email" placeholder="seu@email.com" required autocomplete="email" />
-            <ul id="email-suggestions" class="email-suggestions" role="listbox" aria-label="Sugestões de domínio de e-mail" hidden></ul>
+
+          <div class="form-row form-row--two-cols">
+            <div class="form-group">
+              <label for="form-name">Nome Completo</label>
+              <input type="text" id="form-name" name="name" placeholder="Seu nome ou empresa" required autocomplete="name" />
+            </div>
+            <div class="form-group form-group--relative">
+              <label for="form-email">Seu E-mail</label>
+              <input type="email" id="form-email" name="email" placeholder="seu@email.com" required autocomplete="email" />
+              <ul id="email-suggestions" class="email-suggestions" role="listbox" aria-label="Sugestões de domínio de e-mail" hidden></ul>
+            </div>
           </div>
+
           <div class="form-group">
             <label for="form-extra-contact">Outro Meio de Contato <span class="label-optional">(Opcional)</span></label>
             <input type="text" id="form-extra-contact" name="extra_contact" placeholder="WhatsApp, Telefone ou rede social..." autocomplete="tel" />
           </div>
+
           <div class="form-group">
             <label for="form-message">Mensagem</label>
             <textarea id="form-message" name="message" placeholder="Olá Raphael, gostaria de conversar sobre uma oportunidade / projeto..."
               rows="5" required></textarea>
           </div>
+
           <button type="submit" id="btn-send" class="btn btn--primary btn--full">
             <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem
           </button>
+
           <p class="form-note">
             <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-            Envio direto via cliente padrão de e-mail (sem intermediários ou coleta de dados).
+            <span>Envio direto via cliente de e-mail · Sem intermediários ou coleta de dados</span>
           </p>
         </form>
       </div>
@@ -1223,22 +1289,33 @@
   <!-- ═══════════════════════════ LIGHTBOX MODAL ════════════════════════ -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Anterior" style="display: none;">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
     <div class="lightbox-content">
-      <button id="lightbox-close" class="lightbox-close" aria-label="Fechar" title="Fechar">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Fechar visualizador" title="Fechar (Esc)">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Anterior" style="display: none;">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
       <img id="lightbox-img" src="" alt="Pré-visualização do Certificado ou Projeto" />
-      <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Próximo" style="display: none;">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
     </div>
+    <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Próximo" style="display: none;">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </div>
 
+  <!-- ═══════════════════════════ THEME TOGGLE (BOTÃO FLUTUANTE) ═══════════════ -->
+  <aside class="theme-toggle-wrapper" aria-label="Controle de Tema">
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar para tema escuro" title="Tema Escuro" type="button">
+      <div class="theme-toggle-icon">
+        <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+        <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+      </div>
+      <span class="theme-toggle-tooltip" id="theme-tooltip">Tema Escuro</span>
+    </button>
+  </aside>
+
   <!-- Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=17"></script>
 </body>
 
 </html>

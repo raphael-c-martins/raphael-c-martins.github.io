@@ -4,6 +4,28 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ## 🚀 Entregas e Evolução
 
+### [2026-10-02] - Atualização Curricular, Theme Manager & Refinamento de UX/UI
+- **Decisão:** Reestruturação e modernização completa da grade de Cursos & Certificações, implementação do tema Claro como padrão com alternância fluida via View Transitions API, re-ancoragem do Lightbox Desktop e atualização estrita dos termos de propriedade intelectual (LICENSE).
+- **Racional:** Alinhar a vitrine do portfólio às competências reais de Infraestrutura, Nuvem, Cibersegurança e QA, entregando uma experiência visual de alto contraste e legibilidade imediata para recrutadores, eliminando redundâncias em galerias de certificados e protegendo a autoria do projeto.
+- **Execução:**
+  - **Padronização de Tema Claro (Light Default):**
+    - Definição de `data-theme="light"` como padrão no `<html>`, `localStorage`, script anti-FOUC do `<head>` e no `js/main.js`.
+    - Implementação do alternador flutuante no canto inferior direito com suporte nativo à *View Transitions API* (expansão radial geométrica calculada com `Math.hypot` a partir da origem do clique) e fallback por ripple CSS.
+    - Otimização do tema escuro: ajuste de contraste em botões e blocos de texto para evitar ofuscamento ou ilegibilidade.
+  - **Reestruturação de Cursos & Certificações:**
+    - Substituição do bootcamp legado de Java pelo curso prático *Windows Server, Active Directory & Microsoft Azure (25h) — DICARJ (Udemy)*, com foco em Hyper-V HA, pfSense, Zabbix e nuvem Azure (AZ-900 / AZ-104).
+    - Remoção do card isolado de estudos de QA para evitar assimetria curricular, mantendo o posicionamento sênior de QA e automação nos tópicos do Hero, Tech Stack e nos projetos práticos (BugSync Bot, testes E2E).
+    - Adição de descrições técnicas densas e sênior para os cards *Endpoint Security (27h) — Cisco Networking Academy* e *Bootcamp Cibersegurança #2 (28h) — Santander (DIO.me)*, detalhando ementas de defesa de endpoints, sistemas Windows/Linux, HIPS, EDR, pentest, simulação MiTM e scripts Python.
+    - Separação de escopo na galeria Santander: o botão principal abre diretamente o diploma de 28h, enquanto o stack de mini-cards ativa a navegação nos 21 módulos especializados.
+  - **Correção e Polimento do Lightbox Modal:**
+    - Re-ancoragem do botão de fechamento (`.lightbox-close`) diretamente ao card do modal em telas desktop (`top: -16px; right: -16px;`), tornando o controle intuitivo em monitores ultrawide/Full HD.
+    - Expansão ergonômica da caixa de texto do modal em visualização mobile.
+  - **Atualização da Licença de Uso (LICENSE):**
+    - Conversão do arquivo `LICENSE` para o regime estrito de *Todos os Direitos Reservados (All Rights Reserved)*, garantindo proteção integral de autoria para o design, código e ideias do portfólio.
+  - **Melhorias de Usabilidade e Segurança:**
+    - Cópia instantânea de e-mail ao clicar no contato com Toast Notification e retenção de scroll position (`window.scrollTo`).
+    - Sanitização de sugestões de domínio no input de e-mail via manipulação de nós DOM nativos (`createElement`/`textContent`).
+
 ### [2026-04-20] - Setup de Infraestrutura (GitHub Pages)
 - **Decisão:** Alteração do nome do repositório para `raphael-c-martins.github.io`.
 - **Racional:** Promover o deploy nativo diretamente na raiz do domínio provido pelo GitHub Pages, garantindo maior profissionalismo (remoção do sub-path `/web-curriculo`).

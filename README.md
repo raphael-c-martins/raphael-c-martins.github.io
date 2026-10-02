@@ -11,7 +11,7 @@ Site do currículo pessoal e portfólio de engenharia de software e infraestrutu
 
 O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScript)**:
 1. **Zero Frameworks Client-Side:** Nenhuma biblioteca pesada de frontend (React, Vue, jQuery) no client. Toda a navegação, filtros dinâmicos e modais rodam no motor nativo do navegador.
-2. **Identidade Visual Dark Slate & Ouro Nobre:** Design limpo, sóbrio e profissional, afastando-se de clichês visuais e excesso de cores para focar em alto contraste, superfícies sólidas, tipografia refinada (*Plus Jakarta Sans* e *Inter*) e toques sutis em ouro suave.
+2. **Identidade Visual Dual-Theme (Light & Dark):** Design limpo, sóbrio e profissional com tema Claro por padrão e suporte a Dark Mode com alternância fluida via *View Transitions API*. Alto contraste, superfícies sólidas, tipografia refinada (*Plus Jakarta Sans*, *Inter* e *JetBrains Mono*) e toques em azul ardósia e ouro nobre.
 3. **Filtros Dinâmicos por Categoria:** Sistema instantâneo de abas na seção de projetos (`Todos`, `Web Applications`, `QA & Automação`, `Desktop & Mídia`, `Infra & Hardening`).
 4. **Lightbox Modal Nativo com Carrossel:** Visualização de certificados e telas de projetos com paginação por setas, clique externo e atalhos de teclado (`ESC`, `←`, `→`).
 5. **Responsividade Mobile-First:** Suporte completo à área segura de iPhones (Dynamic Island / Notch via `env(safe-area-inset-top)`), menu hambúrguer com transição suave e expansores de texto para reduzir a fadiga de rolagem.
@@ -55,13 +55,14 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 /
 ├── index.html          # Estrutura semântica (W3C, SEO, Open Graph e Acessibilidade)
 ├── css/
-│   └── style.css       # Design System Dark Slate & Gold, grid responsivo e microinterações
+│   └── style.css       # Design System Dual-Theme, grid responsivo e microinterações
 ├── js/
-│   └── main.js         # Filtros dinâmicos, Lightbox Modal com carrossel e Observers
+│   └── main.js         # Theme Manager (View Transitions), filtros dinâmicos e Lightbox Modal
 ├── imgs/
 │   ├── foto-rosto.jfif # Fotografia de perfil profissional
 │   ├── certificados/   # Diplomas em imagem (.jpg e .png) e sub-certificados modulares
 │   └── projetos/       # Capturas de tela organizadas em subpastas por projeto
+├── LICENSE             # Termos de Todos os Direitos Reservados (All Rights Reserved)
 ├── README.md           # Manual de operação e síntese do projeto
 └── HISTORICO.md        # Diário de bordo e decisões arquiteturais
 ```
