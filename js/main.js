@@ -620,13 +620,14 @@ if (emailInput && emailSuggestions) {
   });
 }
 
-// 3. Formatação Inteligente do Campo "Outro Meio de Contato"
+// 3. Formatação Inteligente e Limite do Campo "Outro Meio de Contato"
 if (extraContactInput) {
   extraContactInput.addEventListener('input', () => {
     const val = extraContactInput.value;
     // Se o usuário estiver digitando números e pontuação telefônica, formata como telefone brasileiro
     if (!/[a-zA-Z]/.test(val) && /\d/.test(val)) {
-      const digits = val.replace(/\D/g, '').slice(0, 11);
+      // Limite estrito internacional de até 15 dígitos numéricos (E.164)
+      const digits = val.replace(/\D/g, '').slice(0, 15);
       if (!digits) {
         extraContactInput.value = '';
         return;
@@ -638,37 +639,130 @@ if (extraContactInput) {
         formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
       } else if (digits.length <= 10) {
         formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
-      } else {
+      } else if (digits.length === 11) {
         formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+      } else {
+        // Formato internacional estendido (DDI + DDD + Número até 15 dígitos)
+        formatted = `+${digits}`;
       }
       extraContactInput.value = formatted;
     }
   });
 }
 
-// 4. Submissão do Formulário com Validação e Feedback Instantâneo
+// 4. Contador de Caracteres em Tempo Real da Mensagem
+const messageInput = document.getElementById('form-message');
+const msgCurrentChars = document.getElementById('msg-current-chars');
+const charCountContainer = document.getElementById('form-char-count');
+
+if (messageInput && msgCurrentChars) {
+  messageInput.addEventListener('input', () => {
+    const len = messageInput.value.length;
+    msgCurrentChars.textContent = len;
+    if (charCountContainer) {
+      charCountContainer.classList.toggle('is-warning', len >= 1350 && len < 1500);
+      charCountContainer.classList.toggle('is-limit', len >= 1500);
+    }
+  });
+}
+
+// 5. Submissão do Formulário com Rate Limiting, Honeypot e Validação Estrita de Segurança
 if (contactForm) {
+  const SUBMIT_COOLDOWN_MS = 15000; // 15 segundos entre envios sucessivos (Rate Limit Anti-Flood)
+
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('form-name').value.trim();
-    const email = document.getElementById('form-email').value.trim();
-    const extraContact = document.getElementById('form-extra-contact')?.value.trim();
-    const message = document.getElementById('form-message').value.trim();
 
+    // 1. Armadilha Honeypot Anti-Bot invisível
+    const honeypotVal = document.getElementById('form-website-check')?.value.trim();
+    if (honeypotVal) {
+      // Descarta submissão automatizada de spam silenciosamente
+      contactForm.reset();
+      return;
+    }
+
+    // 2. Rate Limiting no Client-Side (Prevenção contra Flood / Spam)
+    const now = Date.now();
+    const lastSubmitTime = parseInt(sessionStorage.getItem('rcm_last_submit_ts') || '0', 10);
+    if (now - lastSubmitTime < SUBMIT_COOLDOWN_MS) {
+      const remainingSeconds = Math.ceil((SUBMIT_COOLDOWN_MS - (now - lastSubmitTime)) / 1000);
+      showToast(`Aguarde ${remainingSeconds}s antes de enviar outra mensagem.`, 'warning');
+      return;
+    }
+
+    const name = (document.getElementById('form-name')?.value || '').trim();
+    const email = (document.getElementById('form-email')?.value || '').trim();
+    const extraContact = (document.getElementById('form-extra-contact')?.value || '').trim();
+    const message = (document.getElementById('form-message')?.value || '').trim();
+    const btnSend = document.getElementById('btn-send');
+
+    // 3. Validação de Campos Obrigatórios
     if (!name || !email || !message) {
       showToast('Por favor, preencha todos os campos obrigatórios!', 'error');
       return;
     }
 
+    // 4. Limites Estritos de Tamanho de Caracteres (Anti-Buffer Overflow / Anti-Spam)
+    if (name.length < 2 || name.length > 70) {
+      showToast('O nome deve conter entre 2 e 70 caracteres.', 'error');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (email.length > 80 || !emailRegex.test(email)) {
+      showToast('Por favor, insira um e-mail válido (máximo 80 caracteres).', 'error');
+      return;
+    }
+
+    if (extraContact) {
+      if (extraContact.length > 30) {
+        showToast('O contato adicional deve ter no máximo 30 caracteres.', 'error');
+        return;
+      }
+      // Se for apenas dígitos e pontuação, valida o padrão internacional de até 15 dígitos
+      const numericDigits = extraContact.replace(/\D/g, '');
+      if (numericDigits.length > 15) {
+        showToast('O número de telefone não pode exceder 15 dígitos.', 'error');
+        return;
+      }
+    }
+
+    if (message.length < 10 || message.length > 1500) {
+      showToast('A mensagem deve conter entre 10 e 1500 caracteres.', 'error');
+      return;
+    }
+
+    // 5. Registra Timestamp para Rate Limiting
+    sessionStorage.setItem('rcm_last_submit_ts', now.toString());
+
+    // 6. Higienização e Encodificação Segura
     const subject = encodeURIComponent(`Contato pelo Portfólio — ${name}`);
     let bodyText = `Olá Raphael,\n\n${message}\n\nDe: ${name}\nE-mail: ${email}`;
     if (extraContact) {
       bodyText += `\nOutro Contato: ${extraContact}`;
     }
     const body = encodeURIComponent(bodyText);
+
+    // 7. Feedback de Processamento com Bloqueio Temporário do Botão
+    if (btnSend) {
+      btnSend.disabled = true;
+      btnSend.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Preparando...';
+    }
+
     window.location.href = `mailto:raphaelchernicharo@gmail.com?subject=${subject}&body=${body}`;
     showToast('Abrindo seu aplicativo de e-mail...', 'success');
     contactForm.reset();
+    if (msgCurrentChars) msgCurrentChars.textContent = '0';
+    if (charCountContainer) {
+      charCountContainer.classList.remove('is-warning', 'is-limit');
+    }
+
+    setTimeout(() => {
+      if (btnSend) {
+        btnSend.disabled = false;
+        btnSend.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem';
+      }
+    }, 2500);
   });
 }
 
