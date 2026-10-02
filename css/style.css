@@ -300,8 +300,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    HERO
    ═══════════════════════════════════════════════════════ */
 .hero {
-  min-height: 94vh; display: flex; align-items: center;
-  position: relative; overflow: hidden; padding: calc(var(--nav-h) + 40px) 24px 60px;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + 36px) 24px 28px;
 }
 .hero-bg-grid {
   position: absolute; inset: 0; z-index: 0;
@@ -394,7 +398,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
-  margin-top: 40px;
+  margin-top: 32px;
   width: 100%;
 }
 .hero-stat-card {
@@ -428,7 +432,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 .hero-scroll-hint {
-  margin-top: 26px;
+  margin-top: 18px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -456,9 +460,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* ═══════════════════════════════════════════════════════
    SECTIONS COMMON
    ═══════════════════════════════════════════════════════ */
-.section { padding: 90px 0; }
+.section { padding: 64px 0; }
+#sobre { padding-top: 36px; }
 .section--alt { background: var(--bg-alt); }
-.section-header { margin-bottom: 48px; }
+.section-header { margin-bottom: 36px; }
 .section-tag {
   font-family: var(--font-mono);
   font-size: .8rem; color: var(--accent); letter-spacing: .1em;
