@@ -4,6 +4,17 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ## 🚀 Entregas e Evolução
 
+### [2026-10-09] - Calibração de Proporção Visual: Foto de Perfil sem Recorte (3:4 Portrait) & Otimização Web
+- **Decisão:** Substituição do enquadramento quadrado (1:1 de 320x320) pela fotografia completa sem recorte em formato vertical (3:4 Portrait, 350x467px), com geração de versão otimizada para web (`imgs/foto-rosto.jpg` a 333 KB a partir do original de 7.5 MB), calibração do grid `.sobre-grid` (`350px 1fr`) e ajuste ergonômico no responsivo mobile (`max-width: 290px`).
+- **Racional:** O bloco descritivo e de qualificações da seção "Quem sou eu" possui altura de 571px. A moldura quadrada anterior de 320px deixava um vazio vertical de ~251px, causando desequilíbrio e fazendo a foto parecer solta na tela. A versão sem recorte em 3:4 equilibra a altura visual (467px), enquadrando os ombros e o cenário natural em profundidade de campo, harmonizando perfeitamente com a altura dos parágrafos e cards.
+- **Execução:**
+  - Processamento e otimização do arquivo de alta fidelidade via Pillow (Lanczos 1200x1600 @ 90q, comprimindo de 7.57 MB para 333 KB).
+  - Atualização do container `.sobre-img-wrapper` para `aspect-ratio: 3/4` e `max-width: 350px` em `css/style.css`.
+  - Expansão da coluna da foto no `.sobre-grid` para `350px 1fr` com espaçamento de `48px`.
+  - Tratamento responsivo em `@media (max-width: 900px)` com `max-width: 290px` para não sobrecarregar telas verticais de smartphones.
+  - Atualização do caminho para `imgs/foto-rosto.jpg` e dimensões `width="350"` e `height="467"` no `index.html`.
+  - Atualização das metatags Open Graph (`og:image`) e Twitter Card (`twitter:image`), e incremento do cache buster da folha de estilo para `v=27`.
+
 ### [2026-10-02] - Mobile UX: Botão Flutuante Arrastável (Draggable FAB) com Snap Magnético & Calibração de Navegação
 - **Decisão:** Implementação de capacidade de arraste inteligente (Draggable FAB) com snap magnético lateral e persistência local para o botão flutuante de alternância de tema, refinamento ergonômico dos links do menu mobile e harmonização do cabeçalho da barra de navegação.
 - **Racional:** Em telas compactas de smartphones, botões flutuantes fixos podem obstruir a leitura de textos, nomes de certificados ou detalhes de projetos. Permitir que o usuário reposicione o botão livremente para qualquer borda da tela sem disparar acidentalmente a troca de tema nem travar a rolagem da página eleva o nível de usabilidade a padrões nativos de sistemas móveis (semelhante ao AssistiveTouch do iOS).

@@ -59,7 +59,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 ├── js/
 │   └── main.js         # Theme Manager (View Transitions), filtros dinâmicos e Lightbox Modal
 ├── imgs/
-│   ├── foto-rosto.jfif # Fotografia de perfil profissional
+│   ├── foto-rosto.jpg  # Fotografia de perfil profissional (Alta Resolução 3:4 Portrait)
 │   ├── certificados/   # Diplomas em imagem (.jpg e .png) e sub-certificados modulares
 │   └── projetos/       # Capturas de tela organizadas em subpastas por projeto
 ├── LICENSE             # Termos de Todos os Direitos Reservados (All Rights Reserved)
