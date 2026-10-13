@@ -2,7 +2,22 @@
 
 Este documento atua como diário de bordo e central de auditoria arquitetural do projeto, em estrita conformidade com as diretrizes de Engenharia Sênior (Alta Disponibilidade, Segurança e Padronização).
 
+## 🛡️ Diretrizes Críticas de Preservação e Operação
+> [!CAUTION]
+> **Preservação Absoluta de Dados e Histórico:** É estritamente mandatório a todos os agentes e desenvolvedores tomar o máximo de cuidado para **NUNCA** realizar o apagamento de logs persistentes (`/logs/`, logs de execução) e **NUNCA** efetuar o reset, drop ou recriação de bancos de dados em qualquer circunstância de manutenção. Todas as alterações devem ser incrementais, reversíveis e seguras.
+
 ## 🚀 Entregas e Evolução
+
+### [2026-10-12] - Hero UX: Botão de Currículo em PDF, Normalização de Assets Web & Simetria de Ações
+- **Decisão:** Inclusão de ação direta para visualização e download do currículo atualizado em formato PDF na seção principal (Hero Section), normalização do arquivo estático para a web (`Curriculo-Raphael-C-Martins.pdf`), implementação de micro-interações táteis e feedback visual via Toast, e balanceamento simétrico bilateral dos botões com o destaque colorido posicionado no centro.
+- **Racional:** Proporcionar aos recrutadores e visitantes acesso imediato ao currículo completo em PDF sem a necessidade de rolar a página ou baixar arquivos de forma forçada. A abertura em nova aba com o visualizador nativo do navegador preserva a fluidez da navegação. Na interface, a disposição simétrica `[ Outline ] [ Primary ] [ Outline ]` equilibra o peso visual da tela, mantendo o botão "Explorar Projetos" como ponto focal central e distribuindo harmoniosamente o "Currículo" e o "Vamos Conversar" nas laterais.
+- **Execução:**
+  - **Normalização de Arquivos e Compatibilidade Web:** Criação da versão sanitizada `Curriculo-Raphael-C-Martins.pdf` (142 KB) na raiz do projeto, preservando o arquivo original e prevenindo falhas de *percent-encoding* ou erros 404 em servidores Linux do GitHub Pages.
+  - **Marcação Semântica e Acessibilidade:** Inserção do link em `.hero-actions` com atributos `target="_blank"`, `rel="noopener noreferrer"`, ícone FontAwesome `fa-file-pdf` e `aria-label` descritivo para tecnologias assistivas.
+  - **Harmonia Visual e Simetria:** Reordenação dos botões para a sequência: `Currículo (PDF)` à esquerda (outline), `Explorar Projetos (12)` no centro (primário com preenchimento sólido de destaque) e `Vamos Conversar` à direita (outline).
+  - **Design System & Micro-interações:** Criação de micro-estilo CSS com escala suave no ícone no *hover* (`#btn-curriculo:hover i`) e ajuste de contraste nos temas Claro (`#0f172a`) e Escuro (`#c9a84c`).
+  - **Feedback Interativo (Toast System):** Adição de evento em `js/main.js` que dispara notificação Toast (*"Abrindo currículo em PDF..."*) para confirmação visual imediata.
+  - **Cache Busting:** Atualização dos identificadores de versão da folha de estilos (`style.css?v=27`) e dos scripts (`main.js?v=20`).
 
 ### [2026-10-09] - Calibração de Proporção Visual: Foto de Perfil sem Recorte (3:4 Portrait) & Otimização Web
 - **Decisão:** Substituição do enquadramento quadrado (1:1 de 320x320) pela fotografia completa sem recorte em formato vertical (3:4 Portrait, 350x467px), com geração de versão otimizada para web (`imgs/foto-rosto.jpg` a 333 KB a partir do original de 7.5 MB), calibração do grid `.sobre-grid` (`350px 1fr`) e ajuste ergonômico no responsivo mobile (`max-width: 290px`).

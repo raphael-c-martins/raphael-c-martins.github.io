@@ -16,6 +16,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 4. **Lightbox Modal Nativo com Carrossel:** Visualização de certificados e telas de projetos com paginação por setas, clique externo e atalhos de teclado (`ESC`, `←`, `→`).
 5. **Responsividade Mobile-First:** Suporte completo à área segura de iPhones (Dynamic Island / Notch via `env(safe-area-inset-top)`), menu hambúrguer com transição suave, expansores de texto e botão flutuante arrastável (Draggable FAB) com snap magnético lateral para não obstruir conteúdos.
 6. **Toast System:** Notificações visuais nativas para feedback de ações do usuário.
+7. **Currículo Integrado (PDF):** Ação direta na Hero Section para visualização e download imediato do currículo completo em PDF via leitor nativo do navegador, com simetria bilateral de CTAs.
 
 ---
 
@@ -54,6 +55,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 ```text
 /
 ├── index.html          # Estrutura semântica (W3C, SEO, Open Graph e Acessibilidade)
+├── Curriculo-Raphael-C-Martins.pdf # Documento de currículo completo normalizado para web
 ├── css/
 │   └── style.css       # Design System Dual-Theme, grid responsivo e microinterações
 ├── js/

@@ -159,6 +159,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transform: translateY(-2px);
   background: rgba(212, 175, 55, 0.06);
 }
+#btn-curriculo i {
+  color: var(--accent);
+  transition: transform var(--transition);
+}
+#btn-curriculo:hover i {
+  transform: scale(1.12);
+}
 .btn--live {
   background: rgba(52, 211, 153, 0.14);
   border: 1px solid rgba(52, 211, 153, 0.35);
@@ -2347,6 +2354,9 @@ body.theme-transitioning * {
   border-color: #0f172a;
   color: #0f172a;
   background: #f8fafc;
+}
+[data-theme="light"] #btn-curriculo i {
+  color: #0f172a;
 }
 
 [data-theme="light"] .btn--live {

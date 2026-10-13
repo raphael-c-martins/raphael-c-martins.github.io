@@ -814,6 +814,14 @@ function showToast(msg, type = 'success', duration = 4000) {
   }, duration);
 }
 
+/* ── CURRÍCULO FEEDBACK ──────────────────────────────── */
+const btnCurriculo = document.getElementById('btn-curriculo');
+if (btnCurriculo) {
+  btnCurriculo.addEventListener('click', () => {
+    showToast('Abrindo currículo em PDF...', 'info', 3000);
+  });
+}
+
 /* ── FOOTER YEAR ─────────────────────────────────────── */
 const footerYearEl = document.getElementById('footer-year');
 if (footerYearEl) {
