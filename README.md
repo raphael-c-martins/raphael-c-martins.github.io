@@ -55,7 +55,8 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 ```text
 /
 ├── index.html          # Estrutura semântica (W3C, SEO, Open Graph e Acessibilidade)
-├── Curriculo-Raphael-C-Martins.pdf # Documento de currículo completo normalizado para web
+├── docs/
+│   └── Curriculo-Raphael-C-Martins.pdf # Documento de currículo completo em PDF
 ├── css/
 │   └── style.css       # Design System Dual-Theme, grid responsivo e microinterações
 ├── js/
