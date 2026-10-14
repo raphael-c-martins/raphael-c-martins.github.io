@@ -8,6 +8,14 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ## 🚀 Entregas e Evolução
 
+### [2026-10-14] - Trajetória Profissional: Expansão do Card Autônomo com Soluções de Scripts e Web sob Demanda
+- **Decisão:** Atualização do card de experiência autônoma na linha do tempo para "Técnico de Informática & Desenvolvedor Freelance (Autônomo)", com agrupamento das atribuições em tópicos destacados (Hardware, Manutenção, Scripts e Web sob Demanda) e inclusão de novas tags temáticas.
+- **Racional:** Integrar na trajetória profissional os trabalhos autônomos e sob demanda realizados para clientes na área de desenvolvimento de software e automações (como bots e scrapers de notificação de preços de itens de CS/Steam e páginas web personalizadas comemorativas, a exemplo do *Interactive Anniversary Template*). Essa integração confere visibilidade à versatilidade técnica prática do profissional, conectando o atendimento de suporte/hardware com a entrega de soluções de programação sob medida sem dispersar a vitrine principal de projetos.
+- **Execução:**
+  - **Atualização Semântica do Cargo e Subtítulo (`index.html`):** Transição do cargo para `Técnico de Informática & Desenvolvedor Freelance (Autônomo)` e substituição do subtítulo para `Serviços Especializados em TI & Soluções sob Demanda` com ícone temático `fa-laptop-code`.
+  - **Padronização das Atribuições por Tópicos:** Reorganização das responsabilidades com marcadores em negrito alinhados ao padrão visual corporativo do card de infraestrutura (`Montagem & Consultoria de Hardware`, `Manutenção Preventiva & Diagnóstico`, `Automação & Scripts sob Demanda` e `Criação de Websites & Templates Personalizados`).
+  - **Enriquecimento de Tags da Timeline:** Inclusão de `Scripts sob Demanda`, `Automação Python` e `Websites sob Medida`, mantendo as competências essenciais de hardware e diagnóstico.
+
 ### [2026-10-12] - Hero UX: Botão de Currículo em PDF, Normalização de Assets Web & Simetria de Ações
 - **Decisão:** Inclusão de ação direta para visualização e download do currículo atualizado em formato PDF na seção principal (Hero Section), normalização do arquivo estático para a web (`Curriculo-Raphael-C-Martins.pdf`), implementação de micro-interações táteis e feedback visual via Toast, e balanceamento simétrico bilateral dos botões com o destaque colorido posicionado no centro.
 - **Racional:** Proporcionar aos recrutadores e visitantes acesso imediato ao currículo completo em PDF sem a necessidade de rolar a página ou baixar arquivos de forma forçada. A abertura em nova aba com o visualizador nativo do navegador preserva a fluidez da navegação. Na interface, a disposição simétrica `[ Outline ] [ Primary ] [ Outline ]` equilibra o peso visual da tela, mantendo o botão "Explorar Projetos" como ponto focal central e distribuindo harmoniosamente o "Currículo" e o "Vamos Conversar" nas laterais.
