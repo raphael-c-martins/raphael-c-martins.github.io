@@ -40,9 +40,9 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 | **How To Complete Dex** | Web Application | React 19, TypeScript, Vite, Tailwind v4, Zustand, Supabase | [Online 🟢](https://how-to-complete-dex.vercel.app) |
 | **Media Studio** | Web Application | Python, FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, PyAV/OpenCV, SQLite | Open Source 📦 (4 Telas) |
 | **BugSync Bot** | QA & Confiabilidade | Python, discord.py, Google Sheets API, Apps Script Webhooks | Projeto Privado 🔒 |
-| **DevPad** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Projeto Privado 🔒 |
-| **Finance App & Investment Hub** | Web Application | Next.js App Router, TypeScript, Zustand, APIs Real-Time | Projeto Privado 🔒 |
-| **I Love Security** | Cibersegurança & Privacidade | Python, FastAPI, IA Local (Zero Data Leak), Canvas | Open Source 📦 |
+| **DevPad** | Web Application | Next.js 16, TypeScript, Prisma ORM, Supabase RLS, TipTap | Projeto Privado 🔒 (4 Telas) |
+| **Finance App & Investment Hub** | Web Application | Next.js App Router, TypeScript, Zustand, APIs Real-Time | Projeto Privado 🔒 (4 Telas) |
+| **I Love Security** | Cibersegurança & Privacidade | Python, FastAPI, IA Local (Zero Data Leak), Canvas | Open Source 📦 (4 Telas) |
 | **Relíquias Itaboraí — Motor Hub** | Web Application | Vanilla JS, Supabase BaaS, Blog/Fórum & Extensão Instagram | Em Desenvolvimento 🚧 |
 | **RMS Marcenaria e Reformas** | Landing Page Comercial | React 19, Vite, Tailwind CSS v4, Lucide React, WhatsApp | Em Desenvolvimento 🚧 |
 | **Interactive Anniversary Template** | UI & Animação 3D | HTML5, CSS 3D Animations, Vanilla JS, Audio API | [Online 🟢](https://interactive-anniversary-template.netlify.app/) |
