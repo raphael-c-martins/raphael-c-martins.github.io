@@ -8,6 +8,13 @@ Este documento atua como diário de bordo e central de auditoria arquitetural do
 
 ## 🚀 Entregas e Evolução
 
+### [2026-11-17] - Atualização das Capturas da Suíte de Ferramentas Web (13 Telas · Pacotes A e B)
+- **Decisão:** Renovação completa da galeria da **Suíte de Ferramentas Web** (`suite1.png`–`suite13.png` em `1920x1080`) com ambiente simulado em `%TEMP%` a partir do bundle `v2.3.0` (`afb352b`) e dados 100% fictícios, destacando os novos recursos visuais entregues nos **Pacotes A e B de UI/UX**.
+- **Execução:**
+  - **Isolamento e Anti-Vazamento:** Servidor temporário mock em `127.0.0.1` servindo apenas o bundle compilado em cópia temporária sanitizada (sem contato com o banco original `backend/database.sqlite` — SHA-256 verificado antes e depois — nem com a rede/compartilhamentos corporativos). Substituídos hostnames (`SRV-APP-01`..`ESTACAO-ADMIN-01`), IPs (`10.10.20.x`), MACs (`02:00:00:10:xx:xx`), caminhos (`\\srv-demo\acervo\Lotes`) e referências internas por rótulos de demonstração (`Ambiente Corporativo Demo`).
+  - **Cobertura das 13 Telas:** Dashboard Início com o **novo gráfico estruturado de Alertas do Inventário**, **novo Modal Interativo de Alertas do Inventário** (`suite2.png`), Inventário com **filtros clicáveis em pílula**, Modal de Detalhes (`ADM01`), Monitor de Acesso, Visualizador de Processos, Comparador Lado a Lado, Deletor de Arquivos, Auditoria e Segurança, Auditoria de Protocolos, Scripts e Automações, Testador de Hardware com teclas ativas e responsividade proporcional (`ResizeObserver`), e Dashboard com Assistente IA aberto (`ID-014`, sem botão redundante no cabeçalho e container query responsivo).
+  - **Atualização do Card (`index.html` e `README.md`):** Atualizada a galeria `data-gallery` para 13 capturas e descrição do módulo de inventário.
+
 ### [2026-11-16] - Galerias Demo de DevPad, Finance App e I Love Security (12 Novas Telas)
 - **Decisão:** Execução de sandboxes locais isolados em `%TEMP%` (sem contato com bancos ou dados pessoais de produção) para capturar 4 telas reais de demonstração de cada um dos projetos **DevPad**, **Finance App & Investment Hub** e **I Love Security** (`12` novas capturas em `1440x900`), conectando galerias Lightbox nos três cards da 3ª linha da vitrine (`index.html` e `README.md`).
 - **Racional:** Os cards do *DevPad* e do *Finance App* possuíam botões apontando para imagens ainda vazias nos diretórios, enquanto o *I Love Security* não exibia prévia visual da interface ao lado do link do GitHub. Gerar massas de dados 100% sintéticas e arquivos PDF/PNG/TIFF demonstrativos garante privacidade absoluta ao mesmo tempo em que valoriza a apresentação visual de cada projeto.

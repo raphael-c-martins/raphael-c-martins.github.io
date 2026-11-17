@@ -35,7 +35,7 @@ O projeto foi inteiramente construído em **Vanilla Puro (HTML5 + CSS3 + JavaScr
 
 | Projeto | Categoria | Tecnologias Principais | Status |
 |---|---|---|---|
-| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Chatbot / Assistente IA, Active Directory (GPOs), Proxmox VE, Visualizador de Processos, SRE | Projeto Privado 🔒 (12 Telas) |
+| **Suíte de Ferramentas Web** | Ferramenta Corporativa | React, FastAPI, Chatbot / Assistente IA, Active Directory (GPOs), Proxmox VE, Visualizador de Processos, SRE | Projeto Privado 🔒 (13 Telas) |
 | **Otimizador de Windows 10/11** | Infra & Hardening | C# / .NET 4.8 WPF, Hardening SMB & UAC, Zero Telemetria, Dry-Run & Rollback (-Undo), PowerShell | Open Source 📦 |
 | **How To Complete Dex** | Web Application | React 19, TypeScript, Vite, Tailwind v4, Zustand, Supabase | [Online 🟢](https://how-to-complete-dex.vercel.app) |
 | **Media Studio** | Web Application | Python, FastAPI, Vanilla JS SPA, SSE em tempo real, yt-dlp, PyAV/OpenCV, SQLite | Open Source 📦 (4 Telas) |
